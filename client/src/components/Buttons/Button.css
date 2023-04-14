@@ -1,0 +1,13 @@
+button {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 20px;
+}
+button i {
+  width: 24px;
+  height: 24px;
+}

@@ -1,0 +1,11 @@
+.carousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+.cards {
+  display: flex;
+  gap: 24px;
+  width: 80%;
+}

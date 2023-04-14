@@ -1,0 +1,35 @@
+.section-aboutus {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 2em;
+  gap: 36px;
+  background-color: var(--base-white);
+}
+.section-aboutus > * {
+  flex: 1 1 0;
+}
+.aboutus-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.aboutus-content h3 {
+  color: var(--primary-color);
+}
+
+.aboutus-content p {
+  color: var(--base-500);
+}
+.aboutus-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.aboutus-image .image {
+  background-color: var(--secondary-color-red);
+  height: 400px;
+  width: 400px;
+}

@@ -1,0 +1,36 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--base-700);
+  color: var(--base-white);
+  padding: 2em;
+  gap: 56px;
+}
+.footer .info > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+}
+.sections,
+.social-networks,
+.help {
+  align-self: flex-start;
+  margin-top: 64px;
+}
+.info,
+.rights {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.divider {
+  height: 3px;
+  width: 100%;
+  background-color: var(--base-600);
+}

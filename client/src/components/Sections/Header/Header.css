@@ -1,0 +1,35 @@
+header {
+  height: calc(100vh - 72px);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 72px;
+  width: 100%;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-bottom: 224px;
+  gap: 8px;
+  width: 60%;
+}
+.hero p {
+  align-self: center;
+  width: 80%;
+  color: var(--base-500);
+}
+.actions-container {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  width: 80%;
+  align-self: center;
+}
+.actions-container > * {
+  flex: 1 1 0px;
+}

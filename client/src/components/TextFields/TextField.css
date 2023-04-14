@@ -1,0 +1,26 @@
+.text-field-container {
+  border: 3px solid var(--base-200);
+  background-color: var(--base-white);
+  border-radius: 40px;
+  padding: 0.5em 1.2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.text-field-container i {
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+}
+.text-field-container input {
+  background-color: var(--base-white);
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  color: var(--base-700);
+  width: 100%;
+}

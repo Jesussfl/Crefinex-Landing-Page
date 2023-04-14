@@ -1,0 +1,29 @@
+.section-resources {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 88px 124px;
+  gap: 56px;
+}
+.section-resources .copys-resources {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 24px;
+}
+.copys-resources p {
+  color: var(--base-500);
+}
+.horizontal-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.horizontal-cards > div {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}

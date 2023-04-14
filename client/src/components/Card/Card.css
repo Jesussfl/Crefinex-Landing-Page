@@ -1,0 +1,33 @@
+.card {
+  padding: 12px;
+  border-radius: 24px;
+  background-color: var(--base-white);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.image {
+  border-radius: 20px;
+  height: 188px;
+  background-color: var(--primary-color);
+  min-width: 220px;
+}
+.card .content {
+  padding: 16px 0;
+
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+.card .content .description {
+  color: var(--base-500);
+  height: 48px;
+  overflow: hidden;
+}
+
+.card:hover {
+  scale: 1.05;
+  transition: all 0.3s ease-in-out;
+}

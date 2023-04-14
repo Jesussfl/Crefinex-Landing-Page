@@ -1,0 +1,50 @@
+html {
+  font-size: 16px;
+}
+h1 {
+  font-size: 3.5rem;
+  font-weight: bolder;
+  margin: 0;
+  line-height: 78.4px;
+}
+h2 {
+  font-size: 3rem;
+  line-height: 67.2px;
+  margin: 0;
+}
+h3 {
+  font-size: 2.625rem;
+  margin: 0;
+}
+h4 {
+  font-size: 2.25rem;
+  margin: 0;
+}
+h5 {
+  font-size: 1.75rem;
+  margin: 0;
+}
+h6 {
+  font-size: 1.5rem;
+  line-height: 34.6px;
+  margin: 0;
+}
+.headline {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+.body-large {
+  font-size: 1.04rem;
+  font-weight: 600;
+  margin: 0;
+}
+p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 25.2px;
+  margin: 0;
+}
+.callout {
+  font-size: 0.875rem;
+}

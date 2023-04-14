@@ -1,0 +1,7 @@
+.copys-container {
+  width: 50%;
+}
+.copys-container p {
+  margin-top: 8px;
+  color: var(--base-500);
+}
