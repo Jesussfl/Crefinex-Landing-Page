@@ -6,7 +6,7 @@ header {
   align-items: center;
   align-content: center;
   margin-top: 72px;
-  width: 100%;
+  /* width: 100%; */
 }
 .hero {
   display: flex;
@@ -35,10 +35,10 @@ header {
 }
 
 @media (max-width: 800px) {
-  header {
+  /* header {
     padding: 0 16px;
     box-sizing: border-box;
-  }
+  } */
   .hero,
   .actions-container,
   .hero p {
