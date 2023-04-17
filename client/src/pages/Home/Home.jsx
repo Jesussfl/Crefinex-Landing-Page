@@ -9,7 +9,7 @@ import SectionResources from "../../components/Sections/Resources/SectionResourc
 import SectionEducation from "../../components/Sections/Education/SectionEducation";
 import SectionSubscribe from "../../components/Sections/Subscribe/SectionSubscribe";
 import Footer from "../../components/Sections/Footer/Footer";
-
+import "./Home.css";
 function Home() {
   return (
     <div className="home">
