@@ -54,3 +54,16 @@ p {
 .callout {
   font-size: 0.875rem;
 }
+@media (min-width: 468px) {
+  h1 {
+    font-size: 1.75rem;
+    margin: 0;
+    line-height: 39.2px;
+  }
+  .body-large {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 25.2px;
+    margin: 0;
+  }
+}

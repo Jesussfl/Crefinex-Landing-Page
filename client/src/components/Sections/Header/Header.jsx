@@ -25,6 +25,7 @@ function Header() {
         </div>
       </div>
       <PeopleRoundedBackground
+        className="people1"
         style={{
           backgroundColor: "var(--primary-color)",
           bottom: "-60px",
@@ -33,6 +34,7 @@ function Header() {
         src="images/img1.png"
       />
       <PeopleRoundedBackground
+        className="people2"
         style={{
           backgroundColor: "var(--secondary-color-yellow)",
           bottom: "-60px",
@@ -41,6 +43,7 @@ function Header() {
         src="images/img2.png"
       />
       <PeopleRoundedBackground
+        className="people3"
         style={{
           backgroundColor: "var(--secondary-color-red)",
           bottom: "10%",
@@ -49,6 +52,7 @@ function Header() {
         src="images/img3.png"
       />
       <PeopleRoundedBackground
+        className="people4"
         style={{
           backgroundColor: "var(--secondary-color-blue)",
           bottom: "10%",

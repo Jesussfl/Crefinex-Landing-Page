@@ -2,7 +2,7 @@ import React from "react";
 import "./PeopleRoundedBackground.css";
 function PeopleRoundedBackground(props) {
   return (
-    <div style={props.style} className="people-container">
+    <div style={props.style} className={`people-container ${props.className}`}>
       <img src={props.src} alt={props.alt} />
     </div>
   );

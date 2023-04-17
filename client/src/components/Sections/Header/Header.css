@@ -33,3 +33,35 @@ header {
 .actions-container > * {
   flex: 1 1 0px;
 }
+
+@media (max-width: 800px) {
+  header {
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+  .hero,
+  .actions-container,
+  .hero p {
+    width: 100%;
+  }
+  .actions-container {
+    flex-direction: column;
+  }
+  .people3,
+  .people4 {
+    display: none !important;
+  }
+  .people1 {
+    left: 0px !important;
+    bottom: -50px !important;
+  }
+  .people2 {
+    right: 0px !important;
+    bottom: -50px !important;
+  }
+}
+@media screen and (min-width: 400px) {
+  .actions-container > * {
+    width: 100%;
+  }
+}
