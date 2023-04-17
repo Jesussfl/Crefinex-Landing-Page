@@ -11,3 +11,7 @@ button i {
   width: 24px;
   height: 24px;
 }
+.btn-link {
+  text-decoration: none;
+  color: var(--white-color);
+}

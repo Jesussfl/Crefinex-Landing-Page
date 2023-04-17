@@ -14,11 +14,10 @@ function SectionLocation() {
       <div className="map">
         <iframe
           style={{ width: "100%", height: "100%", borderRadius: "20px" }}
-          class="gmap_iframe"
-          frameborder="0"
-          scrolling="no"
-          marginheight="0"
-          marginwidth="0"
+          className="gmap_iframe"
+          frameBorder="0"
+          marginHeight="0"
+          marginWidth="0"
           src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Crefinex maracay&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         ></iframe>
       </div>

@@ -19,6 +19,7 @@
   transition: cubic-bezier(0.215, 0.61, 0.355, 1) 800ms;
 }
 .people-container img {
+  height: 100%;
   position: absolute;
   transform: translate(-45%, 5%);
   left: 50%;

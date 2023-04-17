@@ -39,6 +39,12 @@ h6 {
   font-weight: 600;
   margin: 0;
 }
+.body-btn {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 25.2px;
+}
 p {
   font-size: 1rem;
   font-weight: 500;
