@@ -6,7 +6,7 @@ function SectionResources() {
   return (
     <div className="section-resources">
       <div className="copys-resources">
-        <h3>Tenemos recursos para tí</h3>
+        <h2>Tenemos recursos para tí</h2>
         <p className="body-large">
           Hemos creado una serie de libros y cuentos dirigidos a niños y jóvenes
           para ayudarles a comprender conceptos financieros importantes de

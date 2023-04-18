@@ -28,6 +28,9 @@
   box-sizing: border-box;
 }
 @media (max-width: 768px) {
+  .map {
+    padding: 12px;
+  }
   .section-location {
     padding: 16px;
   }
