@@ -15,13 +15,13 @@ function Home() {
     <div className="home">
       <Navbar />
       <Header />
-      {/* <SectionAnimation />
-      <SectionCourses />
-      <SectionEducation />
-      <SectionAboutUs />
       <SectionAnimation />
-      <SectionResources />
-      <SectionLocation /> */}
+      <SectionCourses />
+      {/* <SectionEducation /> */}
+      {/* <SectionAboutUs /> */}
+      {/* <SectionAnimation /> */}
+      {/* <SectionResources /> */}
+      {/* <SectionLocation /> */}
       {/* <SectionSubscribe /> */}
       {/* <Footer /> */}
     </div>
