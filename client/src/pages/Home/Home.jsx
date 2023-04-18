@@ -20,7 +20,7 @@ function Home() {
       <SectionEducation />
       {/* <SectionAboutUs /> */}
       {/* <SectionAnimation /> */}
-      {/* <SectionResources /> */}
+      <SectionResources />
       <SectionLocation />
       {/* <SectionSubscribe /> */}
       <Footer />
