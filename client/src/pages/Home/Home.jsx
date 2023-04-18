@@ -21,7 +21,7 @@ function Home() {
       {/* <SectionAboutUs /> */}
       {/* <SectionAnimation /> */}
       {/* <SectionResources /> */}
-      {/* <SectionLocation /> */}
+      <SectionLocation />
       {/* <SectionSubscribe /> */}
       <Footer />
     </div>
