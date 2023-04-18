@@ -27,5 +27,8 @@
   justify-content: left;
   align-items: start;
   text-align: left;
+  list-style: none;
   color: var(--base-500);
+  padding: 0;
+  gap: 8px;
 }

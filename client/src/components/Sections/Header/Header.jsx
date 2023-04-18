@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { Button } from "../../Buttons/Button";
 import PeopleRoundedBackground from "../../Decorations/PeopleRoundedBackground/PeopleRoundedBackground";
 import { TextField } from "../../TextFields/TextField";
 import { ArrowCircleRight, Sms } from "iconsax-react";
+import axios from "axios";
 function Header() {
+  // form states
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [designation, setDesignation] = useState("");
+  const [salary, setSalary] = useState("");
+
+  // getting data function
+  const getData = () => {
+    axios
+      .get("https://sheet.best/api/sheets/a623b1a3-9a4a-4510-b41f-fe60daba5916")
+      .then((response) => {
+        console.log(response.data);
+      });
+  };
+
+  // triggering function
+  // useEffect(() => {
+  //   getData();
+  // }, [data]);
   return (
     <header>
-      <div className="hero">
+      <div className="hero" onClick={getData}>
         <h1>
           Mejora el futuro <span className="red">financiero</span> de tus{" "}
           <span className="blue">hijos</span> con nosotros.
