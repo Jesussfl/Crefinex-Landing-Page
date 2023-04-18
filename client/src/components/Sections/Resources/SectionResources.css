@@ -37,4 +37,8 @@
   .horizontal-cards > div {
     max-width: 100% !important;
   }
+  .horizontal-cards > div > .image {
+    height: 100%;
+    min-width: 96px !important;
+  }
 }
