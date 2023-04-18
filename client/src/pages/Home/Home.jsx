@@ -16,14 +16,14 @@ function Home() {
       <Navbar />
       <Header />
       <SectionAnimation />
-      {/* <SectionCourses /> */}
-      {/* <SectionEducation /> */}
-      {/* <SectionAboutUs /> */}
+      <SectionCourses />
+      <SectionEducation />
+      <SectionAboutUs />
       <SectionAnimation />
-      {/* <SectionResources /> */}
-      {/* <SectionLocation /> */}
+      <SectionResources />
+      <SectionLocation />
       {/* <SectionSubscribe /> */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

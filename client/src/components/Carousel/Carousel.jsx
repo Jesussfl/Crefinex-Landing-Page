@@ -1,6 +1,6 @@
 import React from "react";
-import "./Carousel.css";
 import Card from "../Card/Card";
+import "./Carousel.css";
 function Carousel() {
   return (
     <div className="carousel">

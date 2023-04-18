@@ -2,10 +2,7 @@ import React from "react";
 import "./SectionAboutUs.css";
 function SectionAboutUs() {
   return (
-    <div
-      style={{ height: "100vh", padding: "88px 124px" }}
-      className="section-aboutus"
-    >
+    <div className="section-aboutus">
       <div className="aboutus-content">
         <h3>¿Quiénes Somos?</h3>
         <p className="body-large">

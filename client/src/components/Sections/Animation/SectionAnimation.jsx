@@ -6,7 +6,6 @@ function SectionAnimation() {
       style={{
         height: "300px",
         backgroundColor: "var(--primary-color)",
-        marginTop: "164px",
       }}
     ></div>
   );

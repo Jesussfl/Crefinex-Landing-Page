@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 88px 124px;
   gap: 56px;
 }
 .section-resources .copys-resources {
@@ -20,10 +19,22 @@
 .horizontal-cards {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 24px;
 }
 .horizontal-cards > div {
   display: flex;
   flex-direction: row;
+  max-width: 600px !important;
   gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .section-resources {
+    padding: 16px;
+  }
+  .horizontal-cards > div {
+    max-width: 100% !important;
+  }
 }

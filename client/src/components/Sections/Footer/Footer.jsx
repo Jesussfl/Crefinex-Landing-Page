@@ -5,7 +5,7 @@ function Footer() {
     <div className="footer">
       <div className="info">
         <div className="logoAndInfo">
-          <img src="logo-crefinex.svg" alt="" />
+          <img src="logo-crefinex-white.svg" alt="" />
           <p>Creciendo Financieramente Exitosos</p>
           <a href="">
             <img src="" alt="" />

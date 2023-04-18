@@ -1,23 +1,12 @@
 import React from "react";
-import "./SectionCourses.css";
 import Carousel from "../../Carousel/Carousel";
 import Button from "../../Buttons/Button";
 
+import "./SectionCourses.css";
+
 function SectionCourses() {
   return (
-    <div
-      style={{
-        textAlign: "center",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignContent: "center",
-        alignItems: "center",
-        padding: "56px, 88px",
-        gap: "48px",
-        margin: "88px 0",
-      }}
-    >
+    <div className="section-courses">
       <div className="copys-container">
         <h2>
           Explora nuestros <span className="red">cursos</span>

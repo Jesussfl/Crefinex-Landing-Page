@@ -10,7 +10,7 @@ function SectionResources() {
         <p className="body-large">
           Hemos creado una serie de libros y cuentos dirigidos a niños y jóvenes
           para ayudarles a comprender conceptos financieros importantes de
-          manera sencilla y divertida.s
+          manera sencilla y divertida.
         </p>
       </div>
       <div className="horizontal-cards">

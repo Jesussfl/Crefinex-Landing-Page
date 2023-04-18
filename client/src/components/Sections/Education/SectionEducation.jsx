@@ -7,7 +7,7 @@ function SectionEducation() {
       <div className="section-container">
         <div className="image"></div>
         <div className="section-content">
-          <h3>Educación Tradicional</h3>
+          <h4>Educación Tradicional</h4>
           <ul>
             <li>
               <h6>Actividades Lúdicas</h6>

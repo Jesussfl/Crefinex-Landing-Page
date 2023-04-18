@@ -1,35 +1,27 @@
 .section-aboutus {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  padding: 2em;
-  gap: 36px;
-  background-color: var(--base-white);
+  gap: 48px;
 }
 .section-aboutus > * {
   flex: 1 1 0;
 }
-.aboutus-content {
+.section-aboutus .aboutus-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-.aboutus-content h3 {
-  color: var(--primary-color);
-}
-
-.aboutus-content p {
-  color: var(--base-500);
+  gap: 24px;
+  padding: 1rem;
+  text-align: left;
 }
 .aboutus-image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  position: relative;
+  padding: 1rem;
 }
-.aboutus-image .image {
-  background-color: var(--secondary-color-red);
-  height: 400px;
-  width: 400px;
+@media (max-width: 768px) {
+  .section-aboutus {
+    flex-direction: column;
+  }
+  .aboutus-content {
+    padding: 16px;
+  }
 }

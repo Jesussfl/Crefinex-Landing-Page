@@ -1,7 +1,6 @@
 .footer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   background-color: var(--base-700);
   color: var(--base-white);
   padding: 2em;
@@ -10,15 +9,15 @@
 .footer .info > * {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-content: flex-start;
   align-items: flex-start;
+  align-self: flex-start;
+
   gap: 16px;
 }
+
 .sections,
 .social-networks,
 .help {
-  align-self: flex-start;
   margin-top: 64px;
 }
 .info,
@@ -33,4 +32,9 @@
   height: 3px;
   width: 100%;
   background-color: var(--base-600);
+}
+@media (max-width: 768px) {
+  .footer .info {
+    flex-direction: column;
+  }
 }

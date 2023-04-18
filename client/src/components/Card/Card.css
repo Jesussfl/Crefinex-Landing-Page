@@ -4,12 +4,14 @@
   background-color: var(--base-white);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  box-sizing: border-box;
+  max-width: 330px;
 }
 .image {
   border-radius: 20px;
   height: 188px;
   background-color: var(--primary-color);
-  min-width: 220px;
+  min-width: 256px;
 }
 .card .content {
   padding: 16px 0;
@@ -30,4 +32,10 @@
 .card:hover {
   scale: 1.05;
   transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+  }
 }
