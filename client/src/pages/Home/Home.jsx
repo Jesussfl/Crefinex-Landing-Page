@@ -23,7 +23,7 @@ function Home() {
       {/* <SectionResources /> */}
       {/* <SectionLocation /> */}
       {/* <SectionSubscribe /> */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
