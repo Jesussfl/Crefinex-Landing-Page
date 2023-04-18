@@ -18,9 +18,9 @@ function Home() {
       <SectionAnimation />
       <SectionCourses />
       <SectionEducation />
-      {/* <SectionAboutUs /> */}
-      {/* <SectionAnimation /> */}
-      <SectionResources />
+      <SectionAboutUs />
+      <SectionAnimation />
+      {/* <SectionResources /> */}
       <SectionLocation />
       {/* <SectionSubscribe /> */}
       <Footer />
