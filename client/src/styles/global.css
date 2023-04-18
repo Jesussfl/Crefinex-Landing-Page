@@ -36,6 +36,7 @@ h6 {
 .headline {
   font-size: 1.1rem;
   font-weight: 700;
+  line-height: 28px;
   margin: 0;
 }
 .body-large {
@@ -68,10 +69,28 @@ p {
     font-size: 1.5rem;
     line-height: 34.6px;
   }
+  h5 {
+    font-size: 1.3rem;
+    line-height: 34.6px;
+  }
+  h6 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 28px;
+  }
+  .headline {
+    font-size: 1.04rem;
+  }
   .body-large {
     font-size: 1rem;
     font-weight: 500;
     line-height: 25.2px;
+    margin: 0;
+  }
+  p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 24.2px;
     margin: 0;
   }
 }

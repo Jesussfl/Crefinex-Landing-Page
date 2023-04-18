@@ -7,16 +7,16 @@ function SectionEducation() {
       <div className="section-container">
         <div className="image"></div>
         <div className="section-content">
-          <h4>Educación Tradicional</h4>
+          <h5>Educación Tradicional</h5>
           <ul>
             <li>
-              <h6>Actividades Lúdicas</h6>
+              <p className="headline">Actividades Lúdicas</p>
             </li>
             <li>
-              <h6>Compañerismo y Trabajo en equipo</h6>
+              <p className="headline">Compañerismo y Trabajo en equipo</p>
             </li>
             <li>
-              <h6>Refuerzo de temas complejos</h6>
+              <p className="headline">Refuerzo de temas complejos</p>
             </li>
           </ul>
         </div>

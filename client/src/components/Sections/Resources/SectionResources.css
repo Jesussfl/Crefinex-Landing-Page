@@ -31,6 +31,9 @@
 }
 
 @media (max-width: 600px) {
+  .section-resources .copys-resources {
+    width: 100%;
+  }
   .section-resources {
     padding: 16px;
   }

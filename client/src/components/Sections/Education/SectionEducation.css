@@ -11,7 +11,7 @@
   flex: 1 1 0;
 }
 .section-container .image {
-  min-height: 400px;
+  min-height: 256px;
 }
 .section-content {
   text-align: left;
@@ -19,7 +19,7 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  gap: 48px;
+  gap: 12px;
 }
 .section-container .section-content ul {
   display: flex;
