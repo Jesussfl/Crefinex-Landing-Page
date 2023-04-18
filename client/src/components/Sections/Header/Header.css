@@ -1,9 +1,11 @@
 header, .hero{
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 header {
   margin-top: 72px;
+  padding: 16px;
   gap: 156px;
 }
 .hero {
