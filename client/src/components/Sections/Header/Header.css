@@ -66,9 +66,8 @@ header {
 
   }
   .people2 {
-    left: initial !important;
     transform: none !important;
-    right: -32px !important;
+    left: 65% !important;
     scale: 0.9 !important;
     bottom: -100px !important;
   }
