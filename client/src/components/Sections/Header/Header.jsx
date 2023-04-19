@@ -62,7 +62,7 @@ function Header() {
         style={{
           position: "absolute",
           top: "46%",
-          right: "5px",
+          right: "10px",
           transform: "rotate(-30deg)",
           zIndex: "-1",
         }}
