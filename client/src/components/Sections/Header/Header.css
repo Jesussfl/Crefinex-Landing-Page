@@ -9,7 +9,6 @@ header {
   margin-top: 72px;
   padding: 16px;
   gap: 156px;
-  position: relative;
 }
 .hero {
   margin: 0 auto;
@@ -66,8 +65,7 @@ header {
 
   }
   .people2 {
-    transform: none !important;
-    left: 65% !important;
+    left: 85% !important;
     scale: 0.9 !important;
     bottom: -100px !important;
   }
