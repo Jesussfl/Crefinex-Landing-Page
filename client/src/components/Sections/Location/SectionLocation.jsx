@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./SectionLocation.css";
+import { loadSheetData } from "../../../api/googleSheetAPI";
+
 function SectionLocation() {
+  const [location, setLocation] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    window.gapi.load("client", () => {
+      loadSheetData("Ubicacion", "A2").then((loadedData) => {
+        console.log(loadedData);
+        setLocation(loadedData);
+        setIsLoading(false);
+      });
+    });
+  }, []);
   return (
     <div className="section-location">
       <div className="copys-location">
         <p className="body-large">Nuestra Ubicación</p>
-        <h6>
-          Venezuela - Estado Aragua, Maracay. Avenida Bolívar - Oeste. Centro
-          Comercial Pacífico, Piso 6 a 50 Metros Del C.C. Parque Aragua donde se
-          encuentra el colegio de contadores públicos.{" "}
-        </h6>
+        <h6>{location}</h6>
       </div>
       <div className="map">
         <iframe

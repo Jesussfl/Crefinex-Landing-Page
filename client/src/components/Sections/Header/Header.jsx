@@ -11,7 +11,7 @@ function Header() {
 
   useEffect(() => {
     window.gapi.load("client", () => {
-      loadSheetData("A3").then((loadedData) => {
+      loadSheetData("Cabecera", "A3").then((loadedData) => {
         console.log(loadedData);
         setDescription(loadedData[0][0]);
       });

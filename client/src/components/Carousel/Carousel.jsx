@@ -5,21 +5,37 @@ import { loadSheetData } from "../../api/googleSheetAPI";
 import Card from "../Card/Card";
 import "./Carousel.css";
 function Carousel() {
+  const [cardTitle, setCardTitle] = useState([]);
   const [cardDescription, setCardDescription] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     window.gapi.load("client", () => {
-      loadSheetData("B1:B9").then((loadedData) => {
+      loadSheetData("Cursos", "C2:C6").then((loadedData) => {
+        console.log(loadedData);
+        setCardTitle(loadedData);
+        setIsLoading(false);
+      });
+      loadSheetData("Cursos", "D2:D6").then((loadedData) => {
         console.log(loadedData);
         setCardDescription(loadedData);
+        setIsLoading(false);
       });
     });
   }, []);
   return (
     <div className="carousel">
       <div className="cards">
-        <Card title={cardDescription[3][0]} />
-        <Card title={cardDescription[5][0]} />
-        <Card title={cardDescription[7][0]} />
+        {isLoading ? (
+          <p>Cargando...</p>
+        ) : (
+          cardTitle.map((card, index) => (
+            <Card
+              key={index}
+              title={card}
+              description={cardDescription[index]}
+            />
+          ))
+        )}
       </div>
     </div>
   );
