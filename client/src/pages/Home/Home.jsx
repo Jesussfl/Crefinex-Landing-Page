@@ -16,7 +16,7 @@ function Home() {
     <div className="home">
       <Navbar />
       <Header />
-      <SectionAnimation />
+      {/* <SectionAnimation />
       <SectionCourses />
       <SectionEducation />
       <SectionAboutUs />
@@ -24,7 +24,7 @@ function Home() {
       <SectionResources />
       <SectionLocation />
       <SectionSubscribe />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
