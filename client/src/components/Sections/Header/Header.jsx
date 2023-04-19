@@ -32,8 +32,9 @@ function Header() {
       <Confetti
         style={{
           position: "absolute",
-          top: "13%",
+          top: "8%",
           transform: "rotate(-45deg)",
+          zIndex: "-1",
         }}
         color="#5171e2"
         size="36px"
@@ -44,6 +45,7 @@ function Header() {
           top: "28%",
           left: "10px",
           transform: "rotate(10deg)",
+          zIndex: "-1",
         }}
         color="#ffe607"
         size="36px"
@@ -54,6 +56,7 @@ function Header() {
           top: "13%",
           right: "2%",
           transform: "rotate(20deg)",
+          zIndex: "-1",
         }}
         color="#ff4463"
         size="36px"
@@ -61,7 +64,7 @@ function Header() {
       <Confetti
         style={{
           position: "absolute",
-          top: "46%",
+          top: "26%",
           right: "10px",
           transform: "rotate(-30deg)",
           zIndex: "-1",

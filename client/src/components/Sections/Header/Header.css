@@ -3,11 +3,13 @@ header,
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+
 }
 header {
   margin-top: 72px;
   padding: 16px;
   gap: 156px;
+  position: relative;
 }
 .hero {
   margin: 0 auto;
@@ -61,14 +63,12 @@ header {
     left: -32px !important;
     scale: 0.9 !important;
     bottom: -100px !important;
-    display: none !important;
 
   }
   .people2 {
-    display: none !important;
     left: initial !important;
     transform: none !important;
-    right: 0px !important;
+    right: -32px !important;
     scale: 0.9 !important;
     bottom: -100px !important;
   }
