@@ -16,15 +16,15 @@ function Home() {
     <div className="home">
       <Navbar />
       <Header />
-      {/* <SectionAnimation />
+      <SectionAnimation />
       <SectionCourses />
       <SectionEducation />
       <SectionAboutUs />
       <SectionAnimation />
       <SectionResources />
       <SectionLocation />
-      <SectionSubscribe />
-      <Footer /> */}
+      {/* <SectionSubscribe /> */}
+      <Footer />
     </div>
   );
 }
