@@ -51,6 +51,9 @@ header {
     margin-top: 124px;
     gap: 96px;
   }
+  .people{
+    display: none;
+  }
   .actions-container {
     flex-direction: column;
   }
