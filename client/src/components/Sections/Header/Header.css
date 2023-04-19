@@ -58,14 +58,17 @@ header {
     display: none !important;
   }
   .people1 {
-    left: 0px !important;
+    left: -32px !important;
     scale: 0.9 !important;
     bottom: -100px !important;
+    display: none !important;
+
   }
   .people2 {
+    display: none !important;
     left: initial !important;
     transform: none !important;
-    right: 0;
+    right: 0px !important;
     scale: 0.9 !important;
     bottom: -100px !important;
   }

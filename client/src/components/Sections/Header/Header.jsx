@@ -30,8 +30,43 @@ function Header() {
   return (
     <header>
       <Confetti
-        style={{ position: "absolute", top: "60%", transform: "rotate(45deg)" }}
+        style={{
+          position: "absolute",
+          top: "13%",
+          transform: "rotate(-45deg)",
+        }}
         color="#5171e2"
+        size="36px"
+      />
+      <Confetti
+        style={{
+          position: "absolute",
+          top: "28%",
+          left: "10px",
+          transform: "rotate(10deg)",
+        }}
+        color="#ffe607"
+        size="36px"
+      />
+      <Confetti
+        style={{
+          position: "absolute",
+          top: "13%",
+          right: "2%",
+          transform: "rotate(20deg)",
+        }}
+        color="#ff4463"
+        size="36px"
+      />
+      <Confetti
+        style={{
+          position: "absolute",
+          top: "46%",
+          right: "5px",
+          transform: "rotate(-30deg)",
+          zIndex: "-1",
+        }}
+        color="#7f3dea"
         size="36px"
       />
       <div className="hero">
