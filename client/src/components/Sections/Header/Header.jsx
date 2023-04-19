@@ -29,49 +29,54 @@ function Header() {
 
   return (
     <header>
-      <Confetti
-        style={{
-          position: "absolute",
-          top: "8%",
-          transform: "rotate(-45deg)",
-          zIndex: "-1",
-        }}
-        color="#5171e2"
-        size="36px"
-      />
-      <Confetti
-        style={{
-          position: "absolute",
-          top: "28%",
-          left: "10px",
-          transform: "rotate(10deg)",
-          zIndex: "-1",
-        }}
-        color="#ffe607"
-        size="36px"
-      />
-      <Confetti
-        style={{
-          position: "absolute",
-          top: "13%",
-          right: "2%",
-          transform: "rotate(20deg)",
-          zIndex: "-1",
-        }}
-        color="#ff4463"
-        size="36px"
-      />
-      <Confetti
-        style={{
-          position: "absolute",
-          top: "26%",
-          right: "10px",
-          transform: "rotate(-30deg)",
-          zIndex: "-1",
-        }}
-        color="#7f3dea"
-        size="36px"
-      />
+      {/* <div
+        className="confettis"
+        style={{ position: "absolute", width: "100%", height: "100vh" }}
+      >
+        <Confetti
+          style={{
+            position: "absolute",
+            top: "8%",
+            transform: "rotate(-45deg)",
+            zIndex: "-1",
+          }}
+          color="#5171e2"
+          size="36px"
+        />
+        <Confetti
+          style={{
+            position: "absolute",
+            top: "28%",
+            left: "10px",
+            transform: "rotate(10deg)",
+            zIndex: "-1",
+          }}
+          color="#ffe607"
+          size="36px"
+        />
+        <Confetti
+          style={{
+            position: "absolute",
+            top: "13%",
+            right: "2%",
+            transform: "rotate(20deg)",
+            zIndex: "-1",
+          }}
+          color="#ff4463"
+          size="36px"
+        />
+        <Confetti
+          style={{
+            position: "absolute",
+            top: "26%",
+            right: "10px",
+            transform: "rotate(-30deg)",
+            zIndex: "-1",
+          }}
+          color="#7f3dea"
+          size="36px"
+        />
+      </div> */}
       <div className="hero">
         <h1>
           Mejora el futuro <span className="red">financiero</span> de tus{" "}
