@@ -1,0 +1,14 @@
+.confetti1{
+    position: relative;
+}
+.confetti1::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    border-radius: 50px;
+    background-color: #fff;
+}

@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
-import { Button } from "../../Buttons/Button";
-import PeopleRoundedBackground from "../../Decorations/PeopleRoundedBackground/PeopleRoundedBackground";
-import { TextField } from "../../TextFields/TextField";
-import { ArrowCircleRight, Sms } from "iconsax-react";
+
+//Methods
 import { loadSheetData } from "../../../api/googleSheetAPI";
+
+//Components
+import PeopleRoundedBackground from "../../Decorations/PeopleRoundedBackground/PeopleRoundedBackground";
+import { Button } from "../../Buttons/Button";
+import { TextField } from "../../TextFields/TextField";
+import { Confetti } from "../../Decorations/Confetti/Confetti";
+
+//Icons
+import { ArrowCircleRight, Sms } from "iconsax-react";
+
 function Header() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
+  // Load content
   useEffect(() => {
     window.gapi.load("client", () => {
       loadSheetData("Cabecera", "A3").then((loadedData) => {
@@ -20,6 +29,11 @@ function Header() {
 
   return (
     <header>
+      <Confetti
+        style={{ position: "absolute", top: "60%", transform: "rotate(45deg)" }}
+        color="#5171e2"
+        size="36px"
+      />
       <div className="hero">
         <h1>
           Mejora el futuro <span className="red">financiero</span> de tus{" "}

@@ -46,6 +46,10 @@ header {
 }
 
 @media (max-width: 768px) {
+  header{
+    margin-top: 124px;
+    gap: 96px;
+  }
   .actions-container {
     flex-direction: column;
   }
@@ -54,11 +58,15 @@ header {
     display: none !important;
   }
   .people1 {
-    left: -50px !important;
+    left: 0px !important;
+    scale: 0.9 !important;
     bottom: -100px !important;
   }
   .people2 {
-    left: 90% !important;
+    left: initial !important;
+    transform: none !important;
+    right: 0;
+    scale: 0.9 !important;
     bottom: -100px !important;
   }
 }
