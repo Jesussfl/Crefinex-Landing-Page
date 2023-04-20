@@ -9,6 +9,7 @@ import PeopleRoundedBackground from "../../Decorations/PeopleRoundedBackground/P
 import { Button } from "../../Buttons/Button";
 import { TextField } from "../../TextFields/TextField";
 import { Confetti } from "../../Decorations/Confetti/Confetti";
+import InViewEffect from "../../Decorations/InViewEffect/InViewEffect";
 
 //Icons
 import { ArrowCircleRight, Sms } from "iconsax-react";
@@ -74,11 +75,19 @@ function Header() {
         size="36px"
       />
       <div className="hero">
-        <h1>
-          Mejora el futuro <span className="red">financiero</span> de tus{" "}
-          <span className="blue">hijos</span> con nosotros.
-        </h1>
-        <p className="body-large">{description}</p>
+        <InViewEffect>
+          <h1>
+            Mejora el futuro <span className="red">financiero</span> de tus{" "}
+            <span className="blue">hijos</span> con nosotros.
+          </h1>
+        </InViewEffect>
+        <InViewEffect>
+          <p className="body-large">
+            ¡Aprender finanzas nunca fue tan divertido! Únete a Crefinex y
+            enseña a tus hijos habilidades financieras que les durarán toda la
+            vida.
+          </p>
+        </InViewEffect>
         <div className="actions-container">
           <TextField type="text" leftIcon={<Sms variant="Bold" />} />
           <Button

@@ -1,14 +1,19 @@
 import React from "react";
 import "./Button.css";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export function Button(props) {
   return (
-    <button>
+    <motion.button
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 0.95 }}
+      className="button"
+    >
       {props.leftIcon ? <i>{props.leftIcon}</i> : ""}
       {props.text}
       {props.rightIcon ? <i>{props.rightIcon}</i> : ""}
-    </button>
+    </motion.button>
   );
 }
 export function ButtonLink(props) {

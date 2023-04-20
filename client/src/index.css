@@ -13,7 +13,20 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background-color: transparent;
+}
 
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--primary-color);
+}
 a {
   font-weight: 500;
   font-size: 1rem;
@@ -47,7 +60,6 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {

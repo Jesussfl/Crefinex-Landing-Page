@@ -1,4 +1,4 @@
-button {
+.button {
   background-color: var(--primary-color);
   display: flex;
   flex-direction: row;
@@ -7,7 +7,7 @@ button {
   align-items: center;
   gap: 20px;
 }
-button i {
+.button i {
   width: 24px;
   height: 24px;
 }

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
 .home {
   display: flex;
   flex-direction: column;
@@ -5,10 +7,65 @@
   align-items: center;
   gap: 12rem;
 }
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.marquee-section {
+  /* -webkit-font-smoothing: antialiased;  */
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--base-white);
+  font-size: 3.5rem;
+  position: relative;
+  background-image: url("images/crefinex-stamps.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
 
+.parallax {
+  overflow: hidden;
+  letter-spacing: 2px;
+  line-height: 0.8;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
 
+.parallax .scroller {
+  font-family: "Righteous";
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 72px;
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.parallax span {
+  display: block;
+  margin-bottom: 20px;
+  margin-right: 30px;
+}
 @media (max-width: 600px) {
   .home {
     gap: 8rem;
+  }
+  section {
+    background-size: 200%;
+  }
+  .parallax .scroller {
+    font-size: 42px;
   }
 }

@@ -16,11 +16,18 @@ function Home() {
     <div className="home">
       <Navbar />
       <Header />
-      <SectionAnimation />
+      <section className="marquee-section">
+        <SectionAnimation baseVelocity={-1}>
+          Creciendo Financiera-mente Exitosos Creciendo Financiera-mente
+          Exitosos
+        </SectionAnimation>
+        <SectionAnimation baseVelocity={1}>
+          Educación Financiera Educación Financiera Educación Financiera
+        </SectionAnimation>
+      </section>
       <SectionCourses />
       {/* <SectionEducation /> */}
       <SectionAboutUs />
-      <SectionAnimation />
       <SectionResources />
       <SectionLocation />
       <div style={{ width: "100%" }}>
