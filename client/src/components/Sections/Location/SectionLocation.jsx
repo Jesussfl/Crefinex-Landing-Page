@@ -1,24 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./SectionLocation.css";
-import { loadSheetData } from "../../../api/googleSheetAPI";
 
-function SectionLocation() {
-  const [location, setLocation] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    window.gapi.load("client", () => {
-      loadSheetData("Ubicacion", "A2").then((loadedData) => {
-        console.log(loadedData);
-        setLocation(loadedData);
-        setIsLoading(false);
-      });
-    });
-  }, []);
+function SectionLocation(props) {
   return (
     <div className="section-location">
       <div className="copys-location">
         <p className="body-large">Nuestra Ubicación</p>
-        <h6>{location}</h6>
+        <h6>{props.data.Ubicacion}</h6>
       </div>
       <div className="map">
         <iframe

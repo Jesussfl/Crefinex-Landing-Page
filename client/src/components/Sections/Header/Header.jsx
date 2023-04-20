@@ -14,18 +14,18 @@ import InViewEffect from "../../Decorations/InViewEffect/InViewEffect";
 //Icons
 import { ArrowCircleRight, Sms } from "iconsax-react";
 
-function Header() {
+function Header(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   // Load content
   useEffect(() => {
-    window.gapi.load("client", () => {
-      loadSheetData("Cabecera", "A3").then((loadedData) => {
-        console.log(loadedData);
-        setDescription(loadedData[0][0]);
-      });
-    });
+    // window.gapi.load("client", () => {
+    //   loadSheetData("Cabecera", "A3").then((loadedData) => {
+    //     console.log(loadedData);
+    //     setDescription(loadedData[0][0]);
+    //   });
+    // });
   }, []);
 
   return (
@@ -82,11 +82,7 @@ function Header() {
           </h1>
         </InViewEffect>
         <InViewEffect>
-          <p className="body-large">
-            ¡Aprender finanzas nunca fue tan divertido! Únete a Crefinex y
-            enseña a tus hijos habilidades financieras que les durarán toda la
-            vida.
-          </p>
+          <p className="body-large">{props.data.Subtitulo}</p>
         </InViewEffect>
         <div className="actions-container">
           <TextField type="text" leftIcon={<Sms variant="Bold" />} />

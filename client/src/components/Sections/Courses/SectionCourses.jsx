@@ -5,7 +5,7 @@ import InViewEffect from "../../Decorations/InViewEffect/InViewEffect";
 
 import "./SectionCourses.css";
 
-function SectionCourses() {
+function SectionCourses(props) {
   return (
     <div className="section-courses">
       <InViewEffect>
@@ -20,7 +20,7 @@ function SectionCourses() {
           </p>
         </div>
       </InViewEffect>
-      <Carousel />
+      <Carousel data={props.data} />
       <Button text="Ver todos" />
     </div>
   );

@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./SectionResources.css";
 import Card from "../../Card/Card";
 import Button from "../../Buttons/Button";
-import { loadSheetData } from "../../../api/googleSheetAPI";
 
-function SectionResources() {
+function SectionResources(props) {
   const books = [
     "inteligencia-emocional",
     "finanzas-personales",
@@ -12,23 +11,7 @@ function SectionResources() {
     "el-ahorro",
     "el-banco",
   ];
-  const [cardTitle, setCardTitle] = useState([]);
-  const [cardDescription, setCardDescription] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    window.gapi.load("client", () => {
-      loadSheetData("Recursos", "A2:A6").then((loadedData) => {
-        console.log(loadedData);
-        setCardTitle(loadedData);
-        setIsLoading(false);
-      });
-      loadSheetData("Recursos", "B2:B6").then((loadedData) => {
-        console.log(loadedData);
-        setCardDescription(loadedData);
-        setIsLoading(false);
-      });
-    });
-  }, []);
+
   return (
     <div className="section-resources">
       <div className="copys-resources">
@@ -43,18 +26,14 @@ function SectionResources() {
       </div>
 
       <div className="horizontal-cards">
-        {isLoading ? (
-          <p>Cargando...</p>
-        ) : (
-          cardTitle.map((card, index) => (
-            <Card
-              key={index}
-              title={card}
-              description={cardDescription[index]}
-              image={`images/${books[index]}.png`}
-            />
-          ))
-        )}
+        {props.data.map((card, index) => (
+          <Card
+            key={index}
+            title={card.Titulo}
+            description={card.Descripcion}
+            image={`images/${books[index]}.png`}
+          />
+        ))}
       </div>
 
       <Button text="Ver todos" />

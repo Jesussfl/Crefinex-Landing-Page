@@ -2,40 +2,61 @@ import React from "react";
 import "./SectionAboutUs.css";
 import { Confetti } from "../../Decorations/Confetti/Confetti";
 
+const confettiStyles = [
+  {
+    position: "absolute",
+    top: "65.5%",
+    right: "0px",
+    transform: "rotate(-45deg)",
+    color: "#5171e2",
+  },
+  {
+    position: "absolute",
+    top: "60.5%",
+    left: "-8px",
+    transform: "rotate(45deg)",
+    color: "#ffe607",
+  },
+  {
+    position: "absolute",
+    top: "55.5%",
+    left: "50%",
+    transform: "rotate(10deg)",
+    color: "#7f3dea",
+    zIndex: -1,
+  },
+];
+
+const missionListItems = [
+  {
+    id: "fun-finance",
+    icon: "images/btc-coin.png",
+    text: "Educar sobre finanzas de una forma divertida.",
+  },
+  {
+    id: "saving-investment",
+    icon: "images/btc-coin.png",
+    text: "Enseñar la importancia del ahorro y la inversión.",
+  },
+  {
+    id: "solid-financial-future",
+    icon: "images/btc-coin.png",
+    text: "Educar para un futuro financiero sólido.",
+  },
+];
+
 function SectionAboutUs() {
   return (
-    <div className="section-aboutus">
+    <section className="section-aboutus">
       <div className="aboutus-wrapper">
-        <Confetti
-          style={{
-            position: "absolute",
-            top: "65.5%",
-            right: "0px",
-            transform: "rotate(-45deg)",
-          }}
-          color="#5171e2"
-          size="36px"
-        />
-        <Confetti
-          style={{
-            position: "absolute",
-            top: "60.5%",
-            left: "-8px",
-            transform: "rotate(45deg)",
-          }}
-          color="#ffe607"
-          size="36px"
-        />
-        <Confetti
-          style={{
-            position: "absolute",
-            top: "55.5%",
-            left: "50%",
-            transform: "rotate(10deg)",
-          }}
-          color="#7f3dea"
-          size="36px"
-        />
+        {confettiStyles.map((style) => (
+          <Confetti
+            key={style.color}
+            color={style.color}
+            style={style}
+            size="36px"
+          />
+        ))}
         <div className="aboutus-content">
           <h2>¿Quiénes Somos?</h2>
           <p className="body-large">
@@ -45,20 +66,14 @@ function SectionAboutUs() {
             futuro de manera efectiva.
           </p>
           <h3 className="blue">Nuestra Misión</h3>
-          <div className="mision-list">
-            <div className="list">
-              <img src="images/btc-coin.png" alt="" />
-              <p>Educar sobre finanzas de una forma divertida.</p>
-            </div>
-            <div className="list">
-              <img src="images/btc-coin.png" alt="" />
-              <p>Enseñar la importancia del ahorro y la inversión.</p>
-            </div>
-            <div className="list">
-              <img src="images/btc-coin.png" alt="" />
-              <p>Educar para un futuro financiero sólido.</p>
-            </div>
-          </div>
+          <ul className="mission-list">
+            {missionListItems.map(({ id, icon, text }) => (
+              <li key={id} className="list">
+                <img src={icon} alt="" />
+                <p>{text}</p>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="aboutus-image">
           <div className="image">
@@ -66,7 +81,7 @@ function SectionAboutUs() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
