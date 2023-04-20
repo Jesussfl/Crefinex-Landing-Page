@@ -16,6 +16,7 @@ function NavItem(props) {
         to={props.address}
         className={props.address === path ? "nav-item active" : "nav-item"}
         onClick={props.onClick}
+        style={{ display: "flex", alignItems: "center", gap: "10px" }}
       >
         {props.leftIcon ? <i>{props.leftIcon}</i> : ""}
         {props.text}

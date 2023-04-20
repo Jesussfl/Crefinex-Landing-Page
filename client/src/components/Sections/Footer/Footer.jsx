@@ -1,5 +1,12 @@
 import React from "react";
 import "./Footer.css";
+import NavItem from "../../NavItem/NavItem";
+
+import {
+  RiFacebookCircleFill,
+  RiYoutubeFill,
+  RiInstagramFill,
+} from "react-icons/ri";
 function Footer() {
   return (
     <div className="footer">
@@ -36,18 +43,28 @@ function Footer() {
         <div className="social-networks">
           <p className="headline">Nuestras Redes</p>
 
-          <a href="">
-            <img src="" alt="" />
-            Facebook
-          </a>
-          <a href="">
-            <img src="" alt="" />
-            Instagram
-          </a>
-          <a href="">
-            <img src="" alt="" />
-            Tiktok
-          </a>
+          <NavItem
+            text="Facebook"
+            address="https://www.facebook.com/crefinex"
+            leftIcon={<RiFacebookCircleFill size={24} />}
+          ></NavItem>
+          <NavItem
+            text="Youtube"
+            address="https://www.youtube.com/channel/UCjo_nLbwWx63oDbAvv2Q2sw"
+            leftIcon={<RiYoutubeFill size={24} />}
+          ></NavItem>
+          <NavItem
+            text="Instagram"
+            address="https://www.instagram.com/crefinex/"
+            leftIcon={<RiInstagramFill size={24} />}
+          ></NavItem>
+          <NavItem
+            text="TikTok"
+            address="https://www.tiktok.com/@yismaryariass?lang=es"
+            leftIcon={
+              <img src="images/tiktok_fill.svg" style={{ width: "20px" }} />
+            }
+          ></NavItem>
         </div>
       </div>
       <div className="divider"></div>

@@ -1,15 +1,23 @@
 .section-aboutus {
   display: flex;
-  flex-direction: row;
-  gap: 48px;
-  max-width: 1248px;
-  flex-wrap: wrap;
-
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--base-white);
+  padding: 56px 0;
 }
-.aboutus-content h2{
+.aboutus-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1248px;
+  gap: 48px;
+  position: relative;
+}
+.aboutus-content h2 {
   color: var(--secondary-color-red);
 }
-.section-aboutus > * {
+.aboutus-wrapper > * {
   flex: 1 1 0;
 }
 .section-aboutus .aboutus-content {
@@ -23,9 +31,8 @@
   position: relative;
   padding: 1rem;
   min-height: 400px;
-
 }
-.aboutus-image .image{
+.aboutus-image .image {
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -34,17 +41,26 @@
   width: 85%;
   background-color: var(--secondary-color-red);
   overflow-y: visible !important;
-
 }
-.aboutus-image .image img{
+.aboutus-image .image img {
   height: 180%;
   position: absolute;
   right: -72px;
   bottom: 0;
   transform: translateX(0);
 }
+.mision-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 @media (max-width: 768px) {
-  .section-aboutus {
+  .section-aboutus > .aboutus-wrapper {
     flex-direction: column;
   }
   .aboutus-content {

@@ -18,6 +18,7 @@ nav .links {
   display: flex;
   align-items: center;
   gap: 24px;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 800ms;
 }
 nav .left-side {
   justify-items: flex-end;
@@ -29,14 +30,14 @@ nav img {
 .menu {
   color: var(--base-500);
 }
-.menu-container {
+/* .menu-container {
   position: absolute;
   width: 10px;
   height: 10px;
   right: 0px;
   border-radius: 100px;
-  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 800ms;
-}
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 400ms;
+} */
 .opened-elements {
   color: var(--base-white);
 }
@@ -49,11 +50,14 @@ nav img {
 
   z-index: -1;
   background-color: var(--primary-color);
-  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 800ms;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 400ms;
 }
 
 @media (min-width: 968px) {
   .menu {
+    display: none;
+  }
+  .social-networks {
     display: none;
   }
 }
@@ -78,7 +82,23 @@ nav img {
   nav .actions {
     display: none;
   }
-
+  nav .social-networks {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: 16px;
+  }
+  .social-networks .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 24px;
+  }
+  nav .social-networks p {
+    color: var(--base-white);
+  }
   .nav-item {
     color: var(--base-white);
   }
@@ -89,4 +109,7 @@ nav img {
   align-items: flex-start !important;
   padding: 32px;
   gap: 48px !important;
+}
+.social-networks-opened {
+  display: flex !important;
 }
