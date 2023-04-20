@@ -18,13 +18,15 @@ function Home() {
       <Header />
       <SectionAnimation />
       <SectionCourses />
-      <SectionEducation />
+      {/* <SectionEducation /> */}
       <SectionAboutUs />
       <SectionAnimation />
       <SectionResources />
       <SectionLocation />
-      <Footer />
-      {/* <SectionSubscribe /> */}
+      <div style={{ width: "100%" }}>
+        <SectionSubscribe />
+        <Footer />
+      </div>
     </div>
   );
 }

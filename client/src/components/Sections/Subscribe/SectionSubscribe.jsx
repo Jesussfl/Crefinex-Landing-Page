@@ -18,7 +18,9 @@ function Subscribe() {
           />
         </div>
       </div>
-      <div className="image-subscribe"></div>
+      <div className="image-subscribe">
+        <img src="images/girl-with-table.png" alt="" />
+      </div>
     </div>
   );
 }

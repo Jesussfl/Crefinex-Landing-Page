@@ -1,17 +1,30 @@
 .section-subscribe {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap ;
+  width: 100%;
+  box-sizing: border-box;
 }
-.section-subscribe > * {
+.section-subscribe > div {
   flex: 1 1 0;
+  min-width: 500px;
+}
+.image-subscribe{
+  background-color: var(--primary-color);
+  height: 364px;
+  position: relative;
+}
+.image-subscribe img{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
 }
 .copys-subscribe {
-  background-color: var(--secondary-color-yellow);
-  padding: 88px 88px;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  text-align: left;
+  background-color: var(--secondary-color-yellow);
+  padding: 56px 48px;
   gap: 24px;
 }
 .copys-subscribe p {
