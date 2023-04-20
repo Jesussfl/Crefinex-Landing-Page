@@ -5,6 +5,8 @@
   color: var(--base-white);
   padding: 2em;
   gap: 56px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .footer .info > * {
   display: flex;

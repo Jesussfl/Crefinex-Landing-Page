@@ -1,10 +1,13 @@
 import "./App.css";
+import React, { useState, useEffect, useRef } from "react";
+
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 import Home from "./pages/Home/Home";
 function App() {

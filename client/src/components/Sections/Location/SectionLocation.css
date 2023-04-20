@@ -1,4 +1,6 @@
 .section-location {
+  max-width: 1248px;
+
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -4,6 +4,8 @@
   align-items: center;
   gap: 48px;
   padding: 16px;
+  max-width: 1248px;
+
 }
 .copys-container {
   width: 70%;

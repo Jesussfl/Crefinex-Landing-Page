@@ -9,6 +9,7 @@ header {
   padding: 16px;
   gap: 156px;
   position: relative;
+  max-width: 1248px;
   /* overflow-x: hidden; */
 
 }

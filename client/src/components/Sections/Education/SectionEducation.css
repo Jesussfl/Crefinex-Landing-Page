@@ -6,6 +6,8 @@
   flex-wrap: wrap;
   padding: 1rem;
   gap: 36px;
+  max-width: 1248px;
+
 }
 .section-container > * {
   flex: 1 1 0;

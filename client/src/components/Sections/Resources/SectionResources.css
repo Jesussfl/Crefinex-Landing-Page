@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   gap: 56px;
+  max-width: 1248px;
+
 }
 .section-resources .copys-resources {
   width: 70%;

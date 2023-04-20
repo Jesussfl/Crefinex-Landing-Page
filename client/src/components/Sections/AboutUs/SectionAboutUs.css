@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: row;
   gap: 48px;
+  max-width: 1248px;
+
 }
 .section-aboutus > * {
   flex: 1 1 0;
