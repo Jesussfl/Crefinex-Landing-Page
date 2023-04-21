@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 12px;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-item.active {
@@ -11,23 +12,29 @@
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  padding: 12px;
   gap: 4px;
 
-  /* Neutral/06 */
-
-  background: #272b30;
-  color: #fff;
-  box-shadow: inset 0px -2px 1px rgba(0, 0, 0, 0.4),
-    inset 0px 1px 1px rgba(255, 255, 255, 0.11);
-  border-radius: 12px;
-
-  /* Inside auto layout */
+  color: var(--primary-color);
+  transition: all 0.3s ease-in-out;
 }
-
+.active + .indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease-in-out;
+}
 .nav-items {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 10px;
+}
+@media screen and (max-width: 768px) {
+  .nav-item.active {
+    color: var(--secondary-color-yellow);
+  }
+  .active + .indicator {
+    background-color: var(--secondary-color-yellow);
+  }
 }

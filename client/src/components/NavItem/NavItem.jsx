@@ -4,18 +4,25 @@ import "./NavItem.css";
 
 function NavItem(props) {
   const path = window.location.pathname;
+  const handleClick = () => {
+    props.onClick();
+    props.onClickActive();
+    props.onClickMenu();
+  };
+
   return (
     <div
-      onClick={props.onClick}
+      onClick={handleClick}
       style={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       <Link
         to={props.address}
-        className={props.address === path ? "nav-item active" : "nav-item"}
+        className={props.active ? "nav-item active" : "nav-item"}
         onClick={props.onClick}
         style={{ display: "flex", alignItems: "center", gap: "10px" }}
       >

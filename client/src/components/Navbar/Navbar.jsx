@@ -11,38 +11,80 @@ import { handleScrollTo } from "../../controllers/scroller";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleMenuClick = () => {
+    setShowMenu((prevState) => !prevState);
+  };
+
+  const navItems = [
+    {
+      text: "Inicio",
+      onClick: () => handleScrollTo("header", 0),
+    },
+    {
+      text: "Nuestros Cursos",
+      onClick: () => handleScrollTo("courses", 0),
+    },
+    {
+      text: "¿Quiénes somos?",
+      onClick: () => handleScrollTo("aboutUs", 0),
+    },
+    {
+      text: "Recursos",
+      onClick: () => handleScrollTo("resources", 0),
+    },
+    {
+      text: "Ubicación",
+      onClick: () => handleScrollTo("contactUs", 0),
+    },
+  ];
+
+  const socialNetworks = [
+    {
+      address: "https://www.facebook.com/crefinex",
+      leftIcon: <RiFacebookCircleFill size={36} />,
+    },
+    {
+      address: "https://www.youtube.com/channel/UCjo_nLbwWx63oDbAvv2Q2sw",
+      leftIcon: <RiYoutubeFill size={36} />,
+    },
+    {
+      address: "https://www.instagram.com/crefinex/",
+      leftIcon: <RiInstagramFill size={36} />,
+    },
+    {
+      address: "https://www.tiktok.com/@yismaryariass?lang=es",
+      leftIcon: (
+        <img
+          src="images/tiktok_fill.svg"
+          alt="TikTok icon"
+          style={{ width: "30px" }}
+        />
+      ),
+    },
+  ];
 
   return (
     <nav className="center">
-      <div className="left-side ">
+      <div className="left-side">
         <img
-          src={`${
-            showMenu ? "/logo-crefinex-white.svg" : "/logo-crefinex.svg"
-          }`}
-        ></img>
+          src={`/logo-crefinex${showMenu ? "-white" : ""}.svg`}
+          alt="Crefinex logo"
+        />
       </div>
       <div className={`right-side ${showMenu ? "opened" : ""}`}>
         <div className={`links ${showMenu ? "links-menu-opened" : ""}`}>
-          <NavItem
-            text="Inicio"
-            onClick={() => handleScrollTo("header", 0)}
-          ></NavItem>
-          <NavItem
-            onClick={() => handleScrollTo("courses", 0)}
-            text="Nuestros Cursos"
-          ></NavItem>
-          <NavItem
-            text="¿Quiénes somos?"
-            onClick={() => handleScrollTo("aboutUs", 0)}
-          ></NavItem>
-          <NavItem
-            text="Recursos"
-            onClick={() => handleScrollTo("resources", 0)}
-          ></NavItem>
-          <NavItem
-            text="Ubicación"
-            onClick={() => handleScrollTo("contactUs", 0)}
-          ></NavItem>
+          {navItems.map((item, index) => (
+            <NavItem
+              key={index}
+              text={item.text}
+              onClick={item.onClick}
+              active={activeIndex === index}
+              onClickActive={() => setActiveIndex(index)}
+              onClickMenu={handleMenuClick}
+            />
+          ))}
         </div>
         <div className="actions">
           <button>Contáctanos</button>
@@ -54,29 +96,18 @@ function Navbar() {
         >
           <p className="body-large">Nuestras Redes</p>
           <div className="buttons">
-            <NavItem
-              address="https://www.facebook.com/crefinex"
-              leftIcon={<RiFacebookCircleFill size={36} />}
-            ></NavItem>
-            <NavItem
-              address="https://www.youtube.com/channel/UCjo_nLbwWx63oDbAvv2Q2sw"
-              leftIcon={<RiYoutubeFill size={36} />}
-            ></NavItem>
-            <NavItem
-              address="https://www.instagram.com/crefinex/"
-              leftIcon={<RiInstagramFill size={36} />}
-            ></NavItem>
-            <NavItem
-              address="https://www.tiktok.com/@yismaryariass?lang=es"
-              leftIcon={
-                <img src="images/tiktok_fill.svg" style={{ width: "30px" }} />
-              }
-            ></NavItem>
+            {socialNetworks.map((item, index) => (
+              <NavItem
+                key={index}
+                address={item.address}
+                leftIcon={item.leftIcon}
+              />
+            ))}
           </div>
         </div>
       </div>
       <div
-        onClick={() => setShowMenu(!showMenu)}
+        onClick={handleMenuClick}
         className={`menu ${showMenu ? "opened-elements" : ""}`}
       >
         <HambergerMenu variant="Bold" size={36} />
