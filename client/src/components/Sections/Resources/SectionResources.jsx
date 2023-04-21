@@ -13,7 +13,7 @@ function SectionResources(props) {
   ];
 
   return (
-    <div className="section-resources">
+    <section className="section-resources" id="resources">
       <div className="copys-resources">
         <h2>
           Tenemos recursos <span className="red">para tí</span>
@@ -37,7 +37,7 @@ function SectionResources(props) {
       </div>
 
       <Button text="Ver todos" />
-    </div>
+    </section>
   );
 }
 

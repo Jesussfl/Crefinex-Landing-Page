@@ -3,6 +3,7 @@ import "./Header.css";
 
 //Methods
 import { loadSheetData } from "../../../api/googleSheetAPI";
+import { handleScrollTo } from "../../../controllers/scroller";
 
 //Components
 import PeopleRoundedBackground from "../../Decorations/PeopleRoundedBackground/PeopleRoundedBackground";
@@ -15,21 +16,8 @@ import InViewEffect from "../../Decorations/InViewEffect/InViewEffect";
 import { ArrowCircleRight, Sms } from "iconsax-react";
 
 function Header(props) {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-
-  // Load content
-  useEffect(() => {
-    // window.gapi.load("client", () => {
-    //   loadSheetData("Cabecera", "A3").then((loadedData) => {
-    //     console.log(loadedData);
-    //     setDescription(loadedData[0][0]);
-    //   });
-    // });
-  }, []);
-
   return (
-    <header>
+    <header id="header">
       <Confetti
         style={{
           position: "absolute",
@@ -85,9 +73,10 @@ function Header(props) {
           <p className="body-large">{props.data.Subtitulo}</p>
         </InViewEffect>
         <div className="actions-container">
-          <TextField type="text" leftIcon={<Sms variant="Bold" />} />
+          {/* <TextField type="text" leftIcon={<Sms variant="Bold" />} /> */}
           <Button
-            text="Obtener Guía Gratuita"
+            text="Ver Nuestros Cursos"
+            onClick={() => handleScrollTo("courses", 0)}
             rightIcon={<ArrowCircleRight variant="Bold" />}
           />
         </div>

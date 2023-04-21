@@ -6,6 +6,7 @@ function NavItem(props) {
   const path = window.location.pathname;
   return (
     <div
+      onClick={props.onClick}
       style={{
         display: "flex",
         flexDirection: "column",

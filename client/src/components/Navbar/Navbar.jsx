@@ -7,6 +7,7 @@ import {
   RiYoutubeFill,
   RiInstagramFill,
 } from "react-icons/ri";
+import { handleScrollTo } from "../../controllers/scroller";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -22,11 +23,26 @@ function Navbar() {
       </div>
       <div className={`right-side ${showMenu ? "opened" : ""}`}>
         <div className={`links ${showMenu ? "links-menu-opened" : ""}`}>
-          <NavItem text="Inicio"></NavItem>
-          <NavItem text="Nuestros Cursos"></NavItem>
-          <NavItem text="¿Quiénes somos?"></NavItem>
-          <NavItem text="Recursos"></NavItem>
-          <NavItem text="Ubicación"></NavItem>
+          <NavItem
+            text="Inicio"
+            onClick={() => handleScrollTo("header", 0)}
+          ></NavItem>
+          <NavItem
+            onClick={() => handleScrollTo("courses", 0)}
+            text="Nuestros Cursos"
+          ></NavItem>
+          <NavItem
+            text="¿Quiénes somos?"
+            onClick={() => handleScrollTo("aboutUs", 0)}
+          ></NavItem>
+          <NavItem
+            text="Recursos"
+            onClick={() => handleScrollTo("resources", 0)}
+          ></NavItem>
+          <NavItem
+            text="Ubicación"
+            onClick={() => handleScrollTo("contactUs", 0)}
+          ></NavItem>
         </div>
         <div className="actions">
           <button>Contáctanos</button>

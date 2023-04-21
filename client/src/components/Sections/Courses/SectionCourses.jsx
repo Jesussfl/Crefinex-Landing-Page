@@ -7,8 +7,14 @@ import "./SectionCourses.css";
 
 function SectionCourses(props) {
   return (
-    <div className="section-courses">
-      <InViewEffect>
+    <section className="section-courses" id="courses">
+      <InViewEffect
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <div className="copys-container">
           <h2>
             Explora nuestros <span className="red">cursos</span>
@@ -22,7 +28,7 @@ function SectionCourses(props) {
       </InViewEffect>
       <Carousel data={props.data} />
       <Button text="Ver todos" />
-    </div>
+    </section>
   );
 }
 

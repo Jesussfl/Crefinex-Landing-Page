@@ -47,7 +47,7 @@ const missionListItems = [
 
 function SectionAboutUs() {
   return (
-    <section className="section-aboutus">
+    <section className="section-aboutus" id="aboutUs">
       <div className="aboutus-wrapper">
         {confettiStyles.map((style) => (
           <Confetti

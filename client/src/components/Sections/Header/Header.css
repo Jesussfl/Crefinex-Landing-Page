@@ -20,7 +20,8 @@ header {
 }
 .actions-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+
   gap: 12px;
 }
 .actions-container div:first-child {

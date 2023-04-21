@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 
 //Components
 import Navbar from "../../components/Navbar/Navbar";
-
+import { ThreeDots } from "react-loader-spinner";
+import { Whatsapp } from "iconsax-react";
 //Sections
 import Header from "../../components/Sections/Header/Header";
 import SectionAnimation from "../../components/Sections/Animation/SectionAnimation";
@@ -53,11 +54,19 @@ function Home() {
     return (
       <div className="section-loader">
         <img src="/logo-crefinex-white.svg" alt="" />
+        <ThreeDots color="#fff" height={36} />
       </div>
     );
   }
   return (
     <div className="home">
+      <a
+        href="https://api.whatsapp.com/send?phone=0414-4615536&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20Crefinex"
+        target="_blank"
+        className="whatsapp-btn"
+      >
+        <Whatsapp variant="Bold" />
+      </a>
       <Navbar />
       <Header data={headerData} />
       <section className="marquee-section">

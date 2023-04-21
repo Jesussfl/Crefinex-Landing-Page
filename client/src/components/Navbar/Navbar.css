@@ -11,6 +11,9 @@ nav {
   top: 0;
   left: 0;
   z-index: 999;
+
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 400ms;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 nav .right-side,
 nav .left-side,

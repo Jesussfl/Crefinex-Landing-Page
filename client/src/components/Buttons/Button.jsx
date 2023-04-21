@@ -9,6 +9,8 @@ export function Button(props) {
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.95 }}
       className="button"
+      style={props.style}
+      onClick={props.onClick}
     >
       {props.leftIcon ? <i>{props.leftIcon}</i> : ""}
       {props.text}
