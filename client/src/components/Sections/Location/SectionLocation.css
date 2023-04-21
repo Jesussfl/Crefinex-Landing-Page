@@ -1,20 +1,28 @@
 .section-location {
-  /* background-image: url("/images/decoration-BG.png"); */
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: 60%;
-  overflow: visible;
   display: flex;
   flex-direction: row;
-  background-color: var(--base-white);
-  text-align: left;
-  padding: 100px 0 120px 0;
-  box-sizing: border-box;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
   gap: 36px;
+  background-color: var(--base-white);
 }
-.section-location > * {
+
+.contactUs-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  gap: 36px;
+  padding: 100px 0;
+  text-align: left;
+}
+.contactUs-wrapper > * {
   flex: 1 1 0;
+}
+.map-wrapper {
+  padding: 0px 66px 0 0;
+  height: 800px;
+  width: 100%;
 }
 .texts h2 {
   color: var(--primary-color) !important;
@@ -43,16 +51,6 @@
 }
 .copys-location h6 {
   color: var(--base-600);
-}
-.map-wrapper {
-  padding: 0px 66px 0 0;
-  background: transparent;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .map-wrapper > p {

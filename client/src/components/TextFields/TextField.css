@@ -9,7 +9,7 @@
 }
 .text-field-container {
   width: 100%;
-  border: 3px solid var(--base-200);
+  border: 2px solid var(--base-200);
   background-color: var(--base-white);
   border-radius: 40px;
   padding: 0.5em 1em;
