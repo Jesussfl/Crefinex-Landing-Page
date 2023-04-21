@@ -14,7 +14,11 @@ function Navbar() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleMenuClick = () => {
-    setShowMenu((prevState) => !prevState);
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+      setShowMenu((prevState) => !prevState);
+    }
   };
 
   const navItems = [

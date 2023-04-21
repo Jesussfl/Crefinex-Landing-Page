@@ -61,7 +61,7 @@ function Home() {
   return (
     <div className="home">
       <a
-        href="https://api.whatsapp.com/send?phone=0414-4615536&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20Crefinex"
+        href="https://api.whatsapp.com/send?phone=0424-3151580&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20Crefinex"
         target="_blank"
         className="whatsapp-btn"
       >
