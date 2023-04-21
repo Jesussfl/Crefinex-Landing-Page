@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import NavItem from "../NavItem/NavItem";
-import { Button } from "../Buttons/Button";
 import { HambergerMenu } from "iconsax-react";
 import {
   RiFacebookCircleFill,
@@ -16,7 +15,9 @@ function Navbar() {
     <nav className="center">
       <div className="left-side ">
         <img
-          src={`${showMenu ? "logo-crefinex-white.svg" : "logo-crefinex.svg"}`}
+          src={`${
+            showMenu ? "/logo-crefinex-white.svg" : "/logo-crefinex.svg"
+          }`}
         ></img>
       </div>
       <div className={`right-side ${showMenu ? "opened" : ""}`}>
