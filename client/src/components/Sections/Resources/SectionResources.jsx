@@ -31,7 +31,7 @@ function SectionResources(props) {
             key={index}
             title={card.Titulo}
             description={card.Descripcion}
-            image={`images/${books[index]}.png`}
+            image={`images/${books[index]}.jpg`}
           />
         ))}
       </div>
