@@ -57,7 +57,7 @@
   color: var(--base-500);
 }
 @media (max-width: 768px) {
-  .section-location {
+  .contactUs-wrapper {
     flex-direction: column-reverse;
     padding: 56px 16px;
     gap: 36px;
