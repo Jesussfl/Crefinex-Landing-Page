@@ -6,11 +6,14 @@ import {
   SplashScreen,
   Navbar,
   Header,
+  SectionIntroduction,
   SectionAboutUs,
   SectionMarquee,
   SectionCourses,
   SectionEducation,
   SectionResources,
+  SectionTestimonials,
+  SectionFAQs,
   SectionContactUs,
   SectionSubscribe,
   Footer,
@@ -57,11 +60,32 @@ function Home() {
       <FloatButton />
       <Navbar />
       <Header data={headerData} />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "56px",
+          marginTop: "-64px",
+        }}
+      >
+        <SectionIntroduction />
+      </div>
       <SectionMarquee />
       <SectionCourses data={coursesData} />
       <SectionEducation />
       <SectionAboutUs />
+      <section>more about us</section>
+      <section>Image</section>
+      <section
+        style={{
+          height: "456px",
+          backgroundImage: "url('/images/books.jpg')",
+          backgroundRepeat: "no-repeat",
+        }}
+      ></section>
       <SectionResources data={resourcesData} />
+      <SectionTestimonials />
+      <SectionFAQs />
       <SectionContactUs data={locationData} />
 
       <div style={{ width: "100%" }}>

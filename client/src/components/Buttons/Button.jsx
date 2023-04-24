@@ -7,7 +7,7 @@ import { Whatsapp } from "iconsax-react";
 export function Button(props) {
   return (
     <motion.button
-      whileHover={{ scale: 1.04 }}
+      whileHover={{ scale: 1 }}
       whileTap={{ scale: 0.95 }}
       className="button"
       style={props.style}

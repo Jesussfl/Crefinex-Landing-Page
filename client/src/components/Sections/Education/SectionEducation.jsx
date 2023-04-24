@@ -3,25 +3,29 @@ import "./SectionEducation.css";
 
 function SectionEducation() {
   return (
-    <div className="section-education">
+    <section className="section-education">
       <div className="section-container">
-        <div className="image"></div>
+        <div className="image">
+          <img src="images/kids.jpg" alt="" />
+        </div>
         <div className="section-content">
-          <h5>Educación Tradicional</h5>
+          <h2>Aspectos de nuestra educación</h2>
           <ul>
             <li>
-              <p className="headline">Actividades Lúdicas</p>
+              <p className="headline">
+                Enfoque en la educación financiera temprana
+              </p>
             </li>
             <li>
-              <p className="headline">Compañerismo y Trabajo en equipo</p>
+              <p className="headline">Metodología didáctica y entretenida</p>
             </li>
             <li>
-              <p className="headline">Refuerzo de temas complejos</p>
+              <p className="headline">Profesionales expertos en finanzas</p>
             </li>
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

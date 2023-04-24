@@ -20,9 +20,10 @@ function SectionCourses(props) {
             Explora nuestros <span className="red">cursos</span>
           </h2>
           <p className="body-large">
-            Ofrecemos cursos para niños que les enseñen habilidades financieras
-            clave, como presupuestar, ahorrar y administrar el dinero de manera
-            responsable.
+            En Crefinex ofrecemos cursos diseñados para que niños y jóvenes
+            aprendan habilidades financieras clave. Tenemos cursos online y en
+            modalidad presencial, con el objetivo de adaptarnos a las
+            necesidades y preferencias de cada estudiante.
           </p>
         </div>
       </InViewEffect>
