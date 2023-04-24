@@ -11,6 +11,7 @@ export function Button(props) {
       className="button"
       style={props.style}
       onClick={props.onClick}
+      type={props.type}
     >
       {props.leftIcon ? <i>{props.leftIcon}</i> : ""}
       {props.text}

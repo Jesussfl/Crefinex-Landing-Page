@@ -1,10 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { TextField } from "../../TextFields/TextField";
 import { Button } from "../../Buttons/Button";
 import NavItem from "../../NavItem/NavItem";
 import "./SectionLocation.css";
-
+import emailjs from "@emailjs/browser";
+import Loader from "../../Loader/Loader";
 function SectionLocation(props) {
+  const form = useRef();
+  const [isLoading, setIsLoading] = useState(false);
+  const [values, setValues] = useState({
+    user_name: "",
+    user_last_name: "",
+    user_email: "",
+    user_message: "",
+  });
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    emailjs
+      .sendForm(
+        "service_0jgwxsl",
+        "template_xaw666b",
+        form.current,
+        "6iK_DQEtWGw-jMvrP"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setValues({
+            user_name: "",
+            user_last_name: "",
+            user_email: "",
+            user_message: "",
+          });
+          setIsLoading(false);
+        },
+        (error) => {
+          console.log(error.text);
+          setIsLoading(false);
+        }
+      );
+  };
+
+  // ...
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setValues((prevValues) => ({ ...prevValues, [name]: value }));
+  }
+
   return (
     <section className="section-location" id="contactUs">
       <div className="contactUs-wrapper">
@@ -13,32 +57,56 @@ function SectionLocation(props) {
             <h2>Contáctanos</h2>
             <p className="body-large">Estaremos encantados de atenderte.</p>
           </div>
-          <div className="flex-container">
-            <TextField
-              style={{ flexGrow: 0, flexBasis: "calc(50% - 8px)" }}
-              label="Nombre"
-              placeholder="Primer Nombre"
-            />
-            <TextField
-              style={{ flexGrow: 0, flexBasis: "calc(50% - 8px)" }}
-              label="Apellido"
-              placeholder="Primer Apellido"
-            />
-            <TextField
-              style={{ flexBasis: "100%" }}
-              label="Correo Electrónico"
-              placeholder="Correo Electrónico"
-            />
-            <TextField
-              style={{ flexBasis: "100%" }}
-              label="Tu mensaje"
-              multiline={true}
-            ></TextField>
-            <Button
-              style={{ marginTop: "16px", height: "48px", flexBasis: "100%" }}
-              text="Enviar"
-            ></Button>
-          </div>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <form className="flex-container" ref={form} onSubmit={sendEmail}>
+              <TextField
+                style={{ flexGrow: 0, flexBasis: "calc(50% - 8px)" }}
+                label="Nombre"
+                type="text"
+                placeholder="Primer Nombre"
+                name="user_name"
+                value={values.user_name}
+                onChange={handleChange}
+              />
+              <TextField
+                style={{ flexGrow: 0, flexBasis: "calc(50% - 8px)" }}
+                label="Apellido"
+                type="text"
+                name="user_last_name"
+                placeholder="Primer Apellido"
+                value={values.user_last_name}
+                onChange={handleChange}
+              />
+              <TextField
+                style={{ flexBasis: "100%" }}
+                label="Correo Electrónico"
+                type="email"
+                placeholder="Correo Electrónico"
+                name="user_email"
+                value={values.user_email}
+                onChange={handleChange}
+              />
+              <TextField
+                style={{ flexBasis: "100%" }}
+                label="Tu mensaje"
+                multiline={true}
+                type="text"
+                name="user_message"
+                value={values.user_message}
+                onChange={handleChange}
+              ></TextField>
+              <Button
+                style={{ marginTop: "16px", height: "48px", flexBasis: "100%" }}
+                text="Enviar"
+                type="submit"
+                value="Enviar"
+                onClick={sendEmail}
+              ></Button>
+            </form>
+          )}
+
           <NavItem />
           <p className="callout">{props.data.Ubicacion}</p>
         </div>
