@@ -1,0 +1,8 @@
+# Ignorar la carpeta node_modules
+node_modules/
+
+# Ignorar archivos que terminan en .log
+*.log
+
+# Ignorar archivos que comienzan con .DS_Store
+.DS_Store
