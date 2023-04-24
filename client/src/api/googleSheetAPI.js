@@ -1,4 +1,4 @@
-import { API_KEY, SPREADSHEET_ID } from "../../../config";
+import { API_KEY, SPREADSHEET_ID } from "../../config";
 
 export async function loadSheetData(sheetName = "Sheet1", range = "A1:Z1000") {
   await window.gapi.client.init({
