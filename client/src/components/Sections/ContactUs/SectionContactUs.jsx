@@ -53,6 +53,7 @@ function SectionLocation(props) {
     <section className="section-location" id="contactUs">
       <div className="contactUs-wrapper">
         <div className="copys-location">
+          {/* <img id="map-icon" src="/images/map-pin-dynamic-color.png" alt="" /> */}
           <div className="texts">
             <h2>Contáctanos</h2>
             <p className="body-large">Estaremos encantados de atenderte.</p>

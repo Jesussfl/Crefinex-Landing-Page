@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from "react";
 import "./SectionResources.css";
 import Card from "../../Card/Card";
+import { CardLarge } from "../../Card/Card";
 import Button from "../../Buttons/Button";
 
 function SectionResources(props) {
+  // const books = [
+  //   "inteligencia-emocional",
+  //   "finanzas-personales",
+  //   "el-dinero",
+  //   "el-ahorro",
+  //   "el-banco",
+  // ];
   const books = [
-    "inteligencia-emocional",
-    "finanzas-personales",
-    "el-dinero",
-    "el-ahorro",
-    "el-banco",
+    "book-nobg",
+    "book-nobg",
+    "book-nobg",
+    "book-nobg",
+    "book-nobg",
   ];
-
   return (
     <section className="section-resources" id="resources">
       <div className="copys-resources">
@@ -27,11 +34,11 @@ function SectionResources(props) {
 
       <div className="horizontal-cards">
         {props.data.map((card, index) => (
-          <Card
+          <CardLarge
             key={index}
             title={card.Titulo}
             description={card.Descripcion}
-            image={`images/${books[index]}.jpg`}
+            image={`images/${books[index]}.png`}
           />
         ))}
       </div>

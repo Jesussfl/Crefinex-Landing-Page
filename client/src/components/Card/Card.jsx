@@ -18,4 +18,21 @@ function Card(props) {
   );
 }
 
+export function CardLarge(props) {
+  return (
+    <article className="card">
+      <div className="image">
+        <img src={props.image} alt="" />
+      </div>
+      <div className="content">
+        <p className="headline">{props.title}</p>
+        <p className="description">{props.description}</p>
+        <div className="tags">
+          <div className="tag"></div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default Card;
