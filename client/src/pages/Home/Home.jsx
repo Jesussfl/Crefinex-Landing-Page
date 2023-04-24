@@ -1,24 +1,24 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
+//Styles
+import "./Home.css";
 
-//Components
-import Navbar from "../../components/Navbar/Navbar";
-import { ThreeDots } from "react-loader-spinner";
-import { Whatsapp } from "iconsax-react";
-//Sections
-import Header from "../../components/Sections/Header/Header";
-import SectionAnimation from "../../components/Sections/Animation/SectionAnimation";
-import SectionAboutUs from "../../components/Sections/AboutUs/SectionAboutUs";
-import SectionCourses from "../../components/Sections/Courses/SectionCourses";
-import SectionLocation from "../../components/Sections/Location/SectionLocation";
-import SectionResources from "../../components/Sections/Resources/SectionResources";
-import SectionEducation from "../../components/Sections/Education/SectionEducation";
-import SectionSubscribe from "../../components/Sections/Subscribe/SectionSubscribe";
-import Footer from "../../components/Sections/Footer/Footer";
+import {
+  SplashScreen,
+  Navbar,
+  Header,
+  SectionAboutUs,
+  SectionMarquee,
+  SectionCourses,
+  SectionEducation,
+  SectionResources,
+  SectionContactUs,
+  SectionSubscribe,
+  Footer,
+  FloatButton,
+} from "../../components";
 
 //Methods
 import { loadSheetData } from "../../api/googleSheetAPI";
-//Styles
-import "./Home.css";
 
 function Home() {
   //States
@@ -50,50 +50,23 @@ function Home() {
 
   //Render
   if (isLoading) {
-    return (
-      <div className="section-loader">
-        <img src="/logo-crefinex-white.svg" alt="" />
-        <ThreeDots color="#fff" height={36} />
-      </div>
-    );
+    return <SplashScreen />;
   }
   return (
     <div className="home">
-      <a
-        href="https://api.whatsapp.com/send?phone=0424-3151580&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20Crefinex"
-        target="_blank"
-        className="whatsapp-btn"
-      >
-        <Whatsapp variant="Bold" />
-      </a>
+      <FloatButton />
       <Navbar />
       <Header data={headerData} />
-      <section className="marquee-section">
-        <SectionAnimation baseVelocity={-1}>
-          Creciendo Financiera-mente Exitosos Creciendo Financiera-mente
-          Exitosos
-        </SectionAnimation>
-        <SectionAnimation baseVelocity={1}>
-          Educación Financiera Educación Financiera Educación Financiera
-        </SectionAnimation>
-      </section>
+      <SectionMarquee />
       <SectionCourses data={coursesData} />
-      {/* <SectionEducation /> */}
+      <SectionEducation />
       <SectionAboutUs />
       <SectionResources data={resourcesData} />
-      <SectionLocation data={locationData} />
+      <SectionContactUs data={locationData} />
+
       <div style={{ width: "100%" }}>
         <SectionSubscribe />
         <Footer />
-        {/* <form ref={form} onSubmit={sendEmail}>
-          <label>Name</label>
-          <input type="text" name="user_name" />
-          <label>Email</label>
-          <input type="email" name="user_email" />
-          <label>Message</label>
-          <textarea name="message" />
-          <input type="submit" value="Send" />
-        </form> */}
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { TextField } from "../../TextFields/TextField";
 import { Button } from "../../Buttons/Button";
 import NavItem from "../../NavItem/NavItem";
-import "./SectionLocation.css";
+import "./SectionContactUs.css";
 import emailjs from "@emailjs/browser";
 import Loader from "../../Loader/Loader";
 function SectionLocation(props) {

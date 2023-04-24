@@ -2,6 +2,7 @@ import React from "react";
 import "./Button.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Whatsapp } from "iconsax-react";
 
 export function Button(props) {
   return (
@@ -19,11 +20,15 @@ export function Button(props) {
     </motion.button>
   );
 }
-export function ButtonLink(props) {
+export function FloatButton(props) {
   return (
-    <button className="btn-link body-btn">
-      <Link>{props.text}</Link>
-    </button>
+    <a
+      href="https://api.whatsapp.com/send?phone=0424-3151580&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20Crefinex"
+      target="_blank"
+      className="whatsapp-btn"
+    >
+      <Whatsapp variant="Bold" />
+    </a>
   );
 }
 

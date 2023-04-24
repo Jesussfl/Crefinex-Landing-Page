@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./SectionAnimation.css";
+import "./ParallaxTextEffect.css";
 
 import {
   motion,
@@ -12,7 +12,7 @@ import {
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
 
-function SectionAnimation({ children, baseVelocity = 100 }) {
+function ParallaxTextEffect({ children, baseVelocity = 100 }) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -60,4 +60,4 @@ function SectionAnimation({ children, baseVelocity = 100 }) {
   );
 }
 
-export default SectionAnimation;
+export default ParallaxTextEffect;

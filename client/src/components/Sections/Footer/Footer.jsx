@@ -9,7 +9,7 @@ import {
 } from "react-icons/ri";
 function Footer() {
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="info">
         <div className="logoAndInfo">
           <img src="/logo-crefinex-white.svg" alt="" />
@@ -73,7 +73,7 @@ function Footer() {
         <p className="callout">Diseñado por jesus</p>
         <p className="callout">Todos los derechos reservados</p>
       </div>
-    </div>
+    </footer>
   );
 }
 
