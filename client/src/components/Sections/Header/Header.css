@@ -44,6 +44,7 @@ header {
   }
   .people2 {
     left: 50% !important;
+    transform: translate(-50%, 0) !important;
   }
 }
 

@@ -5,7 +5,6 @@ import useMeasure from "react-use-measure";
 import { Card } from "../index";
 
 export function CarouselFramer({ data }) {
-  const elements = [1, 2, 3, 4, 5, 6, 7];
   const [currentItem, setIndex] = useState(1);
   const [ref, { width }] = useMeasure();
   const [tuple, setTuple] = useState([null, currentItem]); // [prev, current]
@@ -13,7 +12,12 @@ export function CarouselFramer({ data }) {
   if (tuple[1] !== currentItem) {
     setTuple([tuple[1], currentItem]);
   }
-
+  const getPrevIndex = () => {
+    return (currentItem - 1 + data.length) % data.length;
+  };
+  const getNextIndex = () => {
+    return (currentItem + 1) % data.length;
+  };
   const prev = tuple[0];
   let direction = 0;
   if (prev !== null) {
@@ -25,15 +29,15 @@ export function CarouselFramer({ data }) {
     }
   }
   const prevClick = () => {
-    setIndex((currentItem - 1 + data.length) % data.length);
+    setIndex(getPrevIndex());
   };
   const nextClick = () => {
-    setIndex((currentItem + 1) % data.length);
+    setIndex(getNextIndex());
   };
   const displayedElements = [
-    data[(currentItem - 1 + data.length) % data.length],
+    data[getPrevIndex()],
     data[currentItem],
-    data[(currentItem + 1) % data.length],
+    data[getNextIndex()],
   ];
 
   return (
@@ -51,15 +55,13 @@ export function CarouselFramer({ data }) {
                 key={card.Titulo}
                 variants={variants}
                 custom={{ direction, width }}
-                initial={index == 0 || index == 2 ? "enter" : ""}
-                animate={
-                  index == 0
-                    ? "firstPosition"
-                    : index == 1
-                    ? "secondPosition"
-                    : "thirdPosition"
+                initial={
+                  index == 0 || index == displayedElements.length - 1
+                    ? "enter"
+                    : ""
                 }
-                exit={index == 0 || index == 2 ? "exit" : ""}
+                animate={`positionA${index}`}
+                exit={index == 0 || displayedElements.length - 1 ? "exit" : ""}
                 transition={{ duration: 0.5 }}
                 style={{ gridArea: `A${index}` }}
                 layout
@@ -90,7 +92,7 @@ let variants = {
     x: 200,
     scale: 0.9,
   },
-  firstPosition: {
+  positionA0: {
     x: 0,
     scale: 0.9,
     transition: {
@@ -103,11 +105,11 @@ let variants = {
   hoverMiddle: {
     scale: 1.0,
   }, // this fixes it!
-  secondPosition: {
+  positionA1: {
     scale: 1,
     x: 0,
   },
-  thirdPosition: {
+  positionA2: {
     x: 0,
     scale: 0.9,
     transition: {

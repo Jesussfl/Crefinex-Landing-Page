@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./SectionResources.css";
-import Card from "../../Card/Card";
-import { CardLarge } from "../../Card/Card";
+
 import Button from "../../Buttons/Button";
 import { CarouselFramer } from "../../Carousel/CarouselFramer";
-import CarouselComponent from "../../Carousel/Test";
 function SectionResources(props) {
   // const books = [
   //   "inteligencia-emocional",
