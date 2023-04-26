@@ -15,7 +15,7 @@
   transition: cubic-bezier(0.215, 0.61, 0.355, 1) 800ms;
 }
 .people-container:hover {
-  scale: 1.1;
+  transform: scale(1.1);
   transition: cubic-bezier(0.215, 0.61, 0.355, 1) 800ms;
 }
 .people-container img {
@@ -27,7 +27,7 @@
   transition: cubic-bezier(0.215, 0.61, 0.355, 1) 800ms;
 }
 .people-container:hover img {
-  scale: 1.1;
+  transform: scale(1.1);
   transition: cubic-bezier(0.215, 0.61, 0.355, 1) 800ms;
 }
 .red {

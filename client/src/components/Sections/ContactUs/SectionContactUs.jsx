@@ -97,6 +97,8 @@ function SectionLocation(props) {
                 name="user_message"
                 value={values.user_message}
                 onChange={handleChange}
+                title="Tu mensaje"
+                placeholder="Tu mensaje"
               ></TextField>
               <Button
                 style={{ marginTop: "16px", height: "48px", flexBasis: "100%" }}
@@ -115,6 +117,9 @@ function SectionLocation(props) {
           <iframe
             style={{ width: "100%", height: "100%", borderRadius: "16px" }}
             className="gmap_iframe"
+            name="map_iframe"
+            title="map_iframe"
+            SameSite="Lax"
             frameBorder="0"
             marginHeight="0"
             marginWidth="0"

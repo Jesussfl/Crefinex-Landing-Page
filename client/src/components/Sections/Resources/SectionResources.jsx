@@ -4,6 +4,7 @@ import Card from "../../Card/Card";
 import { CardLarge } from "../../Card/Card";
 import Button from "../../Buttons/Button";
 import { CarouselFramer } from "../../Carousel/CarouselFramer";
+import CarouselComponent from "../../Carousel/Test";
 function SectionResources(props) {
   // const books = [
   //   "inteligencia-emocional",
@@ -31,30 +32,7 @@ function SectionResources(props) {
           manera sencilla y divertida.
         </p>
       </div>
-
-      <div className="horizontal-cards">
-        {/* {props.data.map((card, index) => (
-          <CardLarge
-            key={index}
-            title={card.Titulo}
-            description={card.Descripcion}
-            image={`images/${books[index]}.png`}
-          />
-        ))} */}
-        <CarouselFramer
-          images={[
-            "https://source.unsplash.com/random/600x800?red",
-            "https://source.unsplash.com/random/600x800?orange",
-            "https://source.unsplash.com/random/600x800?yellow",
-            "https://source.unsplash.com/random/600x800?green",
-            "https://source.unsplash.com/random/600x800?blue",
-            "https://source.unsplash.com/random/600x800?indigo",
-            "https://source.unsplash.com/random/600x800?violet",
-          ]}
-        />
-      </div>
-
-      <Button text="Ver todos" />
+      <CarouselFramer data={props.data} />
     </section>
   );
 }

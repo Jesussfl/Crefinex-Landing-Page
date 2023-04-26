@@ -11,7 +11,11 @@ function Subscribe() {
         <h2>Mejoremos el futuro financiero de tu hijo.</h2>
         <p className="headline">Adquiere nuestra guía gratuita</p>
         <div className="actions">
-          <TextField type="text" leftIcon={<Sms variant="Bold" />} />
+          <TextField
+            type="email"
+            placeholder="Correo Electronico"
+            leftIcon={<Sms variant="Bold" />}
+          />
           <Button
             text="Obtener"
             rightIcon={<ArrowCircleRight variant="Bold" />}

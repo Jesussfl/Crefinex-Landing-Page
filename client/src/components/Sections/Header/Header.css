@@ -62,12 +62,12 @@ header {
   }
   .people1 {
     left: -32px !important;
-    scale: 0.9 !important;
+    transform: scale(0.9) !important;
     bottom: -100px !important;
   }
   .people2 {
     left: 55% !important;
-    scale: 0.9 !important;
+    transform: scale(0.9) !important;
     bottom: -100px !important;
   }
 }

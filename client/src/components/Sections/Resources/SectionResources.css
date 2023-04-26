@@ -17,14 +17,13 @@
 .copys-resources p {
   color: var(--base-500);
 }
-.horizontal-cards {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  width: 800px;
-  max-width: 1248px;
-  height: 900px;
-  gap: 36px;
-  overflow-x: scroll;
+
+@media screen and (max-width: 768px) {
+  .section-resources {
+    box-sizing: border-box;
+    padding: 16px;
+  }
+  .section-resources .copys-resources {
+    width: 100%;
+  }
 }

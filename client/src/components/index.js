@@ -1,6 +1,7 @@
 //Components
 export { default as Navbar } from "./Navbar/Navbar";
 export { Button, FloatButton } from "./Buttons/Button";
+export { default as Card } from "./Card/Card";
 export { default as SplashScreen } from "./Splash/SplashScreen";
 //Sections
 export { default as Header } from "./Sections/Header/Header";
