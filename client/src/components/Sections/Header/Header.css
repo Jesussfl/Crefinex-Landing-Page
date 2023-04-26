@@ -67,7 +67,8 @@ header {
     bottom: -100px !important;
   }
   .people2 {
-    left: 55% !important;
+    left: initial !important;
+    right: -32px !important;
     transform: scale(0.9) !important;
     bottom: -100px !important;
   }

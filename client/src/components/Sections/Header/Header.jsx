@@ -8,7 +8,6 @@ import { handleScrollTo } from "../../../controllers/scroller";
 //Components
 import PeopleRoundedBackground from "../../Decorations/PeopleRoundedBackground/PeopleRoundedBackground";
 import { Button } from "../../Buttons/Button";
-import { TextField } from "../../TextFields/TextField";
 import { Confetti } from "../../Decorations/Confetti/Confetti";
 import InViewEffect from "../../Decorations/InViewEffect/InViewEffect";
 
