@@ -119,7 +119,6 @@ function SectionLocation(props) {
             className="gmap_iframe"
             name="map_iframe"
             title="map_iframe"
-            SameSite="Lax"
             frameBorder="0"
             marginHeight="0"
             marginWidth="0"
