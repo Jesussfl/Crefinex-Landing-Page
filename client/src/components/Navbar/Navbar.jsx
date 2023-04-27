@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import NavItem from "../NavItem/NavItem";
+import { Button } from "../index";
 import { HambergerMenu } from "iconsax-react";
 import {
   RiFacebookCircleFill,
@@ -91,7 +92,10 @@ function Navbar() {
           ))}
         </div>
         <div className="actions">
-          <button>Contáctanos</button>
+          <Button
+            onClick={() => handleScrollTo("courses", 0)}
+            text="Explorar Cursos"
+          ></Button>
         </div>
         <div
           className={`social-networks ${

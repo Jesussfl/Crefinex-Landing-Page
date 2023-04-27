@@ -46,7 +46,9 @@
   gap: 16px;
   flex-wrap: wrap;
 }
-
+textarea::placeholder {
+  color: var(--base-300);
+}
 .copys-location p {
   color: var(--primary-color);
 }

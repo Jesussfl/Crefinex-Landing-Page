@@ -1,39 +1,71 @@
 import React from "react";
 import "./Footer.css";
 import NavItem from "../../NavItem/NavItem";
+import { handleScrollTo } from "../../../controllers/scroller";
 
 import {
+  RiMailFill,
   RiFacebookCircleFill,
   RiYoutubeFill,
   RiInstagramFill,
+  RiPhoneFill,
+  RiMapFill,
 } from "react-icons/ri";
 function Footer() {
+  const navItems = [
+    {
+      text: "Inicio",
+      onClick: () => handleScrollTo("header", 0),
+    },
+    {
+      text: "Nuestros Cursos",
+      onClick: () => handleScrollTo("courses", 0),
+    },
+    {
+      text: "¿Quiénes somos?",
+      onClick: () => handleScrollTo("aboutUs", 0),
+    },
+    {
+      text: "Recursos",
+      onClick: () => handleScrollTo("resources", 0),
+    },
+    {
+      text: "Ubicación",
+      onClick: () => handleScrollTo("contactUs", 0),
+    },
+  ];
   return (
     <footer className="footer">
       <div className="info">
-        <div className="logoAndInfo">
+        <div
+          className="logoAndInfo"
+          style={{ width: "300px", textAlign: "left" }}
+        >
           <img src="/logo-crefinex-white.svg" alt="" />
           <p>Creciendo Financieramente Exitosos</p>
-          <a href="">
-            <img src="" alt="" />
-            crefinex@gmail.com
-          </a>
-          <a href="">
-            <img src="" alt="" />
-            0243 - 232 - 6703
-          </a>
-          <a href="">
-            <img src="" alt="" />
-            Centro Comercial Pacífico
-          </a>
+          <NavItem
+            text="Contacto@crefinex.com"
+            leftIcon={<RiMailFill size={24} />}
+          ></NavItem>
+          <NavItem
+            text="0243-232-6703"
+            leftIcon={<RiPhoneFill size={24} />}
+          ></NavItem>
+          <NavItem
+            text="Avenida Bolívar - Oeste, en el Centro Comercial Pacífico, sexto piso, a tan solo 50 metros del C.C. Parque Aragua. "
+            leftIcon={<RiMapFill size={24} />}
+          ></NavItem>
         </div>
         <div className="sections">
           <p className="headline">Secciones</p>
-          <a href="">Inicio</a>
+          {navItems.map((item, index) => (
+            <NavItem key={index} text={item.text} onClick={item.onClick} />
+          ))}
+          {/* <a href="">Inicio</a>
           <a href="">Nuestros Cursos</a>
           <a href="">¿Quiénes Somos?</a>
           <a href="">Recursos</a>
-          <a href="">Ubicación</a>
+          <a href="">Ubicación</a> */}
         </div>
         <div className="help">
           <p className="headline">¿Necesitas Ayuda?</p>

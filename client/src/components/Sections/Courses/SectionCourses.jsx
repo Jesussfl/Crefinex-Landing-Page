@@ -6,6 +6,11 @@ import InViewEffect from "../../Decorations/InViewEffect/InViewEffect";
 import "./SectionCourses.css";
 
 function SectionCourses(props) {
+  const cardImages = [
+    "/images/course1.jpg",
+    "/images/course2.jpg",
+    "/images/course3.jpg",
+  ];
   return (
     <section className="section-courses" id="courses">
       <InViewEffect
@@ -27,7 +32,7 @@ function SectionCourses(props) {
           </p>
         </div>
       </InViewEffect>
-      <Carousel data={props.data} />
+      <Carousel data={props.data} images={cardImages} />
       <Button text="Ver todos" />
     </section>
   );

@@ -6,6 +6,8 @@
   cursor: pointer;
   box-sizing: border-box;
   width: 330px;
+  display: flex;
+  flex-direction: column;
 }
 .image {
   border-radius: 24px;
@@ -19,23 +21,35 @@
   justify-content: center;
   align-items: center;
 }
-
+.card .tag {
+  color: var(--base-white);
+  background-color: var(--secondary-color-blue);
+  padding: 8px 16px;
+  border-radius: 50px;
+  text-align: center;
+}
 .card .content {
   padding: 16px 0;
-
   text-align: left;
-  display: flex;
+  display: grid;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 8px;
+  flex-grow: 1;
 }
 .card .content .description {
+  justify-self: flex-start;
   color: var(--base-500);
   height: 48px;
   overflow: hidden;
 }
-
+.card .tags {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 16px;
+  align-self: flex-end;
+}
 .card:hover {
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;

@@ -6,8 +6,10 @@ function NavItem(props) {
   const path = window.location.pathname;
   const handleClick = () => {
     props.onClick();
-    props.onClickActive();
-    props.onClickMenu();
+    if (props.onClick !== undefined) {
+      props.onClickActive();
+      props.onClickMenu();
+    }
   };
 
   return (

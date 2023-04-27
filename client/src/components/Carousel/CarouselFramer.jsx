@@ -88,6 +88,7 @@ function CarouselFramer({ data, ...props }) {
                     title={card.Titulo}
                     description={card.Descripcion}
                     image={props.images[card.Id - 1]}
+                    price={card.Precio}
                   />
                 }
               </motion.div>

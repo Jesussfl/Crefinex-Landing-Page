@@ -16,6 +16,8 @@ function Carousel(props) {
               key={index}
               title={card.Titulo}
               description={card.Descripcion}
+              image={props.images[index]}
+              price={card.Precio}
             />
           ))
         )}
