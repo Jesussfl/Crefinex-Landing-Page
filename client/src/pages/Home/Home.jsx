@@ -57,26 +57,31 @@ function Home() {
     ];
     const resourcesData = [
       {
+        Id: "1",
         Titulo: "Inteligencia Emocional - Educación Financiera",
         Descripcion:
           "Este libro forma parte de nuestra serie sobre educación financiera para niños, niñas y adolescentes. Cuenta con muchas ilustraciones y actividades prácticas para todo",
       },
       {
+        Id: "2",
         Titulo: "Finanzas Personales - Educación Financiera",
         Descripcion:
           "Este libro forma parte de nuestra serie sobre educación financiera para niños, niñas y adolescentes. Cuenta con muchas ilustraciones y actividades prácticas para todo",
       },
       {
+        Id: "3",
         Titulo: "El Dinero - Educación Financiera",
         Descripcion:
           "Este libro forma parte de nuestra serie sobre educación financiera para niños, niñas y adolescentes. Cuenta con muchas ilustraciones y actividades prácticas para todo",
       },
       {
+        Id: "4",
         Titulo: "El Ahorro - Educación Financiera",
         Descripcion:
           "Este libro forma parte de nuestra serie sobre educación financiera para niños, niñas y adolescentes. Cuenta con muchas ilustraciones y actividades prácticas para todo",
       },
       {
+        Id: "5",
         Titulo: "El Banco - Educación Financiera",
         Descripcion:
           "Este libro forma parte de nuestra serie sobre educación financiera para niños, niñas y adolescentes. Cuenta con muchas ilustraciones y actividades prácticas para todo",
@@ -129,7 +134,6 @@ function Home() {
       <SectionEducation />
       <SectionAboutUs />
       <section>more about us</section>
-      <section>Image</section>
       <section
         style={{
           height: "456px",

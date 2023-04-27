@@ -5,6 +5,7 @@ import NavItem from "../../NavItem/NavItem";
 import "./SectionContactUs.css";
 import emailjs from "@emailjs/browser";
 import Loader from "../../Loader/Loader";
+import LazyLoad from "react-lazy-load";
 function SectionLocation(props) {
   const form = useRef();
   const [isLoading, setIsLoading] = useState(false);
@@ -113,7 +114,7 @@ function SectionLocation(props) {
           <NavItem />
           <p className="callout">{props.data.Ubicacion}</p>
         </div>
-        <div className="map-wrapper">
+        <LazyLoad offset={400} className="map-wrapper">
           <iframe
             style={{ width: "100%", height: "100%", borderRadius: "16px" }}
             className="gmap_iframe"
@@ -124,7 +125,7 @@ function SectionLocation(props) {
             marginWidth="0"
             src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Crefinex maracay&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           ></iframe>
-        </div>
+        </LazyLoad>
       </div>
     </section>
   );

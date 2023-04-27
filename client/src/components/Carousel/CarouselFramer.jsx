@@ -1,10 +1,15 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import useMeasure from "react-use-measure";
+
+//Styles
 import "./CarouselFramer.css";
 import { motion, AnimatePresence } from "framer-motion";
-import useMeasure from "react-use-measure";
-import { Card } from "../index";
 
-export function CarouselFramer({ data }) {
+//Components
+import { Button, Card } from "../index";
+import { ArrowRight2, ArrowLeft2 } from "iconsax-react";
+
+function CarouselFramer({ data, ...props }) {
   const [currentItem, setIndex] = useState(1);
   const [ref, { width }] = useMeasure();
   const [tuple, setTuple] = useState([null, currentItem]); // [prev, current]
@@ -42,10 +47,22 @@ export function CarouselFramer({ data }) {
 
   return (
     <div className="carousel-section">
-      <div className="carousel-buttons">
-        <button onClick={prevClick}>Prev</button>
-        <button onClick={nextClick}>Next</button>
-      </div>
+      <motion.div
+        whileHover={{ scale: 1 }}
+        whileTap={{ scale: 0.95 }}
+        className="carousel-buttons right-button"
+        onClick={nextClick}
+      >
+        <ArrowRight2 size={28} color="#fff" variant="Bold" />
+      </motion.div>
+      <motion.div
+        whileHover={{ scale: 1 }}
+        whileTap={{ scale: 0.95 }}
+        className="carousel-buttons left-button"
+        onClick={prevClick}
+      >
+        <ArrowLeft2 size={28} color="#fff" variant="Bold" />
+      </motion.div>
       <div className="carousel-wrapper">
         <div ref={ref} className="carousel-container">
           <AnimatePresence custom={{ direction, width }}>
@@ -66,7 +83,13 @@ export function CarouselFramer({ data }) {
                 style={{ gridArea: `A${index}` }}
                 layout
               >
-                {<Card title={card.Titulo} description={card.Descripcion} />}
+                {
+                  <Card
+                    title={card.Titulo}
+                    description={card.Descripcion}
+                    image={props.images[card.Id - 1]}
+                  />
+                }
               </motion.div>
             ))}
           </AnimatePresence>
@@ -117,3 +140,5 @@ let variants = {
     },
   },
 };
+
+export default React.memo(CarouselFramer);

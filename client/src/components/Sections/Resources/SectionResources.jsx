@@ -2,22 +2,16 @@ import React from "react";
 import "./SectionResources.css";
 
 import Button from "../../Buttons/Button";
-import { CarouselFramer } from "../../Carousel/CarouselFramer";
+import CarouselFramer from "../../Carousel/CarouselFramer";
 function SectionResources(props) {
-  // const books = [
-  //   "inteligencia-emocional",
-  //   "finanzas-personales",
-  //   "el-dinero",
-  //   "el-ahorro",
-  //   "el-banco",
-  // ];
-  const books = [
-    "book-nobg",
-    "book-nobg",
-    "book-nobg",
-    "book-nobg",
-    "book-nobg",
+  const bookImages = [
+    "/images/inteligencia-emocional.jpg",
+    "/images/finanzas-personales.jpg",
+    "/images/el-dinero.jpg",
+    "/images/el-ahorro.jpg",
+    "/images/el-banco.jpg",
   ];
+
   return (
     <section className="section-resources" id="resources">
       <div className="copys-resources">
@@ -30,7 +24,7 @@ function SectionResources(props) {
           manera sencilla y divertida.
         </p>
       </div>
-      <CarouselFramer data={props.data} />
+      <CarouselFramer data={props.data} images={bookImages} />
     </section>
   );
 }

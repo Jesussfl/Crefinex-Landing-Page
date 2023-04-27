@@ -1,13 +1,14 @@
 import React from "react";
 import "./SectionEducation.css";
+import LazyLoad from "react-lazy-load";
 
 function SectionEducation() {
   return (
     <section className="section-education">
-      <div className="section-container">
-        <div className="image">
+      <div className="section-education-container">
+        <LazyLoad height={456} offset={300} className="image">
           <img src="images/kids.jpg" alt="" />
-        </div>
+        </LazyLoad>
         <div className="section-content">
           <h2>Aspectos de nuestra educación</h2>
           <ul>

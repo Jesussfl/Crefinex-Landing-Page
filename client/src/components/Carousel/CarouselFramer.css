@@ -4,10 +4,28 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  position: relative;
 }
 .carousel-buttons {
+  position: absolute;
+  /* transform: translateY(-50%); */
+  z-index: 1;
+  background-color: var(--secondary-color-red);
+  width: 56px;
+  height: 56px;
+  border-radius: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.left-button {
+  left: 0;
+  top: 50%;
+}
+.right-button {
+  right: 0;
+  top: 50%;
 }
 .carousel-wrapper {
   display: flex;
@@ -24,7 +42,7 @@
   align-items: center;
   grid-template-areas: "A0 A1 A2";
 
-  height: 450px;
+  height: 550px;
   width: 1248px;
   overflow-x: hidden;
   position: relative;
