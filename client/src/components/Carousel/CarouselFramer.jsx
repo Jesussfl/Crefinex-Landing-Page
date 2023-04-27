@@ -85,6 +85,7 @@ function CarouselFramer({ data, ...props }) {
               >
                 {
                   <Card
+                    data={card}
                     title={card.Titulo}
                     description={card.Descripcion}
                     image={props.images[card.Id - 1]}

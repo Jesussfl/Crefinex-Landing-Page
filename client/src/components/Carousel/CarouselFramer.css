@@ -57,7 +57,7 @@
 
 @media screen and (max-width: 768px) {
   .carousel-container {
-    width: 900px !important;
+    width: 1050px !important;
   }
   .carousel-item:first-child {
     left: 0;
