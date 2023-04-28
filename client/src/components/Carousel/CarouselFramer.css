@@ -57,7 +57,11 @@
 
 @media screen and (max-width: 768px) {
   .carousel-container {
-    width: 1050px !important;
+    width: 1180px !important;
+  }
+  .carousel-buttons {
+    width: 48px;
+    height: 48px;
   }
   .carousel-item:first-child {
     left: 0;

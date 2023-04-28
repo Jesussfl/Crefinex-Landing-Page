@@ -22,54 +22,6 @@ function Navbar() {
     }
   };
 
-  const navItems = [
-    {
-      text: "Inicio",
-      onClick: () => handleScrollTo("header", 0),
-    },
-    {
-      text: "Nuestros Cursos",
-      onClick: () => handleScrollTo("courses", 0),
-    },
-    {
-      text: "¿Quiénes somos?",
-      onClick: () => handleScrollTo("aboutUs", 0),
-    },
-    {
-      text: "Recursos",
-      onClick: () => handleScrollTo("resources", 0),
-    },
-    {
-      text: "Ubicación",
-      onClick: () => handleScrollTo("contactUs", 0),
-    },
-  ];
-
-  const socialNetworks = [
-    {
-      address: "https://www.facebook.com/crefinex",
-      leftIcon: <RiFacebookCircleFill size={36} />,
-    },
-    {
-      address: "https://www.youtube.com/channel/UCjo_nLbwWx63oDbAvv2Q2sw",
-      leftIcon: <RiYoutubeFill size={36} />,
-    },
-    {
-      address: "https://www.instagram.com/crefinex/",
-      leftIcon: <RiInstagramFill size={36} />,
-    },
-    {
-      address: "https://www.tiktok.com/@yismaryariass?lang=es",
-      leftIcon: (
-        <img
-          src="images/tiktok_fill.svg"
-          alt="TikTok icon"
-          style={{ width: "30px" }}
-        />
-      ),
-    },
-  ];
-
   return (
     <nav className="center">
       <div className="left-side">
@@ -123,5 +75,52 @@ function Navbar() {
     </nav>
   );
 }
+const navItems = [
+  {
+    text: "Inicio",
+    onClick: () => handleScrollTo("header", 0),
+  },
+  {
+    text: "Nuestros Cursos",
+    onClick: () => handleScrollTo("courses", 0),
+  },
+  {
+    text: "¿Quiénes somos?",
+    onClick: () => handleScrollTo("aboutUs", 0),
+  },
+  {
+    text: "Recursos",
+    onClick: () => handleScrollTo("resources", 0),
+  },
+  {
+    text: "Ubicación",
+    onClick: () => handleScrollTo("contactUs", 0),
+  },
+];
+
+const socialNetworks = [
+  {
+    address: "https://www.facebook.com/crefinex",
+    leftIcon: <RiFacebookCircleFill size={36} />,
+  },
+  {
+    address: "https://www.youtube.com/channel/UCjo_nLbwWx63oDbAvv2Q2sw",
+    leftIcon: <RiYoutubeFill size={36} />,
+  },
+  {
+    address: "https://www.instagram.com/crefinex/",
+    leftIcon: <RiInstagramFill size={36} />,
+  },
+  {
+    address: "https://www.tiktok.com/@yismaryariass?lang=es",
+    leftIcon: (
+      <img
+        src="images/tiktok_fill.svg"
+        alt="TikTok icon"
+        style={{ width: "30px" }}
+      />
+    ),
+  },
+];
 
 export default Navbar;

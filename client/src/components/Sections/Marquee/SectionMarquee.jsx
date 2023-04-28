@@ -1,5 +1,6 @@
 import React from "react";
 import ParallaxTextEffect from "../../Animations/ParallaxTextEffect";
+import "./SectionMarquee.css";
 
 function SectionMarquee() {
   return (

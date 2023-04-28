@@ -5,6 +5,7 @@
   align-items: center;
   gap: 36px;
   background-color: var(--base-white);
+  width: 100%;
 }
 
 .contactUs-wrapper {

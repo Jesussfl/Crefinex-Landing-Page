@@ -8,15 +8,18 @@ import Modal from "./Modal";
 import LazyLoad from "react-lazy-load";
 
 import "./Card.css";
+import { useNavigate } from "react-router-dom";
 
 export function Card(props) {
   const [open, setOpen] = useState(false);
-
+  const navigate = useNavigate();
   const openModal = () => {
+    navigate("/inicio/cursos");
     setOpen(true);
   };
 
   const closeModal = () => {
+    navigate("/inicio");
     setOpen(false);
   };
   return (
@@ -24,7 +27,8 @@ export function Card(props) {
       <motion.div
         className="card"
         onClick={openModal}
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
       >
         <div className="card__content">
           <LazyLoad offset={200} className="card__image-container">
@@ -55,7 +59,7 @@ export function Card(props) {
       <AnimatePresence>
         {open && (
           <Overlay close={closeModal}>
-            <Modal data={props.data} close={closeModal} />
+            <Modal data={props.data} image={props.image} close={closeModal} />
           </Overlay>
         )}
       </AnimatePresence>

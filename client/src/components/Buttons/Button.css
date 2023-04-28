@@ -15,3 +15,26 @@
   text-decoration: none;
   color: var(--white-color);
 }
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  font-size: 24px;
+  line-height: 60px;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.whatsapp-btn:hover {
+  background-color: var(--base-500);
+}

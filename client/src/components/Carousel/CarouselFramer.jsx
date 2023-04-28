@@ -119,7 +119,7 @@ let variants = {
   },
   positionA0: {
     x: 0,
-    scale: 0.9,
+    scale: 1,
     transition: {
       duration: 0.5,
     },
@@ -136,7 +136,7 @@ let variants = {
   },
   positionA2: {
     x: 0,
-    scale: 0.9,
+    scale: 1,
     transition: {
       duration: 0.5,
     },

@@ -5,6 +5,7 @@
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   display: flex;
+  position: relative;
 }
 .modal > * {
   flex: 1 1 0;
@@ -13,11 +14,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  border-radius: 20px;
   overflow: hidden;
 }
 .modal__image {
-  width: 170%;
+  width: 200%;
   object-fit: contain;
 }
 .modal__info {
@@ -32,19 +33,34 @@
 .modal__title {
   color: var(--base-600);
   width: 90%;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
-.modal__price {
-  color: var(--primary-color);
+.modal__tag {
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100px; */
+  min-width: 25%;
+  max-width: 30%;
+  border-radius: 50px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
 }
+
 .modal__description-wrapper {
   color: var(--base-500);
 }
 .modal__actions {
   width: 100%;
-
   display: flex;
   justify-content: space-between;
+  gap: 24px;
+}
+.modal__actions > * {
+  flex: 1 1 0;
 }
 
 .modal__close-wrapper {
@@ -52,37 +68,36 @@
   right: 28px;
   top: 28px;
   cursor: pointer;
-  border-radius: 50px;
-}
-
-.modal__close-icon {
+  border-radius: 20px;
+  background-color: #fff;
   width: 40px;
   height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 768px) {
   .modal {
     flex-direction: column;
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
-    overflow-y: scroll;
-  }
-  .modal > * {
-    flex: initial;
+    border-radius: 0;
   }
   .modal__image-container {
-    overflow: hidden;
-    height: 200px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
   }
   .modal__image {
-    width: 100%;
+    width: 145%;
   }
   .modal__info {
     box-sizing: border-box;
-    height: 20%;
+    height: 100%;
   }
-  .modal__actions {
-    margin-bottom: 20px;
+  .modal__close-wrapper {
+    top: 8px;
+    right: 8px;
   }
 }
