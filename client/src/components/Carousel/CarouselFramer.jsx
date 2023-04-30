@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import useMeasure from "react-use-measure";
 
 //Styles
@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button, Card } from "../index";
 import { ArrowRight2, ArrowLeft2 } from "iconsax-react";
 
-function CarouselFramer({ data, ...props }) {
+const CarouselFramer = memo(function CarouselFramer({ data, ...props }) {
   const [currentItem, setIndex] = useState(1);
   const [ref, { width }] = useMeasure();
   const [tuple, setTuple] = useState([null, currentItem]); // [prev, current]
@@ -44,7 +44,7 @@ function CarouselFramer({ data, ...props }) {
     data[currentItem],
     data[getNextIndex()],
   ];
-
+  console.log("Component renderized");
   return (
     <div className="carousel-section">
       <motion.div
@@ -99,7 +99,7 @@ function CarouselFramer({ data, ...props }) {
       </div>
     </div>
   );
-}
+});
 
 let variants = {
   enter: ({ direction, width }) => ({
@@ -143,4 +143,4 @@ let variants = {
   },
 };
 
-export default React.memo(CarouselFramer);
+export default CarouselFramer;

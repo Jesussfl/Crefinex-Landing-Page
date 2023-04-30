@@ -31,7 +31,7 @@ function SectionIntroduction() {
           }}
           whileTap={{ scale: 0.95 }}
         >
-          <img src="images/rocket-dynamic-color.png" alt="" />
+          <img src="images/webp/rocket-dynamic-color.webp" alt="" />
           <p className="headline">Pensamiento Creativo</p>
           <p className="callout">Ver más</p>
         </motion.div>
@@ -44,7 +44,7 @@ function SectionIntroduction() {
           }}
           whileTap={{ scale: 0.95 }}
         >
-          <img src="images/target-dynamic-color.png" alt="" />
+          <img src="images/webp/target-dynamic-color.webp" alt="" />
           <p className="headline">Actividades Dinamicas</p>
           <p className="callout">Ver más</p>
         </motion.div>
@@ -56,7 +56,7 @@ function SectionIntroduction() {
           }}
           whileTap={{ scale: 0.95 }}
         >
-          <img src="images/dollar-dollar-color.png" alt="" />
+          <img src="images/webp/dollar-dollar-color.webp" alt="" />
           <p className="headline">Preparacion Financiera</p>
           <p className="callout">Ver más</p>
         </motion.div>

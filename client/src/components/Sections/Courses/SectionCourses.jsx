@@ -7,9 +7,9 @@ import "./SectionCourses.css";
 
 function SectionCourses(props) {
   const cardImages = [
-    "/images/course1.jpg",
-    "/images/course2.jpg",
-    "/images/course3.jpg",
+    "/images/webp/course1.webp",
+    "/images/webp/course2.webp",
+    "/images/webp/course3.webp",
   ];
   return (
     <section className="section-courses" id="courses">

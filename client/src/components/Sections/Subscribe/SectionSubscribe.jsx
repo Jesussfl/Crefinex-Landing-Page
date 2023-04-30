@@ -23,7 +23,7 @@ function Subscribe() {
         </div>
       </div>
       <div className="image-subscribe">
-        <img src="images/girl-with-table.png" alt="" />
+        <img src="images/webp/girl-with-table.webp" alt="" />
       </div>
     </div>
   );

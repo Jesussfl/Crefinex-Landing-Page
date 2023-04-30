@@ -7,7 +7,7 @@ function SectionEducation() {
     <section className="section-education">
       <div className="section-education-container">
         <LazyLoad height={456} offset={300} className="image">
-          <img src="images/kids.jpg" alt="" />
+          <img src="images/webp/kids.webp" alt="" />
         </LazyLoad>
         <div className="section-content">
           <h2>Aspectos de nuestra educación</h2>

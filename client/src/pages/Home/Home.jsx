@@ -72,12 +72,12 @@ function Home() {
         style={{
           height: "456px",
           width: "100%",
-          backgroundImage: "url('/images/books.jpg')",
+          backgroundImage: "url('/images/webp/books.webp')",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}
       ></section>
-      {/* <SectionResources data={resourcesData} /> */}
+      <SectionResources data={resourcesData} />
       <SectionContactUs data={locationData} />
       <SectionSubscribe />
       <Footer />

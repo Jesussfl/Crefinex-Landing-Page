@@ -89,7 +89,7 @@ function Header(props) {
             bottom: "2%",
             left: "3%",
           }}
-          src="images/img3.png"
+          src="/images/webp/img3.webp"
         />
         <PeopleRoundedBackground
           className="people2"
@@ -98,7 +98,7 @@ function Header(props) {
             bottom: "-60px",
             left: "25%",
           }}
-          src="images/img1.png"
+          src="/images/webp/img1.webp"
         />
         <PeopleRoundedBackground
           className="people3"
@@ -107,7 +107,7 @@ function Header(props) {
             bottom: "-60px",
             right: "25%",
           }}
-          src="images/img2.png"
+          src="/images/webp/img2.webp"
         />
         <PeopleRoundedBackground
           className="people4"
@@ -116,7 +116,7 @@ function Header(props) {
             bottom: "2%",
             right: "3%",
           }}
-          src="images/img4.png"
+          src="/images/webp/img4.webp"
         />
       </div>
       <div className="people-images"></div>

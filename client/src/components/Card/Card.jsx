@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../index";
@@ -10,7 +10,8 @@ import LazyLoad from "react-lazy-load";
 import "./Card.css";
 import { useNavigate } from "react-router-dom";
 
-export function Card(props) {
+export const Card = memo(function Card(props) {
+  console.log("Card renderized");
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const openModal = () => {
@@ -65,6 +66,6 @@ export function Card(props) {
       </AnimatePresence>
     </>
   );
-}
+});
 
 export default Card;

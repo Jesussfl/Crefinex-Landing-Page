@@ -5,11 +5,11 @@ import Button from "../../Buttons/Button";
 import CarouselFramer from "../../Carousel/CarouselFramer";
 function SectionResources(props) {
   const bookImages = [
-    "/images/inteligencia-emocional.jpg",
-    "/images/finanzas-personales.jpg",
-    "/images/el-dinero.jpg",
-    "/images/el-ahorro.jpg",
-    "/images/el-banco.jpg",
+    "/images/webp/inteligencia-emocional.webp",
+    "/images/webp/finanzas-personales.webp",
+    "/images/webp/el-dinero.webp",
+    "/images/webp/el-ahorro.webp",
+    "/images/webp/el-banco.webp",
   ];
 
   return (
