@@ -20,39 +20,39 @@ import {
 
 //Methods
 import { loadSheetData } from "../../api/googleSheetAPI";
-import {
-  headerData,
-  coursesData,
-  resourcesData,
-  locationData,
-} from "../../constants/data";
+// import {
+//   headerData,
+//   coursesData,
+//   resourcesData,
+//   locationData,
+// } from "../../constants/data";
 
 function Home() {
-  //States
-  // const [headerData, setHeaderData] = useState([]);
-  // const [coursesData, setCoursesData] = useState([]);
-  // const [resourcesData, setResourcesData] = useState([]);
-  // const [locationData, setLocationData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  //States;
+  const [headerData, setHeaderData] = useState([]);
+  const [coursesData, setCoursesData] = useState([]);
+  const [resourcesData, setResourcesData] = useState([]);
+  const [locationData, setLocationData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // //Refs
-  // useEffect(() => {
-  //   setHeaderData(headerData);
-  //   setCoursesData(coursesData);
-  //   setResourcesData(resourcesData);
-  //   setLocationData(locationData);
-  //   setIsLoading(false);
-  //   async function fetchData() {
-  //     window.gapi.load("client", async () => {
-  //       const headerData = await loadSheetData("Cabecera", "A:B");
-  //       const coursesData = await loadSheetData("Cursos", "A:D");
-  //       const resourcesData = await loadSheetData("Recursos", "A:C");
-  //       const locationData = await loadSheetData("Ubicacion", "A:B");
-  //     });
-  //   }
+  //Refs
+  useEffect(() => {
+    async function fetchData() {
+      window.gapi.load("client", async () => {
+        const headerData = await loadSheetData("Cabecera", "A:B");
+        const coursesData = await loadSheetData("Cursos", "A:D");
+        const resourcesData = await loadSheetData("Recursos", "A:C");
+        const locationData = await loadSheetData("Ubicacion", "A:B");
+        setHeaderData(headerData);
+        setCoursesData(coursesData);
+        setResourcesData(resourcesData);
+        setLocationData(locationData);
+        setIsLoading(false);
+      });
+    }
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
   //Render
   if (isLoading) {

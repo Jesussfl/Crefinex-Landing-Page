@@ -44,7 +44,6 @@ const CarouselFramer = memo(function CarouselFramer({ data, ...props }) {
     data[currentItem],
     data[getNextIndex()],
   ];
-  console.log("Component renderized");
   return (
     <div className="carousel-section">
       <motion.div

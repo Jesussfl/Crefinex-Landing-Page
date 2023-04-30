@@ -77,7 +77,8 @@ function SectionAboutUs() {
         </div>
         <div className="aboutus-image">
           <div className="image">
-            <img src="images/webp/Yismary.webp" alt="" />
+            {/* <img src="images/webp/Yismary.webp" alt="" /> */}
+            <img src="https://i.ibb.co/KqjL4g1/Yismary.webp" alt="" />
           </div>
         </div>
       </div>
