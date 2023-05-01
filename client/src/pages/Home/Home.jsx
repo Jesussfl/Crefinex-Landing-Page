@@ -20,6 +20,9 @@ import {
 
 //Methods
 import { loadSheetData } from "../../services/googleSheetAPI";
+
+//Uncomment this if you want to use default data
+
 // import {
 //   headerData,
 //   coursesData,
@@ -28,21 +31,20 @@ import { loadSheetData } from "../../services/googleSheetAPI";
 // } from "../../constants/data";
 
 function Home() {
-   //States
    const [headerData, setHeaderData] = useState([]);
    const [coursesData, setCoursesData] = useState([]);
    const [resourcesData, setResourcesData] = useState([]);
    const [locationData, setLocationData] = useState([]);
    const [isLoading, setIsLoading] = useState(true);
 
-   //Refs
    useEffect(() => {
-      async function fetchData() {
-         window.gapi.load("client", async () => {
+      async function loadWebsiteData() {
+         gapi.load("client", async () => {
             const headerData = await loadSheetData("Cabecera", "A:B");
-            const coursesData = await loadSheetData("Cursos", "A:D");
-            const resourcesData = await loadSheetData("Recursos", "A:C");
+            const coursesData = await loadSheetData("Cursos", "A:F");
+            const resourcesData = await loadSheetData("Recursos", "A:D");
             const locationData = await loadSheetData("Ubicacion", "A:B");
+
             setHeaderData(headerData);
             setCoursesData(coursesData);
             setResourcesData(resourcesData);
@@ -51,7 +53,7 @@ function Home() {
          });
       }
 
-      fetchData();
+      loadWebsiteData();
    }, []);
 
    //Render
@@ -69,14 +71,6 @@ function Home() {
          <SectionCourses data={coursesData} />
          <SectionEducation />
          <SectionAboutUs />
-         <section
-            style={{
-               height: "456px",
-               width: "100%",
-               backgroundImage: "url('/images/webp/books.webp')",
-               backgroundRepeat: "no-repeat",
-               backgroundPosition: "center",
-            }}></section>
          <SectionResources data={resourcesData} />
          <SectionContactUs data={locationData} />
          <SectionSubscribe />

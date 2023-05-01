@@ -7,9 +7,6 @@
   position: relative;
 }
 .carousel-buttons {
-  position: absolute;
-  /* transform: translateY(-50%); */
-  z-index: 1;
   background-color: var(--secondary-color-red);
   width: 56px;
   height: 56px;
@@ -47,14 +44,10 @@
   overflow-x: hidden;
   position: relative;
 }
-.carousel-item {
+.carousel-buttons{
   position: absolute;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 1;
 }
-
 @media screen and (max-width: 768px) {
   .carousel-container {
     width: 1180px !important;
