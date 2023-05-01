@@ -18,8 +18,8 @@
   overflow: hidden;
 }
 .modal__image {
-  width: 200%;
-  object-fit: contain;
+  width: 120%;
+  object-fit: cover;
 }
 .modal__info {
   display: flex;
