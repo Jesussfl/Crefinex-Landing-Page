@@ -6,10 +6,12 @@
 }
 .label {
   color: var(--base-500) !important;
+  font-size: 0.9rem;
+
 }
 .text-field-container {
   width: 100%;
-  border: 2px solid var(--base-200);
+  border: 1.5px solid var(--base-200);
   background-color: var(--base-white);
   border-radius: 40px;
   padding: 0.5em 1em;
@@ -43,6 +45,7 @@
 }
 .text-field-container input::placeholder {
   color: var(--base-300);
+  font-size: 0.95rem;
 }
 @media screen and (max-width: 768px) {
   .text-field-container input {
