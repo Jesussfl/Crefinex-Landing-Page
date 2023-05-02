@@ -3,34 +3,9 @@ import "./Modal.css";
 import { RiCloseFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 import LazyLoad from "react-lazy-load";
-import { Button } from "../Buttons/Button";
-import { Link } from "react-router-dom";
+import { Button } from "../index";
 const Modal = ({ data, close, image }) => {
    const { Titulo, Descripcion, Precio, LinkDeCompra } = data;
-   console.log(LinkDeCompra);
-
-   const modalVariants = {
-      open: {
-         opacity: 1,
-         transition: { staggerChildren: 0.5, delayChildren: 0.2 },
-      },
-      closed: { opacity: 0 },
-   };
-
-   const imageVariants = {
-      open: { opacity: 1, y: "0vh" },
-      closed: { opacity: 0, y: "-10vh" },
-   };
-
-   const modalInfoVariants = {
-      open: { opacity: 1, transition: { staggerChildren: 0.2 } },
-      closed: { opacity: 0 },
-   };
-
-   const modalRowVariants = {
-      open: { opacity: 1, x: 0 },
-      closed: { opacity: 0, x: "10%" },
-   };
 
    return (
       <motion.div
@@ -82,5 +57,26 @@ const Modal = ({ data, close, image }) => {
       </motion.div>
    );
 };
+const modalVariants = {
+   open: {
+      opacity: 1,
+      transition: { staggerChildren: 0.5, delayChildren: 0.2 },
+   },
+   closed: { opacity: 0 },
+};
 
+const imageVariants = {
+   open: { opacity: 1, y: "0vh" },
+   closed: { opacity: 0, y: "-10vh" },
+};
+
+const modalInfoVariants = {
+   open: { opacity: 1, transition: { staggerChildren: 0.2 } },
+   closed: { opacity: 0 },
+};
+
+const modalRowVariants = {
+   open: { opacity: 1, x: 0 },
+   closed: { opacity: 0, x: "10%" },
+};
 export default Modal;

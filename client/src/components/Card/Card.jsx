@@ -2,8 +2,7 @@ import React, { useState, memo } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 
-import Overlay from "./Overlay";
-import Modal from "./Modal";
+import { Overlay, Modal } from "../index";
 import LazyLoad from "react-lazy-load";
 
 import "./Card.css";
