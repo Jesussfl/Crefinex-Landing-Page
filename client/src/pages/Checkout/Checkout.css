@@ -1,0 +1,116 @@
+.checkout__body{
+    text-align: left;
+    display: flex;
+    background-color: var(--base-white);
+    height: 100vh;
+    position: relative;
+}
+.checkout__body h1{
+    color: var(--primary-color);
+}
+.checkout__body > *{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em 4.5em;
+    box-sizing: border-box;
+
+}
+.checkout__form-container{
+
+    flex: 1;
+    overflow-y: scroll;
+    padding-bottom: 7em;
+
+}
+.checkout__form{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 32px;
+}
+.checkout__form-row{
+    color: var(--base-500);
+    margin-bottom: 32px;
+}
+.checkout__summary{
+    width: 40%;
+    background-color: var(--base-100);
+
+}
+.checkout__summary-image{
+    width: 30%;
+    border-radius: 8px;
+
+}
+.checkout__summary-product{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.imageContainer{
+    padding: 8px !important;
+    border-radius: 12px;
+
+    background-color: white;
+}
+.checkout__form :nth-child(3), .checkout__form :nth-child(4), .checkout__form :nth-child(7), .checkout__form :nth-child(8){
+    grid-column: span 2;
+}
+
+.checkout__summary-row{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+.divider{
+    height: 2px;
+    background-color: var(--base-200);
+}
+.checkout__form-container span{
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+.checkout__back-button{
+    background-color: var(--primary-color);
+    min-width: 46px;
+    height: 46px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .checkout__body{
+        height: initial;
+        flex-direction: column;
+    }
+    .checkout__form-container{
+        padding: 16px 16px 88px 16px
+    }
+    .checkout__form{
+        display: block;
+    }
+    .checkout__form > *{
+        margin-bottom: 32px;
+    }
+    .checkout__summary{
+        width: 100%;
+        padding: 16px;
+        padding-bottom: 144px;
+    }
+    .checkout__button-container{
+        position: fixed ;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 16px;
+    }
+}
