@@ -10,6 +10,7 @@ export { default as SplashScreen } from "./Splash/SplashScreen";
 //Sections
 export { default as Header } from "./Sections/Header/Header";
 export { default as SectionIntroduction } from "./Sections/Introduction/SectionIntroduction";
+export { default as SectionScolarships } from "./Sections/Scolarships/SectionScolarships";
 export { default as SectionMarquee } from "./Sections/Marquee/SectionMarquee";
 export { default as SectionAboutUs } from "./Sections/AboutUs/SectionAboutUs";
 export { default as SectionCourses } from "./Sections/Courses/SectionCourses";

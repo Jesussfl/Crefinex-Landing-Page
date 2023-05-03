@@ -7,6 +7,7 @@ import {
    Navbar,
    Header,
    SectionIntroduction,
+   SectionScolarships,
    SectionAboutUs,
    SectionMarquee,
    SectionCourses,
@@ -67,6 +68,7 @@ function Home() {
          <Navbar />
          <Header data={headerData} />
          <SectionIntroduction />
+         <SectionScolarships />
          <SectionMarquee />
          <SectionCourses data={coursesData} />
          <SectionEducation />

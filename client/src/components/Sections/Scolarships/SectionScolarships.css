@@ -1,0 +1,37 @@
+.section__scolarships {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    text-align: left;
+    align-items: center;
+}
+.section__scolarships > *{
+    flex: 1 1 0;
+}
+.scolarships__image {
+    width: 100%;
+    border-radius: 0px 30px 30px 0;
+}
+.scolarships__content-container{
+    box-sizing: border-box;
+    padding: 4em;
+}
+.scolarships__content-container p{
+    color: var(--base-500);
+}
+.scolarships__content-container > *{
+    margin-bottom: 24px;
+}
+
+
+@media (max-width: 768px) {
+    .section__scolarships {
+        flex-direction: column;
+    }
+    .scolarships__image{
+        border-radius: 0 0 30px 30px;
+    }
+    .scolarships__content-container{
+        padding: 16px;
+    }
+}
