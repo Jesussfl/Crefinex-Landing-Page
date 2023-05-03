@@ -72,7 +72,6 @@ function Header(props) {
                <p className="body-large">{props.data.Subtitulo}</p>
             </InViewEffect>
             <div className="actions-container">
-               {/* <TextField type="text" leftIcon={<Sms variant="Bold" />} /> */}
                <Button
                   text="Ver Nuestros Cursos"
                   onClick={() => handleScrollTo("courses", 0)}

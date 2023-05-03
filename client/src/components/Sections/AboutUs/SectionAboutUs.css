@@ -1,69 +1,105 @@
-.section-aboutus {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.section__aboutus {
   width: 100%;
   background-color: var(--base-white);
-  padding: 56px 0;
+  height: min-content;
 }
-.aboutus-wrapper {
+.section__aboutus-wrapper {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  max-width: 1248px;
+  flex-direction: row-reverse;
   gap: 48px;
   position: relative;
+  text-align: left;
+  box-sizing: border-box;
 }
-.aboutus-content h2 {
-  color: var(--secondary-color-red);
-}
-.aboutus-wrapper > * {
+.aboutus__content, .aboutus__image-container{
   flex: 1 1 0;
 }
-.section-aboutus .aboutus-content {
+
+.aboutus__content{
+  box-sizing: border-box;
+  padding: 2.5em;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 1rem;
-  text-align: left;
 }
-.aboutus-image {
-  position: relative;
-  padding: 1rem;
-  min-height: 400px;
+.aboutus__content p{
+color: var(--base-500);
 }
-.aboutus-image .image {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  height: 65%;
-  width: 85%;
-  background-color: var(--secondary-color-red);
-  overflow-y: visible !important;
-}
-.aboutus-image .image img {
-  height: 180%;
-  position: absolute;
-  right: -72px;
-  bottom: 0;
-  transform: translateX(0);
-}
-.mision-list {
+.aboutus__list{
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
-.list {
+.aboutus__list-item {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+
+  border: 2px solid var(--base-200);
+  border-radius: 12px;
+  padding: 12px;
+  box-sizing: border-box;
+
 }
-@media (max-width: 768px) {
-  .section-aboutus > .aboutus-wrapper {
+.aboutus__list-item p{
+  color: var(--primary-color);
+
+}
+.aboutus__image-container{
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 0 56px 56px 0;
+  position: relative;
+}
+.aboutus__image{
+
+  width: 70%;
+}
+.aboutus__image, .aboutus__image-container h3{
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translate(50%, 0);
+
+}
+.aboutus__image-container h3{
+  color: var(--base-white);
+  text-align: center;
+  bottom: 56px !important;
+  width: 100%;
+  z-index: 2;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 768px) {
+  .section__aboutus-wrapper{
     flex-direction: column;
   }
-  .aboutus-content {
-    padding: 16px;
+  .aboutus__content, .aboutus__image-container{
+    flex: inherit
   }
+  .aboutus__image-container{
+    width: 100%;
+    height: 650px !important;
+  }
+  .aboutus__image{
+    width: 60%;
+  }
+  .aboutus__content{
+    padding: 56px 16px;
+  }
+}
+@media screen and (max-width: 468px) {
+  .aboutus__image-container{
+    height: 550px !important;
+  }
+  .aboutus__image{
+    width: 100%;
+  }
+
 }

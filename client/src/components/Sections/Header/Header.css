@@ -52,6 +52,8 @@ header {
   header {
     margin-top: 124px;
     gap: 96px;
+    padding: 16px;
+    box-sizing: border-box;
   }
 
   .actions-container {

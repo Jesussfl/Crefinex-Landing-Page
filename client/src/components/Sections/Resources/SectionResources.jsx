@@ -20,7 +20,7 @@ function SectionResources(props) {
                height: "456px",
                width: "100%",
                backgroundImage:
-                  "url('https://ik.imagekit.io/jeflr/Crefinex-Landing-Page/books-background.jpg?updatedAt=1682942860920')",
+                  "url('https://ik.imagekit.io/jeflr/Crefinex-Landing-Page/Covers/books-background.jpg?updatedAt=1682943003787')",
                backgroundRepeat: "no-repeat",
                backgroundPosition: "center",
                display: "flex",
