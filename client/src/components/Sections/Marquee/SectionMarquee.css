@@ -2,7 +2,7 @@
 
 .marquee-section {
   -webkit-font-smoothing: antialiased;
-  height: 450px;
+  height: 550px;
 
   color: var(--base-white);
   font-size: 3.5rem;
@@ -42,7 +42,8 @@
 }
 @media (max-width: 600px) {
   .marquee-section {
-    background-size: 200%;
+    height: 400px;
+    background-size: cover;
   }
   .parallax .scroller {
     font-size: 42px;

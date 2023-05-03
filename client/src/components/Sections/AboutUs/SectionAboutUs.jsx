@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./SectionAboutUs.css";
 import { Confetti } from "../../Decorations/Confetti/Confetti";
-
+import { useInView } from "framer-motion";
 const confettiStyles = [
    {
       position: "absolute",
@@ -46,9 +46,11 @@ const missionListItems = [
 ];
 
 function SectionAboutUs() {
+   const ref = useRef(null);
+   const isInView = useInView(ref);
    return (
-      <section className="section-aboutus" id="aboutUs">
-         <div className="aboutus-wrapper">
+      <section ref={ref} className="section__aboutus" id="aboutUs">
+         <div className="section__aboutus-wrapper">
             {confettiStyles.map((style) => (
                <Confetti
                   key={style.color}
@@ -57,29 +59,45 @@ function SectionAboutUs() {
                   size="36px"
                />
             ))}
-            <div className="aboutus-content">
-               <h2>¿Quiénes Somos?</h2>
-               <p className="body-large">
+            <div className="aboutus__content">
+               <h2 className="red">¿Quiénes Somos?</h2>
+               <p className="headline">
                   Somos una empresa dedicada a la educación financiera para
                   niños. Creemos que la enseñanza de esta área es esencial para
                   que los niños puedan tomar decisiones financieras responsables
                   y planificar su futuro de manera efectiva.
                </p>
-               <h3 className="blue">Nuestra Misión</h3>
-               <ul className="mission-list">
+               <h2 className="blue">Nuestra Misión</h2>
+               <ul className="aboutus__list">
                   {missionListItems.map(({ id, icon, text }) => (
-                     <li key={id} className="list">
-                        <img src={icon} alt="" />
-                        <p>{text}</p>
+                     <li key={id} className="aboutus__list-item">
+                        <img src={icon} alt="mision-icono" />
+                        <p className="headline">{text}</p>
                      </li>
                   ))}
                </ul>
             </div>
-            <div className="aboutus-image">
-               <div className="image">
-                  {/* <img src="images/webp/Yismary.webp" alt="" /> */}
-                  <img src="https://i.ibb.co/KqjL4g1/Yismary.webp" alt="" />
-               </div>
+            <div
+               className="aboutus__image-container"
+               style={{
+                  backgroundImage:
+                     "url(https://ik.imagekit.io/jeflr/Crefinex-Landing-Page/Team/Aboutus-bg.jpg?updatedAt=1683125049497)",
+               }}>
+               <h3
+                  style={{
+                     transform: isInView
+                        ? "translateX(50%)"
+                        : "translateX(-200px)",
+                     transition:
+                        "all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.8s",
+                  }}>
+                  Prof. Yismary Arias
+               </h3>
+               <img
+                  src="https://ik.imagekit.io/jeflr/Crefinex-Landing-Page/Team/DSC08828-PhotoRoom.png-PhotoRoom.png?updatedAt=1683118179291"
+                  alt="yismary-arias profesora"
+                  className="aboutus__image"
+               />
             </div>
          </div>
       </section>

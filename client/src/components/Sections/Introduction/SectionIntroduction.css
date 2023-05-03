@@ -4,7 +4,7 @@
   align-items: center;
   border-radius: 24px;
   max-width: 1248px;
-  background: linear-gradient(180deg, #280c61 0%, #5516bc 100%);
+  background: linear-gradient(45deg, #5313d1 0%, #791fdf 100%);
 
   color: var(--base-white);
   text-align: left;
@@ -67,5 +67,11 @@
   }
   .introduction-section-wrapper {
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  .info{
+    transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s !important;
+
   }
 }

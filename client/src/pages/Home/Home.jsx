@@ -73,6 +73,18 @@ function Home() {
          <SectionAboutUs />
          <SectionResources data={resourcesData} />
          <SectionContactUs data={locationData} />
+         <section
+            className="section__vacancy"
+            style={{
+               maxWidth: "1024px",
+               borderRadius: "20px",
+               height: "480px",
+               backgroundImage:
+                  "url(https://ik.imagekit.io/jeflr/Crefinex-Landing-Page/Covers/Banner-vacancy.jpg?updatedAt=1683126922322)",
+               backgroundSize: "100%",
+               backgroundPosition: "center",
+               backgroundRepeat: "no-repeat",
+            }}></section>
          <SectionSubscribe />
          <Footer />
       </div>
