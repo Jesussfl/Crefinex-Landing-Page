@@ -6,11 +6,6 @@ import InViewEffect from "../../Decorations/InViewEffect/InViewEffect";
 import "./SectionCourses.css";
 
 function SectionCourses({ data }) {
-   // const cardImages = [
-   //    "/images/webp/course1.webp",
-   //    "/images/webp/course2.webp",
-   //    "/images/webp/course3.webp",
-   // ];
    return (
       <section className="section-courses" id="courses">
          <InViewEffect
