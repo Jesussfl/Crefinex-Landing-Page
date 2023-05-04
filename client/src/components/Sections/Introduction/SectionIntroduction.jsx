@@ -1,6 +1,5 @@
 import React from "react";
 import "./SectionIntroduction.css";
-import { motion } from "framer-motion";
 import IntroductionCard from "./IntroductionCard";
 function SectionIntroduction() {
    return (
