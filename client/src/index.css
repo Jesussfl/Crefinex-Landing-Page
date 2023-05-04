@@ -43,6 +43,14 @@ body {
   display: flex;
   /* place-items: center; */
   min-height: 100vh;
+cursor: none;
+
+}
+@media screen and (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+  
 }
 .LazyLoad {
   opacity: 0;
