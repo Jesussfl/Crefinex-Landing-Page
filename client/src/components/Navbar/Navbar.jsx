@@ -21,6 +21,9 @@ function Navbar() {
 
       if (isMobile) {
          setShowMenu((prevState) => !prevState);
+         !showMenu
+            ? (document.body.style.overflow = "hidden")
+            : (document.body.style.overflow = "scroll");
       }
    };
 

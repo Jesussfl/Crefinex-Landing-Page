@@ -13,11 +13,14 @@ export const Card = memo(function Card(props) {
    const navigate = useNavigate();
    const openModal = () => {
       navigate("/inicio/cursos");
+      document.body.style.overflow = "hidden";
       setOpen(true);
    };
 
    const closeModal = () => {
       navigate("/inicio");
+      document.body.style.overflow = "scroll";
+
       setOpen(false);
    };
    return (
