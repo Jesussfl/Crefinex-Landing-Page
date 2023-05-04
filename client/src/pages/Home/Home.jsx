@@ -45,8 +45,8 @@ function Home() {
       async function loadWebsiteData() {
          gapi.load("client", async () => {
             const headerData = await loadSheetData("Cabecera", "A:B");
-            const coursesData = await loadSheetData("Cursos", "A:F");
-            const resourcesData = await loadSheetData("Recursos", "A:D");
+            const coursesData = await loadSheetData("Cursos", "A:G");
+            const resourcesData = await loadSheetData("Recursos", "A:F");
             const locationData = await loadSheetData("Ubicacion", "A:B");
 
             setHeaderData(headerData);
