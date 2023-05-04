@@ -12,7 +12,7 @@ function SectionEducation() {
             offset={300}
             className="education__image-container">
             <img
-               src="images/webp/kids.webp"
+               src="https://ik.imagekit.io/jeflr/Crefinex-Landing-Page/Team/ni%C3%B1os-crefinex.jpg?updatedAt=1683211205628"
                alt="niños en clase"
                className="education__image"
                style={{
