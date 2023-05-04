@@ -6,24 +6,27 @@ import { Whatsapp } from "iconsax-react";
 
 export function Button(props) {
    return (
-      <motion.button
-         whileHover={{ scale: 1.05 }}
-         whileTap={{ scale: 0.95 }}
-         className="button"
-         style={props.style}
-         onClick={props.onClick}
-         type={props.type}
-         href={props.href}>
-         {props.leftIcon ? <i>{props.leftIcon}</i> : ""}
-         {props.href ? (
-            <Link to={props.href} style={{ color: "#fff" }}>
-               {props.text}
-            </Link>
-         ) : (
-            props.text
-         )}
-         {props.rightIcon ? <i>{props.rightIcon}</i> : ""}
-      </motion.button>
+      <div className="button__container">
+         <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="button"
+            style={props.style}
+            onClick={props.onClick}
+            type={props.type}
+            href={props.href}>
+            {props.leftIcon ? <i>{props.leftIcon}</i> : ""}
+            {props.href ? (
+               <Link to={props.href} style={{ color: "#fff" }}>
+                  {props.text}
+               </Link>
+            ) : (
+               props.text
+            )}
+            {props.rightIcon ? <i>{props.rightIcon}</i> : ""}
+         </motion.button>
+         <p className="callout">{props.helper}</p>
+      </div>
    );
 }
 export function FloatButton(props) {

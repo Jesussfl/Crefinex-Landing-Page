@@ -31,7 +31,9 @@
   width: 100%;
   border-radius: 24px 0 0 24px;
 }
-
+.scolarships__content-container :last-child{
+  width: 100px;
+}
 @media screen and (max-width: 768px) {
   .section__education{
     flex-direction: column;
@@ -44,5 +46,8 @@
   }
   .education__content{
     padding: 16px;
+  }
+  .scolarships__content-container :last-child{
+    width: 100%;
   }
 }

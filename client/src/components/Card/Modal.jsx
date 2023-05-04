@@ -47,6 +47,7 @@ const Modal = ({ data, close }) => {
                <Button
                   text="Adquirir por tarjeta"
                   href={LinkDeCompra}
+                  helper={"No valido para venezolanos"}
                   rightIcon={<RiBankCardFill />}
                />
             </motion.div>

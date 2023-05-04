@@ -56,6 +56,8 @@
   display: flex;
   justify-content: space-between;
   gap: 16px;
+  align-items: flex-start;
+
 }
 .modal__actions > * {
   flex: 1 1 0;
@@ -97,6 +99,7 @@
     padding: 16px;
   }
   .modal__actions{
+    
     flex-direction: column;
   }
   .modal__close-wrapper {
