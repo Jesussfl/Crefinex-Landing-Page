@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Header.css";
 
 //Methods
-import { loadSheetData } from "../../../services/googleSheetAPI";
 import { handleScrollTo } from "../../../controllers/scroller";
 
 //Components

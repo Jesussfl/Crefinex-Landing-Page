@@ -19,6 +19,9 @@ import {
    FloatButton,
 } from "../../components";
 
+import CustomCursor from "../../components/CustomCursor/CustomCursor";
+import CustomCursorManager from "../../components/CustomCursor/context/manager";
+
 //Methods
 import { loadSheetData } from "../../services/googleSheetAPI";
 
@@ -64,31 +67,34 @@ function Home() {
 
    return (
       <div className="home">
-         <FloatButton />
-         <Navbar />
-         <Header data={headerData} />
-         <SectionIntroduction />
-         <SectionScolarships />
-         <SectionMarquee />
-         <SectionCourses data={coursesData} />
-         <SectionEducation />
-         <SectionAboutUs />
-         <SectionResources data={resourcesData} />
-         <SectionContactUs data={locationData} />
-         <section
-            className="section__vacancy"
-            style={{
-               maxWidth: "1024px",
-               borderRadius: "20px",
-               height: "480px",
-               backgroundImage:
-                  "url(https://ik.imagekit.io/jeflr/Crefinex-Landing-Page/Covers/Banner-vacancy.jpg?updatedAt=1683126922322)",
-               backgroundSize: "100%",
-               backgroundPosition: "center",
-               backgroundRepeat: "no-repeat",
-            }}></section>
-         <SectionSubscribe />
-         <Footer />
+         <CustomCursorManager>
+            <CustomCursor />
+            <FloatButton />
+            <Navbar />
+            <Header data={headerData} />
+            <SectionIntroduction />
+            <SectionScolarships />
+            <SectionMarquee />
+            <SectionCourses data={coursesData} />
+            <SectionEducation />
+            <SectionAboutUs />
+            <SectionResources data={resourcesData} />
+            <SectionContactUs data={locationData} />
+            <section
+               className="section__vacancy"
+               style={{
+                  maxWidth: "1024px",
+                  borderRadius: "20px",
+                  height: "480px",
+                  backgroundImage:
+                     "url(https://ik.imagekit.io/jeflr/Crefinex-Landing-Page/Covers/Banner-vacancy.jpg?updatedAt=1683126922322)",
+                  backgroundSize: "100%",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+               }}></section>
+            <SectionSubscribe />
+            <Footer />
+         </CustomCursorManager>
       </div>
    );
 }
