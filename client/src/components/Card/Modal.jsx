@@ -1,11 +1,12 @@
 import React from "react";
 import "./Modal.css";
-import { RiCloseFill } from "react-icons/ri";
+import { RiCloseFill, RiWhatsappFill, RiBankCardFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 import LazyLoad from "react-lazy-load";
 import { Button } from "../index";
-const Modal = ({ data, close, image }) => {
-   const { Titulo, Descripcion, Precio, LinkDeCompra } = data;
+
+const Modal = ({ data, close }) => {
+   const { Titulo, Descripcion, Precio, LinkDeCompra, Tipo } = data;
 
    return (
       <motion.div
@@ -38,10 +39,16 @@ const Modal = ({ data, close, image }) => {
             <motion.div className="modal__actions">
                {" "}
                <Button
-                  onClick={close}
-                  text="Cancelar"
-                  style={{ backgroundColor: "var(--base-500)" }}></Button>
-               <Button text="Adquirir" href={LinkDeCompra}></Button>
+                  href={`https://api.whatsapp.com/send?phone=+58-0424-3151580&text=Hola%21%20me%20gustaria%20adquirir%20el%20${Tipo}%20de%20${Titulo}`}
+                  rightIcon={<RiWhatsappFill />}
+                  text="Pedirlo por whatsapp"
+                  style={{ backgroundColor: "#25d366" }}
+               />
+               <Button
+                  text="Adquirir por tarjeta"
+                  href={LinkDeCompra}
+                  rightIcon={<RiBankCardFill />}
+               />
             </motion.div>
          </motion.div>
          <motion.div
