@@ -1,6 +1,6 @@
 import React from "react";
 import "./TextField.css";
-export function TextField(props) {
+function TextField(props) {
    const InputComponent = props.multiline ? "textarea" : "input";
 
    return (
