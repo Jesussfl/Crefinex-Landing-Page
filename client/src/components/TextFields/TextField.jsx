@@ -2,6 +2,7 @@ import React from "react";
 import "./TextField.css";
 export function TextField(props) {
    const InputComponent = props.multiline ? "textarea" : "input";
+
    return (
       <div className="text-field-wrapper" style={props.style}>
          <label className="label callout">{props.label}</label>

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./ParallaxTextEffect.css";
+// import "./ParallaxTextEffect.css";
 
 import {
    motion,
