@@ -2,11 +2,11 @@ import React from "react";
 import { Card } from "../index";
 import { motion } from "framer-motion";
 import "./CarouselItem.css";
-function CarouselItem({ itemData, custom, identifier, key }) {
+function CarouselItem({ itemData, custom, identifier, itemKey }) {
    return (
       <motion.div
          className="carousel-item"
-         key={key}
+         key={itemKey}
          variants={variants}
          custom={custom}
          initial={identifier !== 1 && "enter"}
