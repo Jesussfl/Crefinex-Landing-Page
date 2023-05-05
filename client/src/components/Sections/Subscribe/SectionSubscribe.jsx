@@ -1,7 +1,7 @@
 import React from "react";
 import "./SectionSubscribe.css";
 import Button from "../../Buttons/Button";
-import TextField from "../../Textfields/TextField";
+import { TextField } from "../../index";
 import { ArrowCircleRight, Sms } from "iconsax-react";
 
 function Subscribe() {

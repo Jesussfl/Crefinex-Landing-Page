@@ -1,12 +1,12 @@
 //Components
 export { default as Navbar } from "./Navbar/Navbar";
 export { Button, FloatButton } from "./Buttons/Button";
-export { default as Card } from "./Card/Card";
 export { default as TextField } from "./Textfields/TextField";
 export { default as Modal } from "./Card/Modal";
 export { default as Overlay } from "./Card/Overlay";
 export { default as SplashScreen } from "./Splash/SplashScreen";
 
+export { default as Card } from "./Card/Card";
 //Sections
 export { default as Header } from "./Sections/Header/Header";
 export { default as SectionIntroduction } from "./Sections/Introduction/SectionIntroduction";
