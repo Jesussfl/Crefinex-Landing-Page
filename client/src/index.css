@@ -43,7 +43,7 @@ body {
   display: flex;
   /* place-items: center; */
   min-height: 100vh;
-cursor: none;
+/* cursor: none; */
 
 }
 @media screen and (max-width: 768px) {

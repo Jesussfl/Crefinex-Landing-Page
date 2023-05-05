@@ -2,7 +2,7 @@ import React, { useState, memo } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 
-import { Overlay, Modal } from "../index";
+import { Overlay, Modal, Button } from "../index";
 import LazyLoad from "react-lazy-load";
 
 import "./Card.css";
@@ -28,8 +28,7 @@ export const Card = memo(function Card(props) {
          <motion.div
             className="card"
             onClick={openModal}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}>
+            whileHover={{ scale: 1.05 }}>
             <div className="card__content">
                <LazyLoad offset={200} className="card__image-container">
                   <img
@@ -51,6 +50,9 @@ export const Card = memo(function Card(props) {
                         style={{ backgroundColor: "var(--base-500)" }}>
                         Presencial
                      </div>
+                  </div>
+                  <div className="card__details-row">
+                     <Button text="Ver más" onClick={openModal} />
                   </div>
                </div>
             </div>

@@ -11,7 +11,7 @@ import { Confetti } from "../../Decorations/Confetti/Confetti";
 import InViewEffect from "../../Decorations/InViewEffect/InViewEffect";
 
 //Icons
-import { ArrowCircleRight, Sms } from "iconsax-react";
+import { ArrowCircleDown } from "iconsax-react";
 
 function Header(props) {
    return (
@@ -74,7 +74,7 @@ function Header(props) {
                <Button
                   text="Ver Nuestros Cursos"
                   onClick={() => handleScrollTo("courses", 0)}
-                  rightIcon={<ArrowCircleRight variant="Bold" />}
+                  rightIcon={<ArrowCircleDown variant="Bold" />}
                />
             </div>
          </div>

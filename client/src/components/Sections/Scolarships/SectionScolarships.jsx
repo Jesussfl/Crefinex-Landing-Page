@@ -12,7 +12,8 @@ function SectionScolarships() {
             />
          </div>
          <div className="scolarships__content-container">
-            <h2>Becas Estudiantiles</h2>
+            <h2>Campaña contra el analfabetismo financiero</h2>
+            <h5>Otorgamos 90 becas</h5>
             <p>
                En Crefinex creemos que la educación financiera es fundamental
                para el futuro de nuestros niños, niñas y adolescentes. Es por
