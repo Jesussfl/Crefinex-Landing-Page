@@ -9,7 +9,8 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Checkout from "./pages/Checkout/Checkout";
-import { QueryClientProvider, QueryClient, useQueryClient } from "react-query";
+
+import { QueryClientProvider, QueryClient } from "react-query";
 import { createWebStoragePersistor } from "react-query/createWebStoragePersistor-experimental";
 import { persistQueryClient } from "react-query/persistQueryClient-experimental";
 
