@@ -1,9 +1,9 @@
 import React from "react";
 import "./PeopleRoundedBackground.css";
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 function PeopleRoundedBackground(props) {
    return (
-      <m
+      <motion.div
          initial={{ opacity: 0, scale: 0.5 }}
          animate={{ opacity: 1, scale: 1 }}
          transition={{
@@ -14,7 +14,7 @@ function PeopleRoundedBackground(props) {
          style={props.style}
          className={`people-container ${props.className}`}>
          <img src={props.src} alt={props.alt} />
-      </m>
+      </motion.div>
    );
 }
 
