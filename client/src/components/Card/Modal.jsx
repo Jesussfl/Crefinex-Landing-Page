@@ -4,9 +4,19 @@ import { RiCloseFill, RiWhatsappFill, RiBankCardFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 import LazyLoad from "react-lazy-load";
 import { Button } from "../index";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { getDataFromContext } from "../../context/DataContext";
+const Modal = () => {
+   const navigate = useNavigate();
+   const location = useLocation();
+   const { id } = useParams();
+   const data = getDataFromContext(location, id);
+   const { Titulo, Descripcion, Precio, LinkDeCompra, Tipo, Imagen } = data;
 
-const Modal = ({ data, close }) => {
-   const { Titulo, Descripcion, Precio, LinkDeCompra, Tipo } = data;
+   const closeModal = () => {
+      navigate("/inicio");
+      document.body.style.overflow = "scroll";
+   };
 
    return (
       <motion.div
@@ -18,7 +28,7 @@ const Modal = ({ data, close }) => {
             <motion.img
                className="modal__image"
                alt="real estate mansion"
-               src={data.Imagen}
+               src={Imagen}
                variants={imageVariants}></motion.img>
          </LazyLoad>
          <motion.div className="modal__info" variants={modalInfoVariants}>
@@ -55,7 +65,7 @@ const Modal = ({ data, close }) => {
          <motion.div
             className="modal__close-wrapper"
             whileHover={{ scale: 1.2 }}
-            onClick={close}>
+            onClick={closeModal}>
             <RiCloseFill
                size={32}
                color="var(--base-500)"

@@ -30,17 +30,17 @@ const confettiStyles = [
 const missionListItems = [
    {
       id: "fun-finance",
-      icon: "images/btc-coin.png",
+      icon: "/images/btc-coin.png",
       text: "Educar sobre finanzas de una forma divertida.",
    },
    {
       id: "saving-investment",
-      icon: "images/btc-coin.png",
+      icon: "/images/btc-coin.png",
       text: "Enseñar la importancia del ahorro y la inversión.",
    },
    {
       id: "solid-financial-future",
-      icon: "images/btc-coin.png",
+      icon: "/images/btc-coin.png",
       text: "Educar para un futuro financiero sólido.",
    },
 ];

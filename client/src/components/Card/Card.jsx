@@ -1,28 +1,26 @@
-import React, { useState, memo } from "react";
-
-import { motion, AnimatePresence } from "framer-motion";
-
-import { Overlay, Modal, Button } from "../index";
+import "./Card.css";
+import React, { memo } from "react";
 import LazyLoad from "react-lazy-load";
 
-import "./Card.css";
+import { motion } from "framer-motion";
+import { Button } from "../index";
 import { useNavigate } from "react-router-dom";
 
 export const Card = memo(function Card(props) {
-   const [open, setOpen] = useState(false);
    const navigate = useNavigate();
    const openModal = () => {
-      navigate("/inicio/cursos");
+      const tituloUrl = encodeURIComponent(
+         props.title
+            .toLowerCase()
+            .replace(/[^\w\s]/gi, "")
+            .replace(/\s+/g, "-")
+      );
+      navigate(`${props.type}s/${tituloUrl}/${props.id}`, {
+         state: props.data,
+      });
       document.body.style.overflow = "hidden";
-      setOpen(true);
    };
 
-   const closeModal = () => {
-      navigate("/inicio");
-      document.body.style.overflow = "scroll";
-
-      setOpen(false);
-   };
    return (
       <>
          <motion.div
@@ -57,17 +55,6 @@ export const Card = memo(function Card(props) {
                </div>
             </div>
          </motion.div>
-         <AnimatePresence>
-            {open && (
-               <Overlay close={closeModal}>
-                  <Modal
-                     data={props.data}
-                     image={props.image}
-                     close={closeModal}
-                  />
-               </Overlay>
-            )}
-         </AnimatePresence>
       </>
    );
 });

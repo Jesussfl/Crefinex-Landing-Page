@@ -129,7 +129,7 @@ const socialNetworks = [
       address: "https://www.tiktok.com/@yismaryariass?lang=es",
       leftIcon: (
          <img
-            src="images/tiktok_fill.svg"
+            src="/images/tiktok_fill.svg"
             alt="TikTok icon"
             style={{ width: "30px" }}
          />
