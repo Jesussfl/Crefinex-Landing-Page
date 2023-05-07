@@ -1,7 +1,7 @@
 //Components
 export { default as Navbar } from "./Navbar/Navbar";
 export { Button, FloatButton } from "./Buttons/Button";
-export { default as TextField } from "./Textfields/TextField";
+export { default as TextField } from "./TextFields/TextField";
 export { default as Modal } from "./Card/Modal";
 export { default as Overlay } from "./Card/Overlay";
 export { default as SplashScreen } from "./Splash/SplashScreen";
