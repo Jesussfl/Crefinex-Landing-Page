@@ -29,7 +29,7 @@ export function Button(props) {
       </div>
    );
 }
-export function FloatButton(props) {
+export function FloatButton() {
    return (
       <a
          href="https://api.whatsapp.com/send?phone=+58-0424-3151580&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20Crefinex"

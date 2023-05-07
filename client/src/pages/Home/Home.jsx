@@ -1,5 +1,6 @@
 import "./Home.css";
 import React, { memo } from "react";
+import { Outlet } from "react-router-dom";
 
 import {
    SplashScreen,
@@ -43,6 +44,7 @@ const Home = memo(function Home() {
          <SectionContactUs data={data.locationData} />
          <SectionSubscribe />
          <Footer />
+         <Outlet />
       </div>
    );
 });
