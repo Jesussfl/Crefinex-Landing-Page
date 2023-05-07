@@ -3,7 +3,6 @@ import React, { memo } from "react";
 import { Outlet } from "react-router-dom";
 
 import {
-   SplashScreen,
    Navbar,
    Header,
    SectionIntroduction,
@@ -18,16 +17,9 @@ import {
    Footer,
    FloatButton,
 } from "../../components";
-
-import { loadSheetData } from "../../services/googleSheetAPI";
-import { useQuery } from "react-query";
-
+import { useDataContext } from "../../context/DataContext";
 const Home = memo(function Home() {
-   const { isLoading, data } = useQuery("data", getData);
-
-   if (isLoading || !data) {
-      return <SplashScreen />;
-   }
+   const data = useDataContext();
 
    return (
       <div className="home">
@@ -48,19 +40,5 @@ const Home = memo(function Home() {
       </div>
    );
 });
-
-async function getData() {
-   await gapi.load("client");
-   const headerData = await loadSheetData("Cabecera", "A:B");
-   const coursesData = await loadSheetData("Cursos", "A:G");
-   const resourcesData = await loadSheetData("Recursos", "A:F");
-   const locationData = await loadSheetData("Ubicacion", "A:B");
-   return {
-      headerData,
-      coursesData,
-      resourcesData,
-      locationData,
-   };
-}
 
 export default Home;

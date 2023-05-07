@@ -9,7 +9,15 @@ import { useNavigate } from "react-router-dom";
 export const Card = memo(function Card(props) {
    const navigate = useNavigate();
    const openModal = () => {
-      navigate("cursos", { state: props.data });
+      const tituloUrl = encodeURIComponent(
+         props.title
+            .toLowerCase()
+            .replace(/[^\w\s]/gi, "")
+            .replace(/\s+/g, "-")
+      );
+      navigate(`${props.type}s/${tituloUrl}/${props.id}`, {
+         state: props.data,
+      });
       document.body.style.overflow = "hidden";
    };
 

@@ -15,7 +15,7 @@ function SectionIntroduction() {
             <span></span>
             <IntroductionCard animationDelay={0.35}>
                <img
-                  src="images/webp/rocket-dynamic-color.webp"
+                  src="/images/webp/rocket-dynamic-color.webp"
                   alt="Exito-Icono"
                />
                <p className="headline">Educación Financiera</p>
@@ -26,7 +26,7 @@ function SectionIntroduction() {
             </IntroductionCard>
             <IntroductionCard animationDelay={0.4}>
                <img
-                  src="images/webp/target-dynamic-color.webp"
+                  src="/images/webp/target-dynamic-color.webp"
                   alt="Criptoeconomía-Icono"
                />
                <p className="headline">Criptoeconomía</p>
@@ -36,7 +36,7 @@ function SectionIntroduction() {
             </IntroductionCard>
             <IntroductionCard animationDelay={0.6}>
                <img
-                  src="images/webp/dollar-dollar-color.webp"
+                  src="/images/webp/dollar-dollar-color.webp"
                   alt="Emprendimiento-Icono"
                />
                <p className="headline">Emprendimiento</p>

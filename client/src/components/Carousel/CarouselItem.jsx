@@ -18,6 +18,8 @@ function CarouselItem({ itemData, custom, identifier, itemKey }) {
          {
             <Card
                data={itemData}
+               id={itemData.Id}
+               type={itemData.Tipo}
                title={itemData.Titulo}
                description={itemData.Descripcion}
                image={itemData.Imagen}

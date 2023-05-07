@@ -56,7 +56,8 @@ const CarouselFramer = memo(function CarouselFramer({ data }) {
                <AnimatePresence custom={{ direction, width }}>
                   {displayedElements.map((item, index) => (
                      <CarouselItem
-                        key={item.Titulo}
+                        key={item.Id}
+                        type={item.Tipo}
                         itemData={item}
                         identifier={index}
                         custom={{ direction, width }}

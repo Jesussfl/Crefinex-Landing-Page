@@ -4,16 +4,19 @@ import { RiCloseFill, RiWhatsappFill, RiBankCardFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 import LazyLoad from "react-lazy-load";
 import { Button } from "../index";
-import { useLocation, useNavigate } from "react-router-dom";
-
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { getDataFromContext } from "../../context/DataContext";
 const Modal = () => {
    const navigate = useNavigate();
+   const location = useLocation();
+   const { id } = useParams();
+   const data = getDataFromContext(location, id);
+   const { Titulo, Descripcion, Precio, LinkDeCompra, Tipo, Imagen } = data;
+
    const closeModal = () => {
-      navigate(-1);
+      navigate("/inicio");
       document.body.style.overflow = "scroll";
    };
-   const { state } = useLocation();
-   const { Titulo, Descripcion, Precio, LinkDeCompra, Tipo, Imagen } = state;
 
    return (
       <motion.div

@@ -9,6 +9,8 @@ function Carousel({ data }) {
             {data.map((card, index) => (
                <Card
                   key={index}
+                  id={card.Id}
+                  type={card.Tipo}
                   title={card.Titulo}
                   description={card.Descripcion}
                   image={card.Imagen}

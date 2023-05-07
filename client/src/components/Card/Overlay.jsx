@@ -6,7 +6,7 @@ import "./Overlay.css";
 const Overlay = ({ children }) => {
    const navigate = useNavigate();
    const closeModal = () => {
-      navigate(-1);
+      navigate("/inicio");
       document.body.style.overflow = "scroll";
    };
    const variants = {
