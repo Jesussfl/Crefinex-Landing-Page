@@ -5,7 +5,9 @@ export { default as TextField } from "./TextFields/TextField";
 export { default as Modal } from "./Card/Modal";
 export { default as Overlay } from "./Card/Overlay";
 export { default as SplashScreen } from "./Splash/SplashScreen";
-
+export { default as List } from "./List/List";
+export { default as CourseList } from "./List/CourseList";
+export { default as Rate } from "./Rate/Rate";
 export { default as Card } from "./Card/Card";
 //Sections
 export { default as Header } from "./Sections/Header/Header";

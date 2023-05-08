@@ -3,15 +3,19 @@ import "./Modal.css";
 import { RiCloseFill, RiWhatsappFill, RiBankCardFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 import LazyLoad from "react-lazy-load";
-import { Button } from "../index";
+import { Button, CourseList, Rate } from "../index";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { getDataFromContext } from "../../context/DataContext";
+import { getDataFromContext, useDataContext } from "../../context/DataContext";
 const Modal = () => {
+   const data = useDataContext();
+
    const navigate = useNavigate();
    const location = useLocation();
    const { id } = useParams();
-   const data = getDataFromContext(location, id);
-   const { Titulo, Descripcion, Precio, LinkDeCompra, Tipo, Imagen } = data;
+   const productsData = getDataFromContext(location, id, data);
+
+   const { Titulo, Descripcion, Precio, LinkDeCompra, Tipo, Imagen } =
+      productsData;
 
    const closeModal = () => {
       navigate("/inicio");
@@ -24,30 +28,15 @@ const Modal = () => {
          variants={modalVariants}
          onClick={(e) => e.stopPropagation()}
          layout>
-         <LazyLoad className="modal__image-container">
-            <motion.img
-               className="modal__image"
-               alt="real estate mansion"
-               src={Imagen}
-               variants={imageVariants}></motion.img>
-         </LazyLoad>
-         <motion.div className="modal__info" variants={modalInfoVariants}>
-            <motion.div className="modal__row" variants={modalRowVariants}>
-               <h5 className="modal__title">{Titulo}</h5>
-               <div className="modal__tag">
-                  <p className="modal__price headline">{Precio}</p>
-               </div>
-               <motion.div
-                  className="modal__description-wrapper"
-                  variants={modalRowVariants}>
-                  <p className="modal__description body-medium">
-                     {Descripcion}
-                  </p>
-               </motion.div>
-            </motion.div>
-
+         <div className="modal__left-container">
+            <LazyLoad className="modal__image-container">
+               <motion.img
+                  className="modal__image"
+                  alt="real estate mansion"
+                  src={Imagen}
+                  variants={imageVariants}></motion.img>
+            </LazyLoad>{" "}
             <motion.div className="modal__actions">
-               {" "}
                <Button
                   href={`https://api.whatsapp.com/send?phone=+58-0424-3151580&text=Hola%21%20me%20gustaria%20adquirir%20el%20${Tipo}%20de%20${Titulo}`}
                   rightIcon={<RiWhatsappFill />}
@@ -60,6 +49,32 @@ const Modal = () => {
                   helper={"No valido para venezolanos"}
                   rightIcon={<RiBankCardFill />}
                />
+            </motion.div>
+         </div>
+         <motion.div className="modal__info" variants={modalInfoVariants}>
+            <motion.div className="modal__row" variants={modalRowVariants}>
+               <h5 className="modal__title">{Titulo}</h5>
+               <motion.div
+                  className="modal__description-wrapper"
+                  variants={modalRowVariants}>
+                  <p className="modal__description body-medium">
+                     {Descripcion}
+                  </p>
+               </motion.div>
+               <Rate />
+               <div className="modal__tag">
+                  <p className="modal__price headline">{Precio}</p>
+               </div>
+               <CourseList />
+            </motion.div>
+            <motion.div className="modal__row" variants={modalRowVariants}>
+               <h6>¿Qué se aprenderá?</h6>
+            </motion.div>
+            <motion.div className="modal__row" variants={modalRowVariants}>
+               <h6>¿Para quién es este curso?</h6>
+            </motion.div>
+            <motion.div className="modal__row" variants={modalRowVariants}>
+               <h6>Preguntas Frecuentes</h6>
             </motion.div>
          </motion.div>
          <motion.div
