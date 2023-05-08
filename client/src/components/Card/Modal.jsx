@@ -5,21 +5,17 @@ import { motion } from "framer-motion";
 import LazyLoad from "react-lazy-load";
 import { Button, CourseList, Rate } from "../index";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { useDataContext } from "../../context/DataContext";
+import { getDataFromContext, useDataContext } from "../../context/DataContext";
 const Modal = () => {
    const data = useDataContext();
+
    const navigate = useNavigate();
    const location = useLocation();
    const { id } = useParams();
-   const routeParts = location.pathname.split("/");
-   const routeName = routeParts[2];
-   const type = routeName === "cursos" ? "cursos" : "libros";
-   const { coursesData, resourcesData } = data;
-   const dataToReturn =
-      type === "cursos" ? coursesData[id - 1] : resourcesData[id - 1];
+   const productsData = getDataFromContext(location, id, data);
 
    const { Titulo, Descripcion, Precio, LinkDeCompra, Tipo, Imagen } =
-      dataToReturn;
+      productsData;
 
    const closeModal = () => {
       navigate("/inicio");
@@ -33,7 +29,6 @@ const Modal = () => {
          onClick={(e) => e.stopPropagation()}
          layout>
          <div className="modal__left-container">
-            {/* <div className="modal__image-container"></div> */}
             <LazyLoad className="modal__image-container">
                <motion.img
                   className="modal__image"
@@ -71,6 +66,15 @@ const Modal = () => {
                   <p className="modal__price headline">{Precio}</p>
                </div>
                <CourseList />
+            </motion.div>
+            <motion.div className="modal__row" variants={modalRowVariants}>
+               <h6>¿Qué se aprenderá?</h6>
+            </motion.div>
+            <motion.div className="modal__row" variants={modalRowVariants}>
+               <h6>¿Para quién es este curso?</h6>
+            </motion.div>
+            <motion.div className="modal__row" variants={modalRowVariants}>
+               <h6>Preguntas Frecuentes</h6>
             </motion.div>
          </motion.div>
          <motion.div

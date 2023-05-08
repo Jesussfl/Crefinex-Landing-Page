@@ -1,6 +1,7 @@
 import "./Home.css";
 import React, { memo } from "react";
 import { Outlet } from "react-router-dom";
+import { useQuery } from "react-query";
 
 import {
    Navbar,
@@ -19,7 +20,10 @@ import {
 } from "../../components";
 import { useDataContext } from "../../context/DataContext";
 const Home = memo(function Home() {
-   const data = useDataContext();
+   const { isLoading, data } = useQuery("data", useDataContext());
+
+   // const data = useDataContext();
+   console.log("Renderizando");
    return (
       <div className="home">
          <FloatButton />
