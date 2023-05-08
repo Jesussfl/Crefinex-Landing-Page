@@ -1,0 +1,32 @@
+.list__container{
+    background-color: var(--base-white);
+    border-radius: 20px;
+    gap: 12px;
+    display: flex;
+    box-sizing: border-box;
+
+}
+.list__leftIcon{
+    background-color: #ffe9209d;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3a3a3a;
+}
+.list__texts{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+}
+.list__title{
+    margin: 0;
+    font-size: 0.9rem;
+}
+.list__subtitle{
+    font-size: 0.84rem;
+    line-height: 20px;
+    color: var(--base-400);
+}

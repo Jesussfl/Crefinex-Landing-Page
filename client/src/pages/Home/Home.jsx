@@ -20,7 +20,6 @@ import {
 import { useDataContext } from "../../context/DataContext";
 const Home = memo(function Home() {
    const data = useDataContext();
-
    return (
       <div className="home">
          <FloatButton />

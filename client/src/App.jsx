@@ -6,7 +6,7 @@ import { Overlay, Modal } from "./components/index";
 import Home from "./pages/Home/Home";
 import Checkout from "./pages/Checkout/Checkout";
 import { queryClient, QueryClientProvider } from "./constants/queryClient";
-import { DataProvider } from "./context/DataContext";
+import { DataProvider, useDataContext } from "./context/DataContext";
 function App() {
    return (
       <div className="App">

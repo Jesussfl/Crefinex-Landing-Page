@@ -1,0 +1,13 @@
+.course__details{
+    display: flex;
+    gap: 24px;
+}
+.details__row{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    box-sizing: border-box;
+    gap: 24px;
+
+}
