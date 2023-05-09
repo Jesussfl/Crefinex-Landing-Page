@@ -8,6 +8,7 @@
   flex-direction: row-reverse;
   position: relative;
   overflow: scroll;
+  transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1) 0.1s;
 }
 .modal__left-container{
   flex: 0 1 50%;

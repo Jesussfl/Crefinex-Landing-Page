@@ -11,10 +11,10 @@ function Faqs({ faqType }) {
          <ul className="faqs__container">
             {faqType === "online"
                ? faqsOnline.map((faq) => (
-                    <AccordionItem key={faq.id} faq={faq} />
+                    <AccordionItem key={faq.Id} faq={faq} />
                  ))
                : faqsOnSite.map((faq) => (
-                    <AccordionItem key={faq.id} faq={faq} />
+                    <AccordionItem key={faq.Id} faq={faq} />
                  ))}
          </ul>
       </>

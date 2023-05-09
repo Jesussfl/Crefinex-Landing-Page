@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Modal.css";
 import { motion } from "framer-motion";
 
@@ -11,11 +11,31 @@ import {
    CourseList,
    Faqs,
 } from "../index";
-
+import { BookList } from "../List/CourseList";
 import { useLocation, useParams } from "react-router-dom";
 import { getDataFromContext, useDataContext } from "../../context/DataContext";
+import ModalWhoSection from "./ModalWhoSection";
 
 const Modal = () => {
+   const modalRef = useRef(null);
+
+   function handleScroll() {
+      const scrollTop = modalRef.current.scrollTop;
+      const maxScrollTop =
+         modalRef.current.scrollHeight - modalRef.current.clientHeight;
+      const value = (maxScrollTop - scrollTop) / maxScrollTop;
+      console.log(value);
+      if (value < 0.9) {
+         modalRef.current.style.width = "100%";
+         modalRef.current.style.height = "100%";
+         modalRef.current.style.borderRadius = "0px";
+      }
+      if (value > 0.9) {
+         modalRef.current.style.width = "90%";
+         modalRef.current.style.height = "90%";
+         modalRef.current.style.borderRadius = "24px";
+      }
+   }
    const data = useDataContext();
    const location = useLocation();
    const { id } = useParams();
@@ -30,6 +50,8 @@ const Modal = () => {
          className="modal"
          variants={modalVariants}
          onClick={(e) => e.stopPropagation()}
+         onWheel={handleScroll}
+         ref={modalRef}
          layout>
          <div className="modal__left-container">
             <LazyLoad className="modal__image-container">
@@ -55,17 +77,25 @@ const Modal = () => {
 
             {/* Courses */}
             <motion.div className="modal__row" variants={modalRowVariants}>
-               <CourseList />
+               {Tipo == "curso" ? <CourseList /> : <BookList />}
             </motion.div>
 
             {/* For what to learn */}
             <motion.div className="modal__row" variants={modalRowVariants}>
                <h6>¿Qué se aprenderá?</h6>
+               <p>
+                  Los conocimientos básicos cómo manejar las finanzas
+                  personales, planificando y estableciendo metas, valorando la
+                  importancia que tiene la toma de decisiones para el logro de
+                  sus objetivos. Practicar los hábitos de ahorro como base
+                  fundamental para invertir y mejorar su calidad de vida
+                  personal y familiar.
+               </p>
             </motion.div>
 
-            {/* For whose to learn */}
+            {/* Who is this course for */}
             <motion.div className="modal__row" variants={modalRowVariants}>
-               <h6>¿Para quién es este curso?</h6>
+               <ModalWhoSection />
             </motion.div>
 
             {/* FAQS */}

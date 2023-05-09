@@ -32,5 +32,34 @@ function CourseList() {
       </div>
    );
 }
-
+export function BookList() {
+   return (
+      <div className="course__details">
+         <div className="details__row">
+            <List
+               icon={<Wifi variant="Bold" />}
+               title="Actividades Incluidas"
+               description="Empieza ahora y aprende en línea"
+            />
+            <List
+               title="Ilustraciones y Dibujos"
+               icon={<Calendar variant="Bold" />}
+               description="Establece fechas limites segun tus necesidades"
+            />
+         </div>
+         <div className="details__row">
+            <List
+               icon={<Clock variant="Bold" />}
+               title="Educativo"
+               description="4 horas por semana sugeridas"
+            />
+            <List
+               icon={<VideoSquare variant="Bold" />}
+               title="Enseñanza"
+               description="Los puedes ver en cualquier momento del dia"
+            />
+         </div>
+      </div>
+   );
+}
 export default CourseList;
