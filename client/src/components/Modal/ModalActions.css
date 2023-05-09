@@ -1,0 +1,23 @@
+.modal__actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: flex-start;
+  padding: 24px;
+  box-sizing: border-box;
+  }
+  .modal__actions > * {
+    flex: 1 1 0;
+  }
+  
+
+@media screen and (max-width: 768px) {
+
+    .modal__actions{
+      
+      flex-direction: column;
+    }
+
+  }
+  

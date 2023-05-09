@@ -1,0 +1,44 @@
+
+ .accordion__button {
+    font-size: 16px;
+    background-color:var(--base-200);
+    color: var(--base-600);
+    text-align: left;
+    font-weight: 700;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    cursor: pointer;
+    border: 2px solid var(--base-200);
+    box-sizing: border-box;
+  }
+  .accordion__button:hover {
+    border: 2px solid var(--base-400);
+      
+      background-color: var(--base-200);
+  }
+  .accordion__control {
+    font-size: 20px;
+  }
+  
+  .accordion__answer {
+    background-color: #f7f7f7;
+    padding: 20px;
+  }
+  
+  /* activate toggle */
+  .accordion__item.active .accordion__button {
+    background-color: var(--secondary-color-blue);
+    color: var(--base-white);
+  }
+  .accordion__answer-wrapper {
+    height: 0;
+    overflow: hidden;
+    transition: height ease 0.2s;
+  }
+  /* .answer_wrapper.open {
+    height: auto;
+  } */
+  
