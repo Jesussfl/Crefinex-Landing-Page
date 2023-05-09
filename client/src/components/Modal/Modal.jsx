@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Modal.css";
 import { motion } from "framer-motion";
 
@@ -18,19 +18,24 @@ import ModalWhoSection from "./ModalWhoSection";
 
 const Modal = () => {
    const modalRef = useRef(null);
-
+   useEffect(() => {
+      document.body.style.overflow = "hidden";
+      return () => {
+         document.body.style.overflow = "unset";
+      };
+   }, []);
    function handleScroll() {
+      const isMobile = window.innerWidth <= 768;
       const scrollTop = modalRef.current.scrollTop;
       const maxScrollTop =
          modalRef.current.scrollHeight - modalRef.current.clientHeight;
       const value = (maxScrollTop - scrollTop) / maxScrollTop;
-      console.log(value);
-      if (value < 0.9) {
+      if (value < 0.9 && !isMobile) {
          modalRef.current.style.width = "100%";
          modalRef.current.style.height = "100%";
          modalRef.current.style.borderRadius = "0px";
       }
-      if (value > 0.9) {
+      if (value > 0.9 && !isMobile) {
          modalRef.current.style.width = "90%";
          modalRef.current.style.height = "90%";
          modalRef.current.style.borderRadius = "24px";

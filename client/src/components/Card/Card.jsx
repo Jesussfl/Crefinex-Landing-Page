@@ -18,7 +18,6 @@ export const Card = memo(function Card(props) {
       navigate(`${props.type}s/${tituloUrl}/${props.id}`, {
          state: props.data,
       });
-      document.body.style.overflow = "hidden";
    };
 
    return (

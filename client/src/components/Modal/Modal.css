@@ -20,13 +20,14 @@
 }
 .modal__image-container {
   background-color: var(--base-200);
-  flex: 0 1 120%;
+  /* flex: 0 1 120%; */
   display: flex;
   justify-content: center;
   border-radius: 20px;
   overflow: hidden;
 }
 .modal__image {
+  width: auto;
   height: 100%;
 }
 .modal__info {
@@ -54,17 +55,27 @@
     height: 100%;
     box-sizing: border-box;
     border-radius: 0;
+    display: block;
+  }
+  .modal__left-container, .modal__image-container, .modal__info{
+    flex: initial;
   }
   .modal__image-container {
     background-color: var(--base-200);
     border-top-right-radius: 0;
     border-top-left-radius: 0;
   }
-
+  .modal__image {
+    width: 100%;
+  }
   .modal__info {
     box-sizing: border-box;
     height: 100%;
     padding: 16px;
+    
+  }
+  .modal__actions > * {
+    width: 100%;
   }
 
 
