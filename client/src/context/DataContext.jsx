@@ -21,14 +21,24 @@ async function getData() {
    console.log("Fetcheando");
 
    const headerData = await loadSheetData("Cabecera", "A:B");
-   const coursesData = await loadSheetData("Cursos", "A:H");
+   const coursesData = await loadSheetData("Cursos", "A:I");
    const resourcesData = await loadSheetData("Recursos", "A:G");
    const locationData = await loadSheetData("Ubicacion", "A:B");
+   const faqsOnline = await loadSheetData(
+      "Preguntas Frecuentes - Cursos Online",
+      "A:C"
+   );
+   const faqsOnSite = await loadSheetData(
+      "Preguntas Frecuentes - Cursos Presenciales",
+      "A:C"
+   );
    return {
       headerData,
       coursesData,
       resourcesData,
       locationData,
+      faqsOnline,
+      faqsOnSite,
    };
 }
 

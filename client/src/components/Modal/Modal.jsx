@@ -1,26 +1,29 @@
 import React from "react";
 import "./Modal.css";
-import { RiCloseFill, RiWhatsappFill, RiBankCardFill } from "react-icons/ri";
 import { motion } from "framer-motion";
+
 import LazyLoad from "react-lazy-load";
-import { Button, CourseList, Rate } from "../index";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+
+import {
+   ModalCloseButton,
+   ModalActions,
+   ModalHeader,
+   CourseList,
+   Faqs,
+} from "../index";
+
+import { useLocation, useParams } from "react-router-dom";
 import { getDataFromContext, useDataContext } from "../../context/DataContext";
+
 const Modal = () => {
    const data = useDataContext();
-
-   const navigate = useNavigate();
    const location = useLocation();
    const { id } = useParams();
+
    const productsData = getDataFromContext(location, id, data);
 
    const { Titulo, Descripcion, Precio, LinkDeCompra, Tipo, Imagen } =
       productsData;
-
-   const closeModal = () => {
-      navigate("/inicio");
-      document.body.style.overflow = "scroll";
-   };
 
    return (
       <motion.div
@@ -36,57 +39,42 @@ const Modal = () => {
                   src={Imagen}
                   variants={imageVariants}></motion.img>
             </LazyLoad>{" "}
-            <motion.div className="modal__actions">
-               <Button
-                  href={`https://api.whatsapp.com/send?phone=+58-0424-3151580&text=Hola%21%20me%20gustaria%20adquirir%20el%20${Tipo}%20de%20${Titulo}`}
-                  rightIcon={<RiWhatsappFill />}
-                  text="Pedirlo por whatsapp"
-                  style={{ backgroundColor: "#25d366" }}
-               />
-               <Button
-                  text="Adquirir por tarjeta"
-                  href={LinkDeCompra}
-                  helper={"No valido para venezolanos"}
-                  rightIcon={<RiBankCardFill />}
-               />
-            </motion.div>
+            <ModalActions
+               Tipo={Tipo}
+               Titulo={Titulo}
+               LinkDeCompra={LinkDeCompra}
+               Precio={Precio}
+            />
          </div>
          <motion.div className="modal__info" variants={modalInfoVariants}>
+            <ModalHeader
+               Titulo={Titulo}
+               Descripcion={Descripcion}
+               Precio={Precio}
+            />
+
+            {/* Courses */}
             <motion.div className="modal__row" variants={modalRowVariants}>
-               <h5 className="modal__title">{Titulo}</h5>
-               <motion.div
-                  className="modal__description-wrapper"
-                  variants={modalRowVariants}>
-                  <p className="modal__description body-medium">
-                     {Descripcion}
-                  </p>
-               </motion.div>
-               <Rate />
-               <div className="modal__tag">
-                  <p className="modal__price headline">{Precio}</p>
-               </div>
                <CourseList />
             </motion.div>
+
+            {/* For what to learn */}
             <motion.div className="modal__row" variants={modalRowVariants}>
                <h6>¿Qué se aprenderá?</h6>
             </motion.div>
+
+            {/* For whose to learn */}
             <motion.div className="modal__row" variants={modalRowVariants}>
                <h6>¿Para quién es este curso?</h6>
             </motion.div>
+
+            {/* FAQS */}
+
             <motion.div className="modal__row" variants={modalRowVariants}>
-               <h6>Preguntas Frecuentes</h6>
+               <Faqs faqType={"online"} />
             </motion.div>
          </motion.div>
-         <motion.div
-            className="modal__close-wrapper"
-            whileHover={{ scale: 1.2 }}
-            onClick={closeModal}>
-            <RiCloseFill
-               size={32}
-               color="var(--base-500)"
-               className="modal__close-icon"
-            />
-         </motion.div>
+         <ModalCloseButton />
       </motion.div>
    );
 };
