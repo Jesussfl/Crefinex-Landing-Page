@@ -8,7 +8,6 @@ function ModalCloseButton() {
 
    const closeModal = () => {
       navigate("/inicio");
-      // document.body.style.overflow = "scroll";
    };
    return (
       <motion.div
