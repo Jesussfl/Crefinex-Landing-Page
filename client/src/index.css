@@ -3,7 +3,7 @@
 :root {
   font-family: "Sora", sans-serif;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
   color: var(--base-600);
   background-color: var(--base-100);
 
@@ -70,6 +70,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
   text-align: center;
+  color: #fff;
 }
 button:hover {
   background-color: var(--base-500);
