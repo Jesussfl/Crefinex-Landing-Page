@@ -30,7 +30,6 @@
   padding: 12px;
   border-radius: 24px;
   height: 556px;
-
   box-sizing: border-box;
 }
 .card__image-container {
@@ -66,6 +65,6 @@
 
   padding: 8px 16px;
   border-radius: 50px;
-
+  font-size: 0.85rem;
   text-align: center;
 }
