@@ -3,11 +3,7 @@ import "./Navbar.css";
 import NavItem from "../NavItem/NavItem";
 import { Button } from "../index";
 import { HambergerMenu } from "iconsax-react";
-import {
-   RiFacebookCircleFill,
-   RiYoutubeFill,
-   RiInstagramFill,
-} from "react-icons/ri";
+import { RiFacebookCircleFill, RiYoutubeFill, RiInstagramFill } from "react-icons/ri";
 import { handleScrollTo } from "../../controllers/scroller";
 import { useInView } from "framer-motion";
 function Navbar() {
@@ -21,9 +17,7 @@ function Navbar() {
 
       if (isMobile) {
          setShowMenu((prevState) => !prevState);
-         !showMenu
-            ? (document.body.style.overflow = "hidden")
-            : (document.body.style.overflow = "scroll");
+         !showMenu ? (document.body.style.overflow = "hidden") : (document.body.style.overflow = "scroll");
       }
    };
 
@@ -36,10 +30,7 @@ function Navbar() {
                transform: inView ? "translateX(0)" : "translateX(-200px)",
                transition: "all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s",
             }}>
-            <img
-               src={`/logo-crefinex${showMenu ? "-white" : ""}.svg`}
-               alt="Crefinex logo"
-            />
+            <img src={`/logo-crefinex${showMenu ? "-white" : ""}.svg`} alt="Crefinex logo" />
          </div>
          <div
             className={`right-side ${showMenu ? "opened" : ""}`}
@@ -61,29 +52,18 @@ function Navbar() {
                ))}
             </div>
             <div className="actions">
-               <Button
-                  onClick={() => handleScrollTo("courses", 0)}
-                  text="Explorar Cursos"></Button>
+               <Button onClick={() => handleScrollTo("courses", 0)} text="Explorar Cursos"></Button>
             </div>
-            <div
-               className={`social-networks ${
-                  showMenu ? "social-networks-opened" : ""
-               }`}>
+            <div className={`social-networks ${showMenu ? "social-networks-opened" : ""}`}>
                <p className="body-large">Nuestras Redes</p>
                <div className="buttons">
                   {socialNetworks.map((item, index) => (
-                     <NavItem
-                        key={index}
-                        address={item.address}
-                        leftIcon={item.leftIcon}
-                     />
+                     <NavItem key={index} address={item.address} leftIcon={item.leftIcon} />
                   ))}
                </div>
             </div>
          </div>
-         <div
-            onClick={handleMenuClick}
-            className={`menu ${showMenu ? "opened-elements" : ""}`}>
+         <div onClick={handleMenuClick} className={`menu ${showMenu ? "opened-elements" : ""}`}>
             <HambergerMenu variant="Bold" size={36} />
          </div>
       </nav>
@@ -103,7 +83,7 @@ const navItems = [
       onClick: () => handleScrollTo("aboutUs", 0),
    },
    {
-      text: "Recursos",
+      text: "Libros",
       onClick: () => handleScrollTo("resources", 0),
    },
    {
@@ -127,13 +107,7 @@ const socialNetworks = [
    },
    {
       address: "https://www.tiktok.com/@yismaryariass?lang=es",
-      leftIcon: (
-         <img
-            src="/images/tiktok_fill.svg"
-            alt="TikTok icon"
-            style={{ width: "30px" }}
-         />
-      ),
+      leftIcon: <img src="/images/tiktok_fill.svg" alt="TikTok icon" style={{ width: "30px" }} />,
    },
 ];
 

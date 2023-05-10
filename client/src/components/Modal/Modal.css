@@ -9,6 +9,7 @@
   position: relative;
   overflow: auto;
   transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1) 0.1s;
+  box-sizing: border-box;
 }
 .modal__left-container{
   flex: 0 1 50%;

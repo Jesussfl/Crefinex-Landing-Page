@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-function ModalWhoSection() {
+function ModalWhoSection({ type }) {
    return (
       <motion.div variants={ModalWhoSectionVariants}>
-         <h6>¿Para quién es este curso?</h6>
+         {type == "curso" ? <h6>¿Para quién es este curso?</h6> : <h6>¿Para quién es este libro?</h6>}
+
          <ul>
             <li>Para toda persona que desee un mejor futuro a su hijo.</li>
             <li>Para toda persona que desee reconocer sus emociones.</li>

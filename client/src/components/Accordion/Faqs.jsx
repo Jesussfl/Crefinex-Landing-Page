@@ -1,18 +1,26 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { AccordionItem } from "../index";
 import "./Faqs.css";
 import { useDataContext } from "../../context/DataContext";
 import { motion } from "framer-motion";
-function Faqs({ faqType }) {
-   const { faqsOnline, faqsOnSite } = useDataContext();
-   console.log(faqType, faqsOnline, faqsOnSite);
+function Faqs({ type, modality }) {
+   const [faqType, setFaqType] = useState([]);
+   const { faqsOnline, faqsOnSite, booksFaqs } = useDataContext();
+
+   useEffect(() => {
+      if (type === "curso") {
+         modality === "online" ? setFaqType(faqsOnline) : setFaqType(faqsOnSite);
+      } else {
+         setFaqType(booksFaqs);
+      }
+   }, []);
    return (
       <motion.div variants={faqsVariants}>
          <h6>Preguntas Frecuentes</h6>
          <ul className="faqs__container">
-            {faqType === "online"
-               ? faqsOnline.map((faq) => <AccordionItem key={faq.Id} faq={faq} />)
-               : faqsOnSite.map((faq) => <AccordionItem key={faq.Id} faq={faq} />)}
+            {faqType.map((faq) => (
+               <AccordionItem key={faq.Id} faq={faq} />
+            ))}
          </ul>
       </motion.div>
    );
