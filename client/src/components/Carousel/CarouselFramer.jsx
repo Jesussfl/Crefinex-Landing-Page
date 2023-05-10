@@ -10,6 +10,7 @@ import CarouselButton from "./CarouselButton";
 import CarouselItem from "./CarouselItem";
 
 const CarouselFramer = memo(function CarouselFramer({ data }) {
+   console.log(data);
    const [currentItem, setIndex] = useState(1);
    const [ref, { width }] = useMeasure();
    const [tuple, setTuple] = useState([null, currentItem]); // [prev, current]

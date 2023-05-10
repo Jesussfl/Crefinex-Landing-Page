@@ -21,7 +21,7 @@ function App() {
                      </DataProvider>
                   }>
                   <Route
-                     path="cursos/:title/:id"
+                     path="cursos/:title/:type/:id"
                      element={
                         <Overlay>
                            <Modal />
@@ -29,7 +29,7 @@ function App() {
                      }
                   />
                   <Route
-                     path="libros/:title/:id"
+                     path="libros/:title/:type/:id"
                      element={
                         <Overlay>
                            <Modal />

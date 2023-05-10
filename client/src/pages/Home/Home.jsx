@@ -22,8 +22,6 @@ import { useDataContext } from "../../context/DataContext";
 const Home = memo(function Home() {
    const { isLoading, data } = useQuery("data", useDataContext());
 
-   // const data = useDataContext();
-   console.log("Renderizando");
    return (
       <div className="home">
          <FloatButton />
@@ -35,7 +33,7 @@ const Home = memo(function Home() {
          <SectionCourses data={data.coursesData} />
          <SectionEducation />
          <SectionAboutUs />
-         <SectionResources data={data.resourcesData} />
+         <SectionResources data={data.booksData} />
          <SectionContactUs data={data.locationData} />
          <SectionSubscribe />
          <Footer />

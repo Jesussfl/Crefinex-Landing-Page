@@ -1,114 +1,62 @@
-import React, { useEffect, useRef } from "react";
 import "./Modal.css";
+import { useEffect, useRef } from "react";
+
 import { motion } from "framer-motion";
 
 import LazyLoad from "react-lazy-load";
 
-import {
-   ModalCloseButton,
-   ModalActions,
-   ModalHeader,
-   CourseList,
-   Faqs,
-} from "../index";
+import { ModalCloseButton, ModalActions, ModalHeader, CourseList, Faqs } from "../index";
 import { BookList } from "../List/CourseList";
-import { useLocation, useParams } from "react-router-dom";
-import { getDataFromContext, useDataContext } from "../../context/DataContext";
+import { useParams } from "react-router-dom";
+import { useDataContext } from "../../context/DataContext";
 import ModalWhoSection from "./ModalWhoSection";
+import ModalContentSection from "./ModalContentSection";
+import ModalCertificationSection from "./ModalCertificationSection";
 
 const Modal = () => {
+   const { coursesData, booksData } = useDataContext();
+   const { id, type } = useParams();
    const modalRef = useRef(null);
+   const { Titulo, Descripcion, Precio, LinkDeCompra, Imagen, Contenido } = type == "curso" ? coursesData[id - 1] : booksData[id - 1];
+
    useEffect(() => {
       document.body.style.overflow = "hidden";
       return () => {
          document.body.style.overflow = "unset";
       };
    }, []);
-   function handleScroll() {
-      const isMobile = window.innerWidth <= 768;
-      const scrollTop = modalRef.current.scrollTop;
-      const maxScrollTop =
-         modalRef.current.scrollHeight - modalRef.current.clientHeight;
-      const value = (maxScrollTop - scrollTop) / maxScrollTop;
-      if (value < 0.9 && !isMobile) {
-         modalRef.current.style.width = "100%";
-         modalRef.current.style.height = "100%";
-         modalRef.current.style.borderRadius = "0px";
-      }
-      if (value > 0.9 && !isMobile) {
-         modalRef.current.style.width = "90%";
-         modalRef.current.style.height = "90%";
-         modalRef.current.style.borderRadius = "24px";
-      }
-   }
-   const data = useDataContext();
-   const location = useLocation();
-   const { id } = useParams();
-
-   const productsData = getDataFromContext(location, id, data);
-
-   const { Titulo, Descripcion, Precio, LinkDeCompra, Tipo, Imagen } =
-      productsData;
 
    return (
       <motion.div
          className="modal"
          variants={modalVariants}
          onClick={(e) => e.stopPropagation()}
-         onWheel={handleScroll}
          ref={modalRef}
+         onWheel={() => handleScroll(modalRef)}
          layout>
          <div className="modal__left-container">
             <LazyLoad className="modal__image-container">
-               <motion.img
-                  className="modal__image"
-                  alt="real estate mansion"
-                  src={Imagen}
-                  variants={imageVariants}></motion.img>
-            </LazyLoad>{" "}
-            <ModalActions
-               Tipo={Tipo}
-               Titulo={Titulo}
-               LinkDeCompra={LinkDeCompra}
-               Precio={Precio}
-            />
+               <motion.img className="modal__image" alt="real estate mansion" src={Imagen} variants={imageVariants}></motion.img>
+            </LazyLoad>
          </div>
          <motion.div className="modal__info" variants={modalInfoVariants}>
-            <ModalHeader
-               Titulo={Titulo}
-               Descripcion={Descripcion}
-               Precio={Precio}
-            />
+            {/* Header */}
+            <ModalHeader title={Titulo} description={Descripcion} price={Precio} />
 
-            {/* Courses */}
-            <motion.div className="modal__row" variants={modalRowVariants}>
-               {Tipo == "curso" ? <CourseList /> : <BookList />}
-            </motion.div>
+            <ModalActions type={type} title={Titulo} link={LinkDeCompra} price={Precio} />
+            {/* Benefits */}
+            {type == "curso" ? <CourseList /> : <BookList />}
 
-            {/* For what to learn */}
-            <motion.div className="modal__row" variants={modalRowVariants}>
-               <h6>¿Qué se aprenderá?</h6>
-               <p>
-                  Los conocimientos básicos cómo manejar las finanzas
-                  personales, planificando y estableciendo metas, valorando la
-                  importancia que tiene la toma de decisiones para el logro de
-                  sus objetivos. Practicar los hábitos de ahorro como base
-                  fundamental para invertir y mejorar su calidad de vida
-                  personal y familiar.
-               </p>
-            </motion.div>
+            {/* Content */}
+            <ModalContentSection type={type} content={Contenido} />
 
+            <ModalCertificationSection />
             {/* Who is this course for */}
-            <motion.div className="modal__row" variants={modalRowVariants}>
-               <ModalWhoSection />
-            </motion.div>
-
+            <ModalWhoSection type={type} content={Descripcion} />
             {/* FAQS */}
-
-            <motion.div className="modal__row" variants={modalRowVariants}>
-               <Faqs faqType={"online"} />
-            </motion.div>
+            <Faqs faqType={"online"} />
          </motion.div>
+
          <ModalCloseButton />
       </motion.div>
    );
@@ -131,8 +79,29 @@ const modalInfoVariants = {
    closed: { opacity: 0 },
 };
 
-const modalRowVariants = {
-   open: { opacity: 1, x: 0 },
-   closed: { opacity: 0, x: "10%" },
-};
+// const modalRowVariants = {
+//    open: { opacity: 1, x: 0 },
+//    closed: { opacity: 0, x: "10%" },
+// };
+
+function handleScroll(modalRef) {
+   const isMobile = window.innerWidth <= 768;
+   const scrollTop = modalRef.current.scrollTop;
+   const maxScrollTop = modalRef.current.scrollHeight - modalRef.current.clientHeight;
+   const value = (maxScrollTop - scrollTop) / maxScrollTop;
+   if (value < 0.9 && !isMobile) {
+      modalRef.current.style.width = "100%";
+      modalRef.current.style.height = "100%";
+      modalRef.current.style.borderRadius = "0px";
+      document.querySelector(".modal__left-container").style.flex = "0 1 0%";
+      document.querySelector(".modal__info").style.flex = "0 1 100%";
+   }
+   if (value > 0.8 && !isMobile) {
+      modalRef.current.style.width = "90%";
+      modalRef.current.style.height = "90%";
+      modalRef.current.style.borderRadius = "24px";
+      document.querySelector(".modal__left-container").style.flex = "0 1 40%";
+      document.querySelector(".modal__info").style.flex = "0 1 60%";
+   }
+}
 export default Modal;
