@@ -25,6 +25,7 @@ async function getData() {
    const locationData = await loadSheetData("Ubicacion", "A:B");
    const faqsOnline = await loadSheetData("Preguntas Frecuentes - Cursos Online", "A:C");
    const faqsOnSite = await loadSheetData("Preguntas Frecuentes - Cursos Presenciales", "A:C");
+   const booksFaqs = await loadSheetData("Preguntas Frecuentes - Libros", "A:C");
    return {
       headerData,
       coursesData,
@@ -32,6 +33,7 @@ async function getData() {
       locationData,
       faqsOnline,
       faqsOnSite,
+      booksFaqs,
    };
 }
 

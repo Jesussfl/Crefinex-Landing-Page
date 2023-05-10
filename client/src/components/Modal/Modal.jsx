@@ -50,11 +50,12 @@ const Modal = () => {
             {/* Content */}
             <ModalContentSection type={type} content={Contenido} />
 
-            <ModalCertificationSection />
+            {type == "curso" && <ModalCertificationSection />}
             {/* Who is this course for */}
             <ModalWhoSection type={type} content={Descripcion} />
+
             {/* FAQS */}
-            <Faqs faqType={"online"} />
+            {type == "curso" ? <Faqs type={type} modality={coursesData[id - 1].Modalidad} /> : <Faqs type={type} />}
          </motion.div>
 
          <ModalCloseButton />
@@ -93,10 +94,13 @@ function handleScroll(modalRef) {
       modalRef.current.style.width = "100%";
       modalRef.current.style.height = "100%";
       modalRef.current.style.borderRadius = "0px";
+      modalRef.current.style.padding = "24px 124px";
       document.querySelector(".modal__left-container").style.flex = "0 1 0%";
       document.querySelector(".modal__info").style.flex = "0 1 100%";
    }
    if (value > 0.8 && !isMobile) {
+      modalRef.current.style.padding = "0px ";
+
       modalRef.current.style.width = "90%";
       modalRef.current.style.height = "90%";
       modalRef.current.style.borderRadius = "24px";
