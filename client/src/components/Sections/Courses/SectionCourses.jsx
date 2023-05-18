@@ -19,14 +19,13 @@ function SectionCourses({ data }) {
                   Explora nuestros <span className="red">cursos</span>
                </h2>
                <p className="body-large">
-                  En Crefinex ofrecemos cursos diseñados para que niños y
-                  jóvenes aprendan habilidades financieras clave. Tenemos cursos
-                  online y en modalidad presencial, con el objetivo de
-                  adaptarnos a las necesidades y preferencias de cada
-                  estudiante.
+                  En Crefinex ofrecemos cursos diseñados para que niños y jóvenes aprendan habilidades financieras clave. Tenemos cursos
+                  online y en modalidad presencial, con el objetivo de adaptarnos a las necesidades y preferencias de cada estudiante.
                </p>
             </div>
          </InViewEffect>
+         {/* <div className="courses__cards-container"></div> */}
+         {Array.isArray(coursesData) ? <Carousel data={coursesData} /> : <Carousel data={coursesData} />}
          <Carousel data={data} />
          <Button text="Ver todos" />
       </section>
