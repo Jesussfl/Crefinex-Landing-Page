@@ -16,7 +16,7 @@ import {
    Footer,
    FloatButton,
 } from "../../components";
-
+import ReactPlayer from "react-player";
 function Home() {
    return (
       <div className="home">
@@ -26,6 +26,13 @@ function Home() {
          <SectionIntroduction />
          <SectionScolarships />
          <SectionMarquee />
+         <ReactPlayer
+            width="96%"
+            height="73vh"
+            style={{ borderRadius: "18px" }}
+            loop={true}
+            url="https://www.youtube.com/watch?v=RtYYi0S9vIY"
+         />
          <SectionCourses />
          <SectionEducation />
          <SectionAboutUs />
