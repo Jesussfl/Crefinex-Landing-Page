@@ -12,12 +12,15 @@ import { useDataContext } from "../../context/DataContext";
 import ModalWhoSection from "./ModalWhoSection";
 import ModalContentSection from "./ModalContentSection";
 import ModalCertificationSection from "./ModalCertificationSection";
+import { useQuery } from "react-query";
+import { getData } from "../../services/googleSheetAPI";
 
 const Modal = () => {
-   const { coursesData, booksData } = useDataContext();
    const { id, type } = useParams();
+   const queryKey = type === "curso" ? "courses" : "books";
+   const range = type === "curso" ? "A:J" : "A:H"; // Rangos diferentes para cursos y books
+   const { isLoading, data: modalContent } = useQuery(queryKey, () => getData(queryKey === "cursos" ? "Cursos" : "Libros", range));
    const modalRef = useRef(null);
-   const { Titulo, Descripcion, Precio, LinkDeCompra, Imagen, Contenido } = type == "curso" ? coursesData[id - 1] : booksData[id - 1];
 
    useEffect(() => {
       document.body.style.overflow = "hidden";
@@ -26,6 +29,11 @@ const Modal = () => {
       };
    }, []);
 
+   if (isLoading || !modalContent) {
+      return <p>Cargando</p>;
+   }
+
+   const { Titulo, Descripcion, Precio, Contenido, LinkDeCompra, Imagen } = modalContent[id - 1];
    return (
       <motion.div
          className="modal"
@@ -55,7 +63,7 @@ const Modal = () => {
             <ModalWhoSection type={type} content={Descripcion} />
 
             {/* FAQS */}
-            {type == "curso" ? <Faqs type={type} modality={coursesData[id - 1].Modalidad} /> : <Faqs type={type} />}
+            {/* {type == "curso" ? <Faqs type={type} modality={coursesData[id - 1].Modalidad} /> : <Faqs type={type} />} */}
          </motion.div>
 
          <ModalCloseButton />

@@ -1,11 +1,17 @@
 import React from "react";
-
+import LazyLoad from "react-lazy-load";
 import Card from "../Card/Card";
-import "./Carousel.css";
-function Carousel({ data }) {
-   console.log(data);
+import "./CoursesContainer.css";
+import { useCoursesQuery } from "./Hooks/useCoursesQuery";
+
+function CoursesContainer() {
+   const { data, isLoading } = useCoursesQuery();
+   if (isLoading || !data) {
+      return <p>Cargando</p>;
+   }
+
    return (
-      <div className="carousel">
+      <LazyLoad offset={200} className="carousel">
          <div className="cards">
             {data.map((card, index) => (
                <Card
@@ -21,8 +27,8 @@ function Carousel({ data }) {
                />
             ))}
          </div>
-      </div>
+      </LazyLoad>
    );
 }
 
-export default Carousel;
+export default CoursesContainer;

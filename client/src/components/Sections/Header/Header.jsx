@@ -13,7 +13,7 @@ import InViewEffect from "../../Decorations/InViewEffect/InViewEffect";
 //Icons
 import { ArrowCircleDown } from "iconsax-react";
 
-function Header(props) {
+function Header() {
    return (
       <header id="header">
          <Confetti
@@ -63,12 +63,14 @@ function Header(props) {
          <div className="hero">
             <InViewEffect>
                <h1>
-                  Mejora el futuro <span className="red">financiero</span> de
-                  tus <span className="blue">hijos</span> con nosotros.
+                  Mejora el futuro <span className="red">financiero</span> de tus <span className="blue">hijos</span> con nosotros.
                </h1>
             </InViewEffect>
             <InViewEffect>
-               <p className="body-large">{props.data.Subtitulo}</p>
+               <p className="body-large">
+                  ¡Aprender finanzas nunca fue tan divertido! Únete a Crefinex y enseña a tus hijos habilidades financieras que les durarán
+                  toda la vida.
+               </p>
             </InViewEffect>
             <div className="actions-container">
                <Button

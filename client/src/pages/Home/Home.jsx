@@ -1,8 +1,6 @@
 import "./Home.css";
-import React, { memo } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
-import { useQuery } from "react-query";
-
 import {
    Navbar,
    Header,
@@ -18,28 +16,26 @@ import {
    Footer,
    FloatButton,
 } from "../../components";
-import { useDataContext } from "../../context/DataContext";
-const Home = memo(function Home() {
-   const { isLoading, data } = useQuery("data", useDataContext());
 
+function Home() {
    return (
       <div className="home">
          <FloatButton />
          <Navbar />
-         <Header data={data.headerData} />
+         <Header />
          <SectionIntroduction />
          <SectionScolarships />
          <SectionMarquee />
-         <SectionCourses data={data.coursesData} />
+         <SectionCourses />
          <SectionEducation />
          <SectionAboutUs />
-         <SectionResources data={data.booksData} />
-         <SectionContactUs data={data.locationData} />
+         <SectionResources />
+         <SectionContactUs />
          <SectionSubscribe />
          <Footer />
          <Outlet />
       </div>
    );
-});
+}
 
 export default Home;
