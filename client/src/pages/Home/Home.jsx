@@ -1,10 +1,7 @@
 import "./Home.css";
-import React, { memo } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
-import { useQuery } from "react-query";
-
 import {
-   SplashScreen,
    Navbar,
    Header,
    SectionIntroduction,
@@ -20,19 +17,12 @@ import {
    FloatButton,
 } from "../../components";
 
-import { getData } from "../../services/googleSheetAPI";
-
-const Home = memo(function Home() {
-   const { isLoading, data: headerData } = useQuery("data", () => getData("Cabecera", "A:B"));
-
-   if (isLoading || !headerData) {
-      return <SplashScreen />;
-   }
+function Home() {
    return (
       <div className="home">
          <FloatButton />
          <Navbar />
-         <Header data={headerData} />
+         <Header />
          <SectionIntroduction />
          <SectionScolarships />
          <SectionMarquee />
@@ -46,6 +36,6 @@ const Home = memo(function Home() {
          <Outlet />
       </div>
    );
-});
+}
 
 export default Home;

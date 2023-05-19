@@ -1,22 +1,11 @@
 import React from "react";
 import LazyLoad from "react-lazy-load";
 import Card from "../Card/Card";
-import "./Carousel.css";
-import { useQuery } from "react-query";
-import { loadSheetData } from "../../services/googleSheetAPI";
+import "./CoursesContainer.css";
+import { useCoursesQuery } from "./Hooks/useCoursesQuery";
 
-async function getData() {
-   await gapi.load("client");
-
-   const coursesData = await loadSheetData("Cursos", "A:J");
-   console.log("fetcheando datos de los cursos");
-
-   return coursesData;
-}
-function Carousel() {
-   console.log("Loading Cards...");
-
-   const { isLoading, data } = useQuery("courses", getData);
+function CoursesContainer() {
+   const { data, isLoading } = useCoursesQuery();
    if (isLoading || !data) {
       return <p>Cargando</p>;
    }
@@ -42,4 +31,4 @@ function Carousel() {
    );
 }
 
-export default Carousel;
+export default CoursesContainer;
