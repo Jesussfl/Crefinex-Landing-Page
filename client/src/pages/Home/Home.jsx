@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { useQuery } from "react-query";
 
 import {
+   SplashScreen,
    Navbar,
    Header,
    SectionIntroduction,
@@ -18,23 +19,28 @@ import {
    Footer,
    FloatButton,
 } from "../../components";
-import { useDataContext } from "../../context/DataContext";
-const Home = memo(function Home() {
-   const { isLoading, data } = useQuery("data", useDataContext());
 
+import { getData } from "../../services/googleSheetAPI";
+
+const Home = memo(function Home() {
+   const { isLoading, data: headerData } = useQuery("data", () => getData("Cabecera", "A:B"));
+
+   if (isLoading || !headerData) {
+      return <SplashScreen />;
+   }
    return (
       <div className="home">
          <FloatButton />
          <Navbar />
-         <Header data={data.headerData} />
+         <Header data={headerData} />
          <SectionIntroduction />
          <SectionScolarships />
          <SectionMarquee />
-         <SectionCourses data={data.coursesData} />
+         <SectionCourses />
          <SectionEducation />
          <SectionAboutUs />
-         <SectionResources data={data.booksData} />
-         <SectionContactUs data={data.locationData} />
+         <SectionResources />
+         <SectionContactUs />
          <SectionSubscribe />
          <Footer />
          <Outlet />

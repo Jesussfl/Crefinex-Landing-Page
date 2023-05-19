@@ -22,3 +22,11 @@ export async function loadSheetData(sheetName = "Sheet1", range = "A1:Z1000") {
 
    return jsonData.length === 1 && sheetName !== "Cursos" ? jsonData[0] : jsonData;
 }
+
+export async function getData(sheetName, range) {
+   await gapi.load("client");
+
+   const sheetData = await loadSheetData(sheetName, range);
+
+   return sheetData;
+}

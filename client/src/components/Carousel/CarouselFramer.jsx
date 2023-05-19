@@ -8,9 +8,11 @@ import { AnimatePresence } from "framer-motion";
 //Components
 import CarouselButton from "./CarouselButton";
 import CarouselItem from "./CarouselItem";
+import { useQuery } from "react-query";
+import { getData } from "../../services/googleSheetAPI";
 
-const CarouselFramer = memo(function CarouselFramer({ data }) {
-   console.log(data);
+const CarouselFramer = memo(function CarouselFramer() {
+   const { isLoading, data } = useQuery("books", () => getData("Libros", "A:H"));
    const [currentItem, setIndex] = useState(1);
    const [ref, { width }] = useMeasure();
    const [tuple, setTuple] = useState([null, currentItem]); // [prev, current]
@@ -21,7 +23,7 @@ const CarouselFramer = memo(function CarouselFramer({ data }) {
    if (tuple[1] !== currentItem) {
       setTuple([tuple[1], currentItem]);
    }
-   if (prev !== null) {
+   if (prev !== null && !isLoading) {
       const dist = (currentItem - prev + data.length) % data.length;
       if (dist <= data.length / 2) {
          direction = 1;
@@ -42,12 +44,10 @@ const CarouselFramer = memo(function CarouselFramer({ data }) {
    const nextClick = () => {
       setIndex(getNextIndex());
    };
-
-   const displayedElements = [
-      data[getPrevIndex()],
-      data[currentItem],
-      data[getNextIndex()],
-   ];
+   if (isLoading || !data) {
+      return <p>Cargando</p>;
+   }
+   const displayedElements = [data[getPrevIndex()], data[currentItem], data[getNextIndex()]];
    return (
       <div className="carousel-section">
          <div className="carousel-wrapper">
@@ -56,13 +56,7 @@ const CarouselFramer = memo(function CarouselFramer({ data }) {
             <div ref={ref} className="carousel-container">
                <AnimatePresence custom={{ direction, width }}>
                   {displayedElements.map((item, index) => (
-                     <CarouselItem
-                        key={item.Id}
-                        type={item.Tipo}
-                        itemData={item}
-                        identifier={index}
-                        custom={{ direction, width }}
-                     />
+                     <CarouselItem key={item.Id} type={item.Tipo} itemData={item} identifier={index} custom={{ direction, width }} />
                   ))}
                </AnimatePresence>
             </div>

@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "../../Carousel/Carousel";
 import Button from "../../Buttons/Button";
 import InViewEffect from "../../Decorations/InViewEffect/InViewEffect";
-
+import LazyLoad from "react-lazy-load";
 import "./SectionCourses.css";
 
 function SectionCourses({ data }) {
@@ -25,8 +25,9 @@ function SectionCourses({ data }) {
             </div>
          </InViewEffect>
          {/* <div className="courses__cards-container"></div> */}
-         {Array.isArray(coursesData) ? <Carousel data={coursesData} /> : <Carousel data={coursesData} />}
-         <Carousel data={data} />
+         <div>{Array.isArray(data) ? <Carousel data={data} /> : <Carousel data={data} />}</div>
+
+         {/* <Carousel data={data} /> */}
          <Button text="Ver todos" />
       </section>
    );
